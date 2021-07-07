@@ -1,34 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 .header {
   display: flex;
   align-items: center;
-  height: 4rem;
+  height: 3.4rem;
   background-color: #2d2d2d;
   color: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+    height: 2.5rem;
+  }
 
   .brandName {
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Dancing Script', cursive;
-    font-size: 2.3rem;
-    padding: 0 1.5rem;
-    border-right: 1px solid gray;
+    // font-family: 'Satisfy', cursive;
     height: 100%;
+
+    span {
+      font-size: 2.3rem;
+      padding: 0 1.5rem;
+      height: 100%;
+      height: 100%;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.8rem;
+        padding: 0 1.2rem;
+      }
+    }
   }
 
   .menOrWomenCategory {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-left: 1px solid gray;
     height: 100%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 
     .menWomen {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: white;
       padding: 0 1.5rem;
       width: 4rem;
@@ -48,6 +69,10 @@
     overflow: hidden;
     margin: 0 1.5rem;
 
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+
     .formContainer {
       position: relative;
       width: 100%;
@@ -65,7 +90,7 @@
       .searchIcon {
         position: absolute;
         top: 0;
-        right: 2%;
+        right: 1.5%;
         height: inherit;
         display: flex;
         align-items: center;
@@ -77,13 +102,17 @@
     }
   }
 
-  .mobileSearch {
-    display: none;
-  }
+  .accountFavCart {
+    display: flex;
 
-  .icon {
-    color: white;
-    margin-right: 1.7rem;
-    font-size: 1.7rem;
+    .mobileSearch {
+      display: none;
+    }
+
+    .icon {
+      color: white;
+      margin-right: 1.7rem;
+      font-size: 1.2rem;
+    }
   }
 }

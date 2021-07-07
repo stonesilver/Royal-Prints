@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div className='header'>
       <Link to='/' className='brandName'>
-        Royal Prints
+        <span>Royal Prints</span>
       </Link>
       <div className='menOrWomenCategory'>
         <Link to='/men' className='menWomen men'>
@@ -39,18 +39,20 @@ const Header = () => {
           </span>
         </div>
       </form>
-      <div className='mobileSearch'>
-        <FontAwesomeIcon icon={faSearch} />
+      <div className='accountFavCart'>
+        <div className='mobileSearch'>
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
+        <Link to='/profile' className='accountIcon icon'>
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
+        <Link to='/favourites' className='favouriteIcon icon'>
+          <FontAwesomeIcon icon={faHeart} />
+        </Link>
+        <Link to='/cart' className='cartIcon icon'>
+          <FontAwesomeIcon icon={faBriefcase} />
+        </Link>
       </div>
-      <Link to='/profile' className='accountIcon icon'>
-        <FontAwesomeIcon icon={faUser} />
-      </Link>
-      <Link to='/favourites' className='favouriteIcon icon'>
-        <FontAwesomeIcon icon={faHeart} />
-      </Link>
-      <Link to='/cart' className='cartIcon icon'>
-        <FontAwesomeIcon icon={faBriefcase} />
-      </Link>
     </div>
   );
 };
