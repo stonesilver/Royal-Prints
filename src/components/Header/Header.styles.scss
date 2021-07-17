@@ -1,118 +1,224 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import '../../scss/sass-variables';
 
 .header {
-  display: flex;
-  align-items: center;
-  height: 3.4rem;
-  background-color: #2d2d2d;
-  color: #ffffff;
+  width: 100%;
 
-  @media screen and (max-width: 768px) {
-    justify-content: space-between;
-    height: 2.5rem;
-  }
-
-  .brandName {
+  .mainNav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-family: 'Dancing Script', cursive;
-    // font-family: 'Satisfy', cursive;
-    height: 100%;
-
-    span {
-      font-size: 2.3rem;
-      padding: 0 1.5rem;
-      height: 100%;
-      height: 100%;
-
-      @media screen and (max-width: 768px) {
-        font-size: 1.8rem;
-        padding: 0 1.2rem;
-      }
-    }
-  }
-
-  .menOrWomenCategory {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 1px solid gray;
-    height: 100%;
+    height: 3.4rem;
+    background-color: $headerBackgroundColor;
+    color: #ffffff;
 
     @media screen and (max-width: 768px) {
-      display: none;
+      justify-content: space-between;
+      height: 2.5rem;
     }
 
-    .menWomen {
+    .brandName {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.15rem;
-      color: white;
-      padding: 0 1.5rem;
-      width: 4rem;
+      font-family: 'Dancing Script', cursive;
+      // font-family: 'Satisfy', cursive;
       height: 100%;
 
-      &:hover {
-        background-color: rgb(71, 68, 68);
-      }
-    }
-  }
-
-  .form {
-    width: 50%;
-    height: 2.1rem;
-    border: 1px solid gray;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 0 1.5rem;
-
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-
-    .formContainer {
-      position: relative;
-      width: 100%;
-      height: 100%;
-
-      input {
-        width: 100%;
+      span {
+        font-size: 2.3rem;
+        padding: 0 1.5rem;
         height: 100%;
-        outline: none;
-        border: none;
-        font-size: 1rem;
-        padding-left: 15px;
+        width: max-content;
+
+        @media screen and (max-width: 768px) {
+          font-size: 1.8rem;
+          padding: 0 1.2rem;
+        }
+      }
+    }
+
+    .menOrWomenCategory {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid $borderColor;
+      height: 100%;
+
+      @media screen and (max-width: 768px) {
+        display: none;
       }
 
-      .searchIcon {
-        position: absolute;
-        top: 0;
-        right: 1.5%;
-        height: inherit;
+      .menWomen {
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 1.15rem;
+        color: white;
+        padding: 0 1.5rem;
+        width: 4rem;
+        height: 100%;
+
+        &:hover {
+          background-color: $headerBackgroundHoverColor;
+        }
+      }
+    }
+
+    .form {
+      width: 50%;
+      height: 2.1rem;
+      border: 1px solid $borderColor;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 0 1.5rem;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+
+      .formContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        input {
+          width: 95%;
+          height: 100%;
+          outline: none;
+          border: none;
+          font-size: 1rem;
+          padding-left: 15px;
+        }
+
+        .searchIcon {
+          width: 5%;
+          height: inherit;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          background: white;
+          color: #000000;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .accountFavCart {
+      display: flex;
+
+      .mobileSearch {
+        display: none;
+      }
+
+      .icon {
+        color: white;
+        margin-right: 1.7rem;
         font-size: 1.2rem;
-        cursor: pointer;
-        color: #000000;
       }
     }
   }
 
-  .accountFavCart {
-    display: flex;
+  .subNav {
+    column-width: 100%;
+    height: 100%;
 
-    .mobileSearch {
-      display: none;
-    }
+    .subNavItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 0.8rem;
+      position: relative;
+      border-bottom: 1px solid $borderColor;
 
-    .icon {
-      color: white;
-      margin-right: 1.7rem;
-      font-size: 1.2rem;
+      .item {
+        padding: 0.5rem 0;
+
+        &:hover .itemMenu {
+          display: flex;
+        }
+
+        .itemHeader {
+          padding: 0 0.5rem;
+          border-bottom: 2px solid transparent;
+
+          &:hover {
+            border-bottom: 2px solid $secondaryColor;
+          }
+        }
+
+        .itemMenu {
+          position: absolute;
+          top: 38px;
+          left: 0;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          font-size: 0.9rem;
+
+          .itemMenucontainer {
+            position: relative;
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+            width: 70vw;
+            border: 1px solid $borderColor;
+            border-top: none;
+
+            .subs {
+              // padding: 0 0.5rem;
+
+              .header {
+                font-size: 1.1rem;
+                padding: 0.5rem 0.5rem 0 0.5rem;
+              }
+
+              .content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+                .groupContent .subLink {
+                  margin: 0.8rem 0;
+                  width: max-content;
+                  padding: 0 0.5rem;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+
+                .contentLeft {
+                  width: 100%;
+
+                  .subMenuLink {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.9rem;
+                    padding: 0.7rem 0.6rem;
+                    margin: 0;
+
+                    &:hover {
+                      background: #000000;
+                      color: #ffffff;
+                      cursor: pointer;
+                    }
+
+                    span:nth-child(2) {
+                      font-size: 1.1rem;
+                    }
+                  }
+                }
+              }
+            }
+
+            .itemRight {
+              border-left: 1px solid $borderColor;
+              padding-bottom: 2.5rem;
+            }
+          }
+        }
+      }
     }
   }
 }
