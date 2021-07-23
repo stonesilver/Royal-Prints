@@ -36,12 +36,12 @@
 
         @media screen and (max-width: 768px) {
           font-size: 1.5rem;
-          padding: 0 .5rem;
+          padding: 0 0.5rem;
         }
 
         @media screen and (max-width: 768px) {
           font-size: 1.25rem;
-          padding: 0 .5rem;
+          padding: 0 0.5rem;
         }
       }
     }
@@ -121,9 +121,20 @@
       }
 
       .icon {
+        position: relative;
         color: white;
         margin-right: 1.7rem;
         font-size: 1.2rem;
+
+        &-count {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: .9rem;
+          font-weight: 600;
+          z-index: 1;
+          color: $secondaryColor;
+        }
 
         @media screen and (max-width: 768px) {
           margin-right: 1rem;
@@ -154,12 +165,13 @@
 
         &:hover .itemMenu {
           display: flex;
+          left: 0px;
         }
 
         .itemHeader {
           padding: 0 0.5rem;
           border-bottom: 2px solid transparent;
-          transition: all .7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          transition: all 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
           &:hover {
             border-bottom: 2px solid $secondaryColor;
@@ -169,12 +181,13 @@
         .itemMenu {
           position: absolute;
           top: 37.1px;
-          left: 0;
-          display: none;
+          left: -5000px;
+          display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
           font-size: 0.9rem;
+          transition: left 1s cubic-bezier(0.19, 1, 0.22, 1);
 
           .itemMenucontainer {
             position: relative;

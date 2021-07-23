@@ -36,6 +36,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transform: translateY(25%);
         width: 100%;
         height: 100%;
         font-size: 2.5rem;
@@ -58,22 +59,27 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    // height: 100%;
+    grid-gap: .5rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 540px) {
       flex-direction: column;
     }
 
     .womenMenContainer {
-      width: 50%;
-      height: 50vh;
+      width: 40%;
+      height: 40vh;
       position: relative;
       padding: 0;
       margin: 0;
 
       @media screen and (max-width: 768px) {
-        width: 100%;
-        height: 30vh;
+        width: 45%;
+        height: 33vh;
+      }
+
+      @media screen and (max-width: 540px) {
+        width: 95%;
+        height: 33vh;
       }
 
       .wmCategory-img {
@@ -99,7 +105,7 @@
           border-radius: 5px;
           transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 540px) {
             padding: .6rem .7rem;
             font-size: .9em;
           }
@@ -136,40 +142,34 @@
       align-items: center;
 
       @media screen and (max-width: 768px) {
+        width: 90%
+      }
+
+      @media screen and (max-width: 540px) {
         width: 100%
       }
 
       .carousel-container {
-        // display: grid;
-        // grid-template-columns: repeat(5, auto);
         width: 100%;
+        height: 100%;
         overflow: hidden;
         grid-gap: 1px;
 
         .slide {
-          display:flex;
-          grid-gap: 1em;
+          display:grid;
+          grid-template-columns: repeat(4, 23.8%);
+          grid-gap: 1rem;
           justify-content: center;
           align-items: center;
-          // background: rgb(50, 102, 70);
           width: 100%;
-          // height: 50vh;
+          height: 100%;
           text-align: center;
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 540px) {
             display: grid;
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(2, 48%);
           }
         }
-
-        // .active {
-        //   position: relative;
-        //   animation: active 1.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-        // }
-
-        // .inactive {
-        //   display: none;
-        // }
       }
 
       .arrow {
@@ -199,7 +199,7 @@
     text-align: center;
     border: 2px solid $primaryBlack;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 540px) {
       width: auto;
       grid-gap: .5rem;
       font-size: .9rem;

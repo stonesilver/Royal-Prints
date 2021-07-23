@@ -51,6 +51,7 @@ const Header = () => {
           </Link>
           <Link to='/favourites' className='favouriteIcon icon'>
             <FontAwesomeIcon icon={faHeart} />
+            <div className="icon-count">2</div>
           </Link>
           <Link to='/cart' className='cartIcon icon'>
             <FontAwesomeIcon icon={faBriefcase} />
