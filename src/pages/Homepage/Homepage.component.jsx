@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import WelcomeImg from '../../assets/imgFiles/Beautiful Ankara white-1820x785 1-1820x785.jpg';
 import WomencategoryImg from '../../assets/imgFiles/womenLarge.jpg';
 import MencategoryImg from '../../assets/imgFiles/menLarge.jpg';
@@ -6,19 +7,30 @@ import Carousel from 'react-elastic-carousel';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import StyleCard from '../../components/StylesCard/StylesCard.component';
-import { carouselData } from '../../assets/carouselData';
+import { pepperDemStyles, trendingFabrics } from '../../assets/carouselData';
 import './Homepage.styles.scss';
 
 const Homepage = () => {
+  const [showText, setShowText] = useState(false);
+  const imageOnLoad = () => {
+    setShowText(true);
+  };
   return (
     <div className='homepage'>
       <div className='welcome'>
         <figure className='figure'>
-          <img src={WelcomeImg} alt='welcome' className='welcome-img' />
-          <figcaption className='caption'>
-            <span>Discover classic styles that will</span>
-            <span>last beyond the season.</span>
-          </figcaption>
+          <img
+            src={WelcomeImg}
+            alt='welcome'
+            className='welcome-img'
+            onLoad={imageOnLoad}
+          />
+          {showText && (
+            <figcaption className='caption'>
+              <span>Discover classic styles that will</span>
+              <span>last beyond the season.</span>
+            </figcaption>
+          )}
         </figure>
       </div>
       <div className='menWomenCategory'>
@@ -54,7 +66,7 @@ const Homepage = () => {
         <div className='trending-design-carousel'>
           <div className='carousel-container'>
             <Carousel>
-              {carouselData.map((data, index) => (
+              {pepperDemStyles.map((data, index) => (
                 <div className='slide' key={index}>
                   {data.map((slide) => (
                     <StyleCard data={slide} key={slide.id} />
@@ -78,7 +90,7 @@ const Homepage = () => {
         <div className='trending-design-carousel'>
           <div className='carousel-container'>
             <Carousel>
-              {carouselData.map((data, index) => (
+              {trendingFabrics.map((data, index) => (
                 <div className='slide' key={index}>
                   {data.map((slide) => (
                     <StyleCard data={slide} key={slide.id} />
