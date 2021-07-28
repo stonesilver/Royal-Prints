@@ -59,7 +59,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    grid-gap: .5rem;
+    grid-gap: 0.5rem;
 
     @media screen and (max-width: 540px) {
       flex-direction: column;
@@ -67,24 +67,28 @@
 
     .womenMenContainer {
       width: 40%;
-      height: 40vh;
+      height: 100%;
       position: relative;
       padding: 0;
       margin: 0;
 
       @media screen and (max-width: 768px) {
         width: 45%;
-        height: 33vh;
+        // height: 33vh;
+        height: 100%;
       }
 
       @media screen and (max-width: 540px) {
         width: 95%;
-        height: 33vh;
+        // height: 33vh;
+        height: 100%;
       }
 
       .wmCategory-img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
+        object-position: bottom;
       }
 
       .explore-all {
@@ -106,8 +110,8 @@
           transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
           @media screen and (max-width: 540px) {
-            padding: .6rem .7rem;
-            font-size: .9em;
+            padding: 0.6rem 0.7rem;
+            font-size: 0.9em;
           }
 
           &:hover {
@@ -142,11 +146,11 @@
       align-items: center;
 
       @media screen and (max-width: 768px) {
-        width: 90%
+        width: 90%;
       }
 
       @media screen and (max-width: 540px) {
-        width: 100%
+        width: 100%;
       }
 
       .carousel-container {
@@ -156,7 +160,7 @@
         grid-gap: 1px;
 
         .slide {
-          display:grid;
+          display: grid;
           grid-template-columns: repeat(4, 23.8%);
           grid-gap: 1rem;
           justify-content: center;
@@ -171,53 +175,94 @@
           }
         }
       }
+    }
 
-      .arrow {
-        width: 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 4rem;
-        
-        .grpArrow {
-          width: max-content;
-          cursor: pointer;
-        }
+    .view-all {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10%;
+      padding: 0.8rem 0.5rem;
+      margin: 1rem;
+      font-size: 1.15rem;
+      text-align: center;
+      border: 2px solid $primaryBlack;
+      transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      @media screen and (max-width: 540px) {
+        width: auto;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      &:hover {
+        background: $primaryBlack;
+        color: $primaryWhite;
+      }
+
+      &-icon {
+        margin-left: clamp(0.5rem, 1vw, 1rem);
       }
     }
   }
 
-  .view-all {
+  .jumpsuit-jackets {
+    width: 100%;
     display: flex;
-    grid-gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 10%;
-    padding: .8rem .5rem;
-    margin: 1rem;
-    font-size: 1.15rem;
-    text-align: center;
-    border: 2px solid $primaryBlack;
+    padding: 0.5rem 0;
+    margin-top: 1.5rem;
 
-    @media screen and (max-width: 540px) {
-      width: auto;
-      grid-gap: .5rem;
-      font-size: .9rem;
-    }
+    &-container {
+      width: 70%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
 
-    &:hover {
-      background: $primaryBlack;
-      color: $primaryWhite;
-    }
-  }
-  @keyframes active {
-    from {
-      left: -970px
-    }
-    to {
-      left: 0
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
+
+      .item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+
+        &-image-container {
+          width: 100%;
+          object-fit: cover;
+          object-position: bottom;
+          height: 99%;
+
+          &-image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &-body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid $primaryBlack;
+          margin-top: 0.5rem;
+          padding: clamp(0.5rem, 1vw, 1.15rem) 0;
+          font-size: clamp(0.9rem, 1vw, 1.2rem);
+          transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+          &:hover {
+            background: $primaryBlack;
+            color: $primaryWhite;
+          }
+        }
+      }
     }
   }
 }
-
-

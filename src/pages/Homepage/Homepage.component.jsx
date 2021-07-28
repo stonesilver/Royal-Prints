@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import JumpSuit from '../../assets/imgFiles/jumpsuit.jpg';
+import Blazer from '../../assets/imgFiles/blazer.jpg';
 import WelcomeImg from '../../assets/imgFiles/Beautiful Ankara white-1820x785 1-1820x785.jpg';
 import WomencategoryImg from '../../assets/imgFiles/womenLarge.jpg';
 import MencategoryImg from '../../assets/imgFiles/menLarge.jpg';
@@ -78,7 +80,7 @@ const Homepage = () => {
         </div>
         <Link className='view-all'>
           <span>View All</span>
-          <span>
+          <span className='view-all-icon'>
             <FontAwesomeIcon icon={faAngleRight} />
           </span>
         </Link>
@@ -102,10 +104,38 @@ const Homepage = () => {
         </div>
         <Link className='view-all'>
           <span>View All</span>
-          <span>
+          <span className='view-all-icon'>
             <FontAwesomeIcon icon={faAngleRight} />
           </span>
         </Link>
+      </div>
+      <div className='jumpsuit-jackets'>
+        <div className='jumpsuit-jackets-container'>
+          <div className='item'>
+            <div className='item-image-container'>
+              <img
+                src={JumpSuit}
+                alt='jump suits'
+                className='item-image-container-image'
+              />
+            </div>
+            <Link className='item-body'>
+              <span>Jump Suits</span>
+            </Link>
+          </div>
+          <div className='item'>
+            <div className='item-image-container'>
+              <img
+                src={Blazer}
+                alt='blazers'
+                className='item-image-container-image'
+              />
+            </div>
+            <Link className='item-body'>
+              <span>Blazers</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
