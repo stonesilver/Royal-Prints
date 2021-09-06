@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import '../../scss/sass-variables';
 
 .header {
@@ -21,8 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Dancing Script', cursive;
-      // font-family: 'Satisfy', cursive;
+      font-family: 'Chakra Petch', sans-serif;
       height: 100%;
 
       span {
@@ -130,10 +127,12 @@
           position: absolute;
           top: 0;
           right: 0;
-          font-size: .9rem;
+          font-size: .7rem;
           font-weight: 600;
           z-index: 1;
-          color: $secondaryColor;
+          background: $secondaryColor;
+          border-radius: 50%;
+          padding: 0 .2rem;
         }
 
         @media screen and (max-width: 768px) {
@@ -165,7 +164,7 @@
 
         &:hover .itemMenu {
           display: flex;
-          left: 0px;
+          opacity: 1;
         }
 
         .itemHeader {
@@ -181,13 +180,14 @@
         .itemMenu {
           position: absolute;
           top: 37.1px;
-          left: -5000px;
+          left: 0px;
           display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
           font-size: 0.9rem;
-          transition: left 1s cubic-bezier(0.19, 1, 0.22, 1);
+          opacity: 0.4;
+          transition: opacity .2s cubic-bezier(0.19, 1, 0.22, 1);
 
           .itemMenucontainer {
             position: relative;

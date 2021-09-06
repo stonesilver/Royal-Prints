@@ -19,7 +19,7 @@ const Header = () => {
     <div className='header'>
       <div className='mainNav'>
         <Link to='/' className='brandName'>
-          <span>Royal Prints</span>
+          <span>Coronation</span>
         </Link>
         <div className='menOrWomenCategory'>
           <Link to='/men' className='menWomen men'>
