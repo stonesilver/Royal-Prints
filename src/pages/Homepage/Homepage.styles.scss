@@ -31,6 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1.5rem;
 
     .header {
       text-align: center;
@@ -115,7 +116,7 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0;
-    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 
     &-container,
     .shop-bag {
@@ -186,12 +187,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(3, 52vh);
-      gap: .3rem;
+      gap: 0.3rem;
       width: 80%;
 
       @media screen and (max-width: 768px) {
         grid-template-rows: repeat(3, 140px);
-        gap: .25rem;
+        gap: 0.25rem;
         width: 95%;
       }
 
@@ -201,7 +202,7 @@
 
         &:hover .on-instagram-card-hover-state {
           // display: flex;
-          background: #00000081;
+          background: #0000008e;
           visibility: visible;
         }
 
@@ -227,7 +228,7 @@
           right: 0;
           color: #b6b5b4;
           background: none;
-          transition: all .3s ease-in;
+          transition: all 0.3s ease-in;
           visibility: hidden;
 
           &-like-and-comment {
