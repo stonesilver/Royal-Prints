@@ -3,6 +3,7 @@ import Welcome from './Welcome/Welcome.component';
 import JumpsuitsJacckets from './JumpsuitsJackets/JumpsuitsJacckets.component';
 import Designscarousel from './DesignsCarousel/Designscarousel.component';
 import OnInstagram from './OnInstagram/OnInstagram.component';
+import TheyTalkedAboutUs from './TheyTalkedAboutUs/TheyTalkedAboutUs.component';
 import './Homepage.styles.scss';
 
 const Homepage = () => {
@@ -19,6 +20,7 @@ const Homepage = () => {
         stylesArray={trendingFabrics}
       />
       <OnInstagram />
+      <TheyTalkedAboutUs />
     </div>
   );
 };

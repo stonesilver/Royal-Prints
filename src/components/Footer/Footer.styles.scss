@@ -1,0 +1,76 @@
+@import '../../scss/sass-variables';
+
+.footer {
+  background: $primaryBlack;
+  color: $primaryWhite;
+  padding: 0 1em;
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 0.5em;
+    }
+
+    &-first-card,
+    &-nav {
+      padding: 0.5em;
+
+      &-header {
+        font-weight: 500;
+        color: #8b8888;
+      }
+
+      &-description {
+        font-size: 0.8rem;
+      }
+
+      &-social-media-handles {
+        display: grid;
+        grid-template-columns: repeat(4, max-content);
+        gap: 1em;
+
+        .icon {
+          padding: 0.4em 0.7em;
+          border-radius: 45%;
+        }
+
+        .facebook {
+          background: #3b5998;
+        }
+
+        .twitter {
+          background: #55acee;
+        }
+
+        .instagram {
+          background: #125688;
+        }
+
+        .pinterest {
+          background: #cc2127;
+        }
+      }
+
+      &-links {
+        &-link {
+          width: fit-content;
+          font-size: 0.9rem;
+          margin: 0.3em;
+
+          span {
+            margin-left: 0.3em;
+          }
+
+          &:hover {
+            cursor: pointer;
+            color: #8b8888;
+          }
+        }
+      }
+    }
+  }
+}
