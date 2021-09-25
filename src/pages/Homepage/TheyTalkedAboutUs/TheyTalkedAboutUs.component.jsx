@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp, faComments, faCoins, faLock } from '@fortawesome/free-solid-svg-icons';
-
 const TheyTalkedAboutUs = () => {
   return (
     <div className='they-talked-about-us'>
@@ -87,40 +84,6 @@ const TheyTalkedAboutUs = () => {
               bed sheets, tablecloth, duvet or pillow covers.
             </p>
           </div>
-        </div>
-      </div>
-      <div className='satisfaction-secured-transactions'>
-        <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon'>
-            <FontAwesomeIcon icon={faThumbsUp} />
-          </span>
-          <p className='satisfaction-secured-transactions-card-text'>
-            97% satisfaction
-          </p>
-        </div>
-        <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon'>
-            <FontAwesomeIcon icon={faComments} />
-          </span>
-          <p className='satisfaction-secured-transactions-card-text'>
-            Discuss with designers
-          </p>
-        </div>
-        <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon three-x'>
-            <FontAwesomeIcon icon={faCoins} /> <span className='three-x'>3X</span>
-          </span>
-          <p className='satisfaction-secured-transactions-card-text'>
-            Payments in 3 times
-          </p>
-        </div>
-        <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon'>
-            <FontAwesomeIcon icon={faLock} />
-          </span>
-          <p className='satisfaction-secured-transactions-card-text'>
-            Secured transactions
-          </p>
         </div>
       </div>
     </div>

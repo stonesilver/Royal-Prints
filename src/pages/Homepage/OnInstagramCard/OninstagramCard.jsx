@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from '@fortawesome/free-solid-svg-icons';
-import JumpSuit from '../../../assets/imgFiles/jumpsuit.jpg';
+// import JumpSuit from '../../../assets/imgFiles/jumpsuit.jpg';
 
-const OninstagramCard = () => {
+const OninstagramCard = ({image}) => {
   return (
     <div className='on-instagram-card'>
       <div className='on-instagram-card-img-container'>
         <img
-          src={JumpSuit}
+          src={image}
           alt='insta'
           className='on-instagram-card-img-container-img'
         />

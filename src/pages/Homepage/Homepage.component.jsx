@@ -1,4 +1,4 @@
-import { pepperDemStyles, trendingFabrics } from '../../assets/carouselData';
+import { pepperDemStyles, trendingFabrics } from '../../utils/carouselData';
 import Welcome from './Welcome/Welcome.component';
 import JumpsuitsJacckets from './JumpsuitsJackets/JumpsuitsJacckets.component';
 import Designscarousel from './DesignsCarousel/Designscarousel.component';

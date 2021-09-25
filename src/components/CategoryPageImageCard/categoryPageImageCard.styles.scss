@@ -1,0 +1,124 @@
+@import '../../scss/sass-variables';
+
+.category-page-image-card {
+  // display: grid;
+  // grid-template-rows: 1fr auto;
+
+  &-image-container {
+    position: relative;
+    overflow: hidden;
+
+    .category-img {
+      width: 100%;
+      height: calc(100vw / 2 + 50px);
+      object-fit: cover;
+
+      @media screen and (min-width: 768px) {
+        height: calc(100vw / 4 + 100px);
+      }
+
+      @media screen and (min-width: 1024px) {
+        height: calc(100vw / 4 + 50px);
+      }
+    }
+
+    span {
+      position: absolute;
+      font-size: 0.8rem;
+      z-index: 5;
+    }
+
+    .favourite {
+      bottom: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 1em;
+      background: $primaryWhite;
+      padding: 0.4rem;
+      opacity: 0.7;
+      border-radius: 50%;
+    }
+
+    .add-to-cart {
+      top: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 1em;
+      background: $primaryWhite;
+      padding: 0.4rem;
+      opacity: 0.7;
+      border-radius: 50%;
+    }
+
+    .sponsored {
+      top: 1em;
+      left: 1em;
+      font-weight: 600;
+      border: 1.5px solid $headerBackgroundHoverColor;
+      background: $transparentGray;
+      color: $headerBackgroundHoverColor;
+      padding: 0.2em;
+      opacity: 0.8;
+    }
+
+    .discount {
+      top: 5.5em;
+      left: -15px;
+      width: 8rem;
+      background: $primaryBlack;
+      color: $primaryWhite;
+      text-align: center;
+      font-weight: 600;
+      padding: 0.2em 0;
+      transform: rotate(-50deg);
+      transform-origin: left;
+    }
+  }
+
+  &-body {
+    padding: 0;
+    margin: 0;
+
+    .title-and-country-flag {
+      margin-top: 0.5em;
+
+      .title {
+        font-size: 1rem;
+        padding: 0.3em 0;
+        line-height: 1.15;
+      }
+    }
+
+    .item-description {
+      font-size: 0.75rem;
+    }
+
+    .price-and-shipping {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .price {
+        font-weight: bold;
+        margin-right: 0.5em;
+        font-size: 0.85rem;
+      }
+
+      .discounted-price {
+        font-size: 0.8rem;
+        color: $secondaryColor;
+        text-decoration: line-through;
+        margin-right: 0.5em;
+      }
+
+      .shipping {
+        font-size: 0.7rem;
+        padding: 0.1em 0.4em ;
+        background: rgba(35, 216, 216, 0.301);
+        border-radius: 2px;
+      }
+    }
+  }
+}

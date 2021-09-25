@@ -19,7 +19,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      // font-family: 'Chakra Petch', sans-serif;
       font-weight: 500;
       height: 100%;
 
@@ -28,6 +27,7 @@
         align-items: center;
         justify-content: center;
         font-size: 2.3rem;
+        color: $secondaryColor;
         padding: 0 1.5rem;
         height: 100%;
         width: max-content;
@@ -105,7 +105,7 @@
           justify-content: center;
           font-size: 1.2rem;
           background: white;
-          color: #000000;
+          color: $primaryBlack;
           cursor: pointer;
         }
       }
@@ -128,12 +128,12 @@
           position: absolute;
           top: 0;
           right: 0;
-          font-size: .7rem;
+          font-size: 0.7rem;
           font-weight: 600;
           z-index: 1;
           background: $secondaryColor;
           border-radius: 50%;
-          padding: 0 .2rem;
+          padding: 0 0.2rem;
         }
 
         @media screen and (max-width: 768px) {
@@ -147,6 +147,7 @@
   .subNav {
     width: 100%;
     height: 100%;
+    box-shadow: 0 0 3px $borderColor;
 
     @media screen and (max-width: 768px) {
       display: none;
@@ -154,51 +155,60 @@
 
     .subNavItem {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      grid-gap: 0.8rem;
+      gap: 0.8rem;
       position: relative;
       border-bottom: 1px solid $borderColor;
 
       .item {
-        padding: 0.5rem 0;
-
-        &:hover .itemMenu {
-          display: flex;
-          opacity: 1;
-        }
+        padding: 0.2em 0;
 
         .itemHeader {
           padding: 0 0.5rem;
-          border-bottom: 2px solid transparent;
+          box-shadow: 0 3px 3px transparent;
           transition: all 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
           &:hover {
-            border-bottom: 2px solid $secondaryColor;
+            box-shadow: 0 1.5px 1px $secondaryColor;
+          }
+
+          &:hover ~ .itemMenu .itemMenucontainer {
+            transform: scale(1, 1);
+            transition: transform 0.2s ease-in-out 0.2s;
           }
         }
 
         .itemMenu {
           position: absolute;
-          top: 37.1px;
+          top: 33px;
           left: 0px;
-          display: none;
+          display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
+          margin: 0 auto;
           font-size: 0.9rem;
-          opacity: 0.4;
-          transition: opacity .2s cubic-bezier(0.19, 1, 0.22, 1);
 
           .itemMenucontainer {
             position: relative;
             display: grid;
             grid-template-columns: 0.4fr 1fr;
             width: 70vw;
-            border: 1px solid $borderColor;
-            border-top: none;
+            box-shadow: 0 0 2px $primaryBlack;
             background: $primaryWhite;
             z-index: 1;
+            transform: scale(1, 0);
+            transform-origin: top;
+
+            @media screen and (max-width: 1024px) {
+              width: 90vw;
+            }
+
+            &:hover {
+              transform: scale(1, 1);
+            }
 
             .subs {
               // padding: 0 0.5rem;

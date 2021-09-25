@@ -1,11 +1,73 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faTwitter, faInstagram, faPinterestP } from '@fortawesome/free-brands-svg-icons';
+import {
+  faAngleRight,
+  faThumbsUp,
+  faComments,
+  faCoins,
+  faLock,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+  faPinterestP,
+} from '@fortawesome/free-brands-svg-icons';
+import { pepperDemStyles } from '../../utils/carouselData';
 import './Footer.styles.scss';
 
 const Footer = () => {
+  const flattenedArray = pepperDemStyles.flat();
   return (
     <div className='footer'>
+      <div className='satisfaction-secured-transactions'>
+        <div className='satisfaction-secured-transactions-card'>
+          <span className='satisfaction-secured-transactions-card-icon'>
+            <FontAwesomeIcon icon={faThumbsUp} />
+          </span>
+          <p className='satisfaction-secured-transactions-card-text'>
+            97% satisfaction
+          </p>
+        </div>
+        <div className='satisfaction-secured-transactions-card'>
+          <span className='satisfaction-secured-transactions-card-icon'>
+            <FontAwesomeIcon icon={faComments} />
+          </span>
+          <p className='satisfaction-secured-transactions-card-text'>
+            Discuss with designers
+          </p>
+        </div>
+        <div className='satisfaction-secured-transactions-card'>
+          <span className='satisfaction-secured-transactions-card-icon three-x'>
+            <FontAwesomeIcon icon={faCoins} />{' '}
+            <span className='three-x'>3X</span>
+          </span>
+          <p className='satisfaction-secured-transactions-card-text'>
+            Payments in 3 times
+          </p>
+        </div>
+        <div className='satisfaction-secured-transactions-card'>
+          <span className='satisfaction-secured-transactions-card-icon'>
+            <FontAwesomeIcon icon={faLock} />
+          </span>
+          <p className='satisfaction-secured-transactions-card-text'>
+            Secured transactions
+          </p>
+        </div>
+      </div>
+      <div className='recently-viewed'>
+        <div className='recently-viewed-container'>
+          {flattenedArray.map(({ image }, index) => (
+            <div className='recently-viewed-card' key={index}>
+              <img
+                src={image}
+                alt='viewed'
+                className='recently-viewed-card-img'
+              />
+            </div>
+          ))}
+        </div>
+        <p className='see-all-viewed'>See all your recently viewed items</p>
+      </div>
       <div className='footer-grid'>
         <div className='footer-grid-first-card'>
           <p className='footer-grid-first-card-header'>Coronation</p>
@@ -15,10 +77,18 @@ const Footer = () => {
             anywhere in the world.
           </p>
           <div className='footer-grid-first-card-social-media-handles'>
-            <FontAwesomeIcon className='icon facebook' icon={faFacebookF} />
-            <FontAwesomeIcon className='icon twitter' icon={faTwitter} />
-            <FontAwesomeIcon className='icon instagram' icon={faInstagram} />
-            <FontAwesomeIcon className='icon pinterest' icon={faPinterestP} />
+            <span className='social-icon facebook'>
+              <FontAwesomeIcon icon={faFacebookF} />
+            </span>
+            <span className='social-icon twitter'>
+              <FontAwesomeIcon icon={faTwitter} />
+            </span>
+            <span className='social-icon instagram'>
+              <FontAwesomeIcon icon={faInstagram} />
+            </span>
+            <span className='social-icon pinterest'>
+              <FontAwesomeIcon icon={faPinterestP} />
+            </span>
           </div>
         </div>
         <div className='footer-grid-nav'>
