@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faHeart } from '@fortawesome/free-solid-svg-icons';
-// import JumpSuit from '../../../assets/imgFiles/jumpsuit.jpg';
+import { ReactComponent as HeartIcon } from '../../../assets/heart.svg';
+import { ReactComponent as MessageIcon } from '../../../assets/message.svg';
 
-const OninstagramCard = ({image}) => {
+const OninstagramCard = ({ image }) => {
   return (
     <div className='on-instagram-card'>
       <div className='on-instagram-card-img-container'>
@@ -14,15 +13,13 @@ const OninstagramCard = ({image}) => {
       </div>
       <div className='on-instagram-card-hover-state'>
         <div className='on-instagram-card-hover-state-like-and-comment'>
-          <span>
-            <FontAwesomeIcon icon={faHeart} />
-          </span>
+          <HeartIcon
+            onClick={() => alert('Dummy Like!!!')}
+          />
           <span>25</span>
         </div>
         <div className='on-instagram-card-hover-state-like-and-comment'>
-          <span>
-            <FontAwesomeIcon icon={faComment} />
-          </span>
+          <MessageIcon onClick={() => alert('Dummy Comment!!!')} />
           <span>12</span>
         </div>
       </div>

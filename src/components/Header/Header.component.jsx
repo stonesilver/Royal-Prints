@@ -1,19 +1,23 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faSearch,
-  faUser,
-  faHeart,
-  faBriefcase,
-} from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as HeartIcon } from '../../assets/heart.svg';
+import { ReactComponent as CartIcon } from '../../assets/cart.svg';
+import { ReactComponent as UserIcon } from '../../assets/user.svg';
+import { ReactComponent as SearchIcon } from '../../assets/search.svg';
 import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
 import './Header.styles.scss';
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
   const onFormSubmit = (e) => {
     e.preventDefault();
-    alert('Submitted!!');
+    alert(`searching ${searchInput}`);
   };
   return (
     <div className='header'>
@@ -34,61 +38,64 @@ const Header = () => {
             <input
               type='search'
               name='search'
+              value={searchInput}
+              onChange={handleChange}
               id='search'
               placeholder='search items and brands'
             />
             <span className='searchIcon'>
-              <FontAwesomeIcon icon={faSearch} />
+              <SearchIcon />
             </span>
           </div>
         </form>
         <div className='accountFavCart'>
           <div className='mobileSearch'>
-            <FontAwesomeIcon icon={faSearch} />
+            <SearchIcon />
           </div>
-          <Link to='/profile' className='accountIcon icon'>
-            <FontAwesomeIcon icon={faUser} />
+          <Link to='/profile'>
+            <UserIcon />
           </Link>
-          <Link to='/favourites' className='favouriteIcon icon'>
-            <FontAwesomeIcon icon={faHeart} />
-            <div className="icon-count">2</div>
+          <Link to='/favourites' className='icon'>
+            <HeartIcon className='count-position' />
+            <div className='icon-count'>2</div>
           </Link>
-          <Link to='/cart' className='cartIcon icon'>
-            <FontAwesomeIcon icon={faBriefcase} />
+          <Link to='/cart' className='icon'>
+            <CartIcon className='count-position' />
+            <div className='icon-count'>5</div>
           </Link>
         </div>
       </div>
       <div className='subNav'>
         <div className='subNavItem'>
           <div className='item'>
-            <Link className='itemHeader'>Selections</Link>
+            <div className='itemHeader'>Selections</div>
             <SelectionSubMenu />
           </div>
           <div className='item'>
-            <Link className='itemHeader'>Deals</Link>
+            <div className='itemHeader'>Deals</div>
           </div>
           <div className='item'>
-            <Link className='itemHeader'>Clothings</Link>
+            <div className='itemHeader'>Clothings</div>
             <ItemSubMenu />
           </div>
           <div className='item'>
-            <Link className='itemHeader'>Jewelry</Link>
+            <div className='itemHeader'>Jewelry</div>
             <ItemSubMenu />
           </div>
           <div className='item'>
-            <Link className='itemHeader'>Bags and Accessories</Link>
+            <div className='itemHeader'>Bags and Accessories</div>
             <ItemSubMenu />
           </div>
           <div className='item'>
-            <Link className='itemHeader'>Fabrics</Link>
+            <div className='itemHeader'>Fabrics</div>
             <ItemSubMenu />
           </div>
           <div className='item'>
-            <Link className='itemHeader'>Beauty, Wellness and Food</Link>
+            <div className='itemHeader'>Beauty, Wellness and Food</div>
             <ItemSubMenu />
           </div>
           <div className='item'>
-            <Link className='itemHeader'>Home and Art</Link>
+            <div className='itemHeader'>Home and Art</div>
             <ItemSubMenu />
           </div>
         </div>

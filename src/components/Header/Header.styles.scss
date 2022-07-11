@@ -75,7 +75,7 @@
     .form {
       width: 50%;
       height: 2.1rem;
-      border: 1px solid $borderColor;
+      border: none;
       border-radius: 20px;
       overflow: hidden;
       margin: 0 1.5rem;
@@ -85,28 +85,27 @@
       }
 
       .formContainer {
-        width: 100%;
+        // width: 100%;
         height: 100%;
         display: flex;
 
         input {
-          width: 95%;
+          flex: 1;
           height: 100%;
           outline: none;
           border: none;
           font-size: 1rem;
-          padding-left: 15px;
+          padding-left: 1em;
+          color: $primaryBlack;
         }
 
         .searchIcon {
-          width: 5%;
           height: inherit;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.2rem;
           background: white;
-          color: $primaryBlack;
+          padding-right: 0.5em;
           cursor: pointer;
         }
       }
@@ -114,27 +113,38 @@
 
     .accountFavCart {
       display: flex;
+      justify-content: flex-end;
 
       .mobileSearch {
         display: none;
       }
 
+      .count-position {
+        position: relative;
+      }
+
       .icon {
         position: relative;
-        color: white;
-        margin-right: 1.7rem;
-        font-size: 1.2rem;
+
+        @include md {
+          margin-left: 1em;
+        }
 
         &-count {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           position: absolute;
           top: 0;
           right: 0;
-          font-size: 0.7rem;
+          width: 15px;
+          height: 15px;
+          font-size: 0.625rem;
           font-weight: 600;
           z-index: 1;
           background: $secondaryColor;
+          color: $primaryWhite;
           border-radius: 50%;
-          padding: 0 0.2rem;
         }
 
         @media screen and (max-width: 768px) {
@@ -170,6 +180,7 @@
           padding: 0 0.5rem;
           box-shadow: 0 3px 3px transparent;
           transition: all 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          cursor: pointer;
 
           &:hover {
             box-shadow: 0 1.5px 1px $secondaryColor;
@@ -183,7 +194,7 @@
 
         .itemMenu {
           position: absolute;
-          top: 27px;
+          top: 30px;
           left: 0px;
           display: flex;
           justify-content: center;
