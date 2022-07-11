@@ -1,19 +1,30 @@
+import React, { useState } from 'react';
+import TestImg from '../../assets/imgFiles/fabrics/2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import './categoryPageImageCard.styles.scss';
 
-const CategoryPageImageCard = ({ image, title, description }) => {
+const CategoryPageImageCard = ({ image, title, description, sponsored }) => {
+  const [imageSrc, setImageSrc] = useState(TestImg);
+  const removePlaceholderImage = () => {
+    setImageSrc(image);
+  };
   return (
     <div className='category-page-image-card'>
       <div className='category-page-image-card-image-container'>
-        <img src={image} alt='item' className='category-img' />
+        <img
+          src={imageSrc}
+          alt='item'
+          className='category-img'
+          onLoad={removePlaceholderImage}
+        />
         <span className='favourite'>
           <FontAwesomeIcon icon={faHeart} />
         </span>
         <span className='add-to-cart'>
           <FontAwesomeIcon icon={faShoppingBasket} />
         </span>
-        <span className='sponsored'>sponsored</span>
+        {sponsored && <span className='sponsored'>sponsored</span>}
         <span className='discount'>14%</span>
       </div>
       <div className='category-page-image-card-body'>

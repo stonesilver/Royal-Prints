@@ -1,4 +1,5 @@
 @import '../../scss/sass-variables';
+@import '../../scss/media-query-mixins';
 
 .homepage {
   min-height: 100vh;
@@ -182,6 +183,10 @@
     align-items: center;
 
     &-header {
+      font-size: clamp(1.2rem, 1.6vw, 1.7rem);
+      font-weight: 600;
+      padding: 0.5rem 0;
+
       @media screen and (max-width: 360px) {
         font-size: 0.85rem;
       }

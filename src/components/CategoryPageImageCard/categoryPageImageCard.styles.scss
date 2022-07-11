@@ -1,8 +1,10 @@
 @import '../../scss/sass-variables';
 
 .category-page-image-card {
-  // display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
   // grid-template-rows: 1fr auto;
+  overflow: hidden;
 
   &-image-container {
     position: relative;
@@ -25,7 +27,7 @@
     span {
       position: absolute;
       font-size: 0.8rem;
-      z-index: 5;
+      z-index: 1;
     }
 
     .favourite {
@@ -80,6 +82,7 @@
   &-body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
 
     .title-and-country-flag {
       margin-top: 0.5em;
@@ -92,7 +95,11 @@
     }
 
     .item-description {
-      font-size: 0.75rem;
+      font-size: clamp(0.75rem, 0.95vw, 1rem);
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .price-and-shipping {
@@ -115,7 +122,7 @@
 
       .shipping {
         font-size: 0.7rem;
-        padding: 0.1em 0.4em ;
+        padding: 0.1em 0.4em;
         background: rgba(35, 216, 216, 0.301);
         border-radius: 2px;
       }

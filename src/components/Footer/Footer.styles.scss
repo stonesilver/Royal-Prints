@@ -112,6 +112,7 @@
         display: grid;
         grid-template-columns: repeat(4, max-content);
         gap: 1em;
+        margin-top: 0.5em;
 
         .social-icon {
           display: flex;

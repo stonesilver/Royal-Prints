@@ -1,7 +1,9 @@
+@import '../../../scss//media-query-mixins';
+
 .sort-and-filter {
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @include sm {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -9,7 +11,7 @@
     background: rgb(247, 244, 244);
   }
 
-  @media screen and (min-width: 1024px) {
+  @include md {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
