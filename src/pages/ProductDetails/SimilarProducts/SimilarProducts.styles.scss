@@ -1,4 +1,5 @@
 @import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
 
 .similar-products {
   margin-top: 1rem;
@@ -25,6 +26,21 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 3em 1em;
+    }
+  }
+
+  .see-more-btn {
+    width: 100%;
+    border: 1px solid $primaryBlack;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.3rem;
+    margin-top: 2rem;
+
+    &:hover {
+      background-color: $secondaryColor;
+      transition: all 0.5s ease-in-out;
+      border: 1px solid $secondaryColor;
     }
   }
 }

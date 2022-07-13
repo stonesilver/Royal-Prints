@@ -21,6 +21,7 @@ const SimilarProducts = () => {
             />
           ))}
       </div>
+      <button className='see-more-btn'>See More</button>
     </div>
   );
 };
