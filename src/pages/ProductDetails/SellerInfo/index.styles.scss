@@ -1,0 +1,89 @@
+@import '../../../scss/sass-variables';
+@import '../../../scss/media-query-mixins';
+
+.seller-info {
+  display: flex;
+  align-items: center;
+  margin: 0.75rem 0;
+
+  .back-btn {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+
+  &-seller-img-container {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid $transparentGray;
+    margin-right: 0.75rem;
+
+    .small-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  &-name-and-status {
+    display: flex;
+    flex-direction: column;
+
+    .name-country {
+      display: flex;
+      align-items: center;
+
+      .seller-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .country {
+        width: 2rem;
+        height: 1rem;
+        background: linear-gradient(
+          to right,
+          green 0,
+          white 33%,
+          white 66%,
+          green 100%
+        );
+        margin-left: 0.75rem;
+      }
+    }
+  }
+
+  .verify-status-rating {
+    display: flex;
+    align-items: center;
+
+    .rating {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 0.875rem;
+        margin-left: 5px;
+      }
+    }
+
+    .verify {
+      display: flex;
+      align-items: center;
+      margin-left: 0.75rem;
+
+      span {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $secondaryColor;
+
+        @include sm {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -3,9 +3,9 @@ import Header from './components/Header/Header.component';
 import Footer from './components/Footer/Footer.component';
 import Homepage from './pages/Homepage/Homepage.component';
 import CateoryPage from './pages/CateoryPage/CateoryPage.component';
+import ProductDetails from './pages/ProductDetails';
 import PageNotFound from './pages/PageNotFound';
 import './App.scss';
-
 
 const App = () => {
   return (
@@ -15,6 +15,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route exact path='/en/category' component={CateoryPage} />
+          <Route exact path='/en/article/:productId' component={ProductDetails} />
           <Route component={PageNotFound} />
         </Switch>
       </div>
