@@ -69,6 +69,47 @@
           padding-left: 1em;
         }
       }
+
+      .review-content {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 1rem;
+
+        @include sm {
+          grid-template-columns: 0.4fr 1fr;
+          gap: 0.5rem;
+        }
+
+        .review-ratings,
+        .review-comments {
+          border: 1px solid $transparentGray;
+          min-height: 4rem;
+        }
+      }
+
+      .shipping-content {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 0.75rem;
+
+        @include sm {
+          grid-template-columns: repeat(5, auto);
+        }
+
+        .content-column {
+          font-size: 0.875rem;
+
+          .column-heading {
+            font-weight: 600;
+          }
+
+          .column-value {
+            @include sm {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import SellerInfo from './SellerInfo';
 import ImagesAndDetails from './ImagesAndDetails/ImagesAndDetails.component';
 import DescriptionReviewShippingAccordion from './DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
+import SimilarProducts from './SimilarProducts/SimilarProducts.component';
 import './index.styles.scss';
 
 const detail = [
@@ -34,6 +35,14 @@ const RefundsAndExchanges = [
 
 const condition = ['New item.', 'Customizable and made to order.'];
 
+const shippingDetails = [
+  { SHIPPED_FROM: 'Nigeria' },
+  { SHIP_TO: 'Nigeria' },
+  { DELAY: '3 days' },
+  { COST: 'Free' },
+  { MULTIPLE: 'Free' },
+];
+
 const ListComponent = ({ header, list }) => {
   return (
     <div className='list-component'>
@@ -51,7 +60,9 @@ const ProductDetails = () => {
   return (
     <div className='product-detail'>
       <SellerInfo />
+
       <ImagesAndDetails />
+
       <DescriptionReviewShippingAccordion initState={true} header='Description'>
         <p>
           This elegant outfit is handmade and designed with high quality
@@ -145,7 +156,7 @@ const ProductDetails = () => {
         </p>
         <div className='cloth-detail'>
           {detail.map((item, index) => (
-            <div className='cloth-detail-row'>
+            <div key={index} className='cloth-detail-row'>
               <span className='cloth-detail-row-key'>{Object.keys(item)}:</span>
               <span className='cloth-detail-row-value'>
                 {Object.values(item)}
@@ -163,12 +174,38 @@ const ProductDetails = () => {
       </DescriptionReviewShippingAccordion>
 
       <DescriptionReviewShippingAccordion initState={false} header='Reviews'>
-        <p>Test</p>
+        <div className='review-content'>
+          <div className='review-ratings'></div>
+          <div className='review-comments'></div>
+        </div>
       </DescriptionReviewShippingAccordion>
 
       <DescriptionReviewShippingAccordion initState={false} header='Shipping'>
-        <p>Test</p>
+        <div className='shipping-content'>
+          {shippingDetails.map((item, index) => (
+            <div key={index} className='content-column'>
+              <p className='column-heading'>
+                {Object.keys(item).toString().replace('_', ' ')}
+              </p>
+              <p
+                className='column-value'
+                style={{
+                  color:
+                    Object.values(item).toString() === 'Free'
+                      ? 'green'
+                      : 'black',
+                  fontWeight:
+                    Object.values(item).toString() === 'Free' ? 600 : 'normal',
+                }}
+              >
+                {Object.values(item)}
+              </p>
+            </div>
+          ))}
+        </div>
       </DescriptionReviewShippingAccordion>
+
+      <SimilarProducts />
     </div>
   );
 };
