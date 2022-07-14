@@ -12,12 +12,11 @@ import {
   faInstagram,
   faPinterestP,
 } from '@fortawesome/free-brands-svg-icons';
-import { pepperDemStyles } from '../../utils/carouselData';
 import { useLocation } from 'react-router-dom';
+import RecentlyViewed from '../RecentlyViewed/RecentlyViewed.component';
 import './Footer.styles.scss';
 
 const Footer = () => {
-  const flattenedArray = pepperDemStyles.flat();
   const location = useLocation();
 
   return (
@@ -57,22 +56,9 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      {location.pathname === '/' && (
-        <div className='recently-viewed'>
-          <div className='recently-viewed-container'>
-            {flattenedArray.map(({ image }, index) => (
-              <div className='recently-viewed-card' key={index}>
-                <img
-                  src={image}
-                  alt='viewed'
-                  className='recently-viewed-card-img'
-                />
-              </div>
-            ))}
-          </div>
-          <p className='see-all-viewed'>See all your recently viewed items</p>
-        </div>
-      )}
+
+      {location.pathname === '/' && <RecentlyViewed />}
+      
       <div className='footer-grid'>
         <div className='footer-grid-first-card'>
           <p className='footer-grid-first-card-header'>Coronation</p>

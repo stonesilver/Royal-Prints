@@ -4,6 +4,7 @@ import { ReactComponent as HeartIcon } from '../../assets/heart.svg';
 import { ReactComponent as CartIcon } from '../../assets/cart.svg';
 import { ReactComponent as UserIcon } from '../../assets/user.svg';
 import { ReactComponent as SearchIcon } from '../../assets/search.svg';
+import { ReactComponent as CrownIcon } from '../../assets/crown.svg';
 import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
 import './Header.styles.scss';
@@ -24,6 +25,7 @@ const Header = () => {
       <div className='mainNav'>
         <Link to='/' className='brandName'>
           <span>Coronation</span>
+          <CrownIcon className='brandName-crown' />
         </Link>
         <div className='menOrWomenCategory'>
           <Link to='/men' className='menWomen men'>

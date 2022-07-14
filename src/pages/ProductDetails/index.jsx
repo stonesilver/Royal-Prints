@@ -1,47 +1,19 @@
 import SellerInfo from './SellerInfo';
 import ImagesAndDetails from './ImagesAndDetails/ImagesAndDetails.component';
 import DescriptionReviewShippingAccordion from './DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
-import SimilarProducts from './SimilarProducts/SimilarProducts.component';
+import MoreProductComponent from './MoreProductComponent/MoreProductComponent.component';
+import RecentlyViewed from '../../components/RecentlyViewed/RecentlyViewed.component';
+import SimilarSearches from './SimilarSearches/SimilarSearches.component';
+import { pepperDemStyles } from '../../utils/carouselData';
+import {
+  detail,
+  deliveryDelay,
+  RefundsAndExchanges,
+  condition,
+  shippingDetails,
+  similarSearchData,
+} from './data';
 import './index.styles.scss';
-
-const detail = [
-  { Color: 'Blue' },
-  { Range: 'Petite, Plus Size and Curves' },
-  { Style: 'Casual, Sexy Clothes' },
-  { Fabric: 'None' },
-  { Gender: 'For Him' },
-  { Material: 'Cashmere, Cloth' },
-  { Occasion: 'The beautiful days, Wedding and ceremony' },
-];
-
-const deliveryDelay = [
-  'Australia from 5 to 11 days.',
-  'Nigeria from 3 to 9 days.',
-  'Martinique from 5 to 11 days.',
-  'French Guiana from 8 to 14 days.',
-  'France from 5 to 11 days.',
-  'United States from 5 to 11 days.',
-  'Guadeloupe from 5 to 11 days.',
-  'Africa from 5 to 11 days.',
-  'International from 10 to 16 days.',
-];
-
-const RefundsAndExchanges = [
-  'Money back guaranteed 15 days after reception.',
-  'Weared and personalized items will not be exchanged or refunded.',
-  'Return shipping fees are at your charge and not refunded.',
-  'Refunds are made on your Afrikrea virtual wallet. You can use the credit to buy another product or transfer the amount to your bank account.',
-];
-
-const condition = ['New item.', 'Customizable and made to order.'];
-
-const shippingDetails = [
-  { SHIPPED_FROM: 'Nigeria' },
-  { SHIP_TO: 'Nigeria' },
-  { DELAY: '3 days' },
-  { COST: 'Free' },
-  { MULTIPLE: 'Free' },
-];
 
 const ListComponent = ({ header, list }) => {
   return (
@@ -57,6 +29,10 @@ const ListComponent = ({ header, list }) => {
 };
 
 const ProductDetails = () => {
+  const flattenarray = pepperDemStyles.flat();
+  const SimilarData = flattenarray.filter((item, index) => index < 8);
+  const sellerData = flattenarray.filter((item, index) => index < 4);
+
   return (
     <div className='product-detail'>
       <SellerInfo />
@@ -205,7 +181,23 @@ const ProductDetails = () => {
         </div>
       </DescriptionReviewShippingAccordion>
 
-      <SimilarProducts />
+      <MoreProductComponent
+        header='Similar products'
+        data={SimilarData}
+        btnText='See More'
+      />
+
+      <div className='product-detail-recently-viewed'>
+        <RecentlyViewed />
+      </div>
+
+      <MoreProductComponent
+        header="Other fashion-home's products"
+        data={sellerData}
+        btnText={`All fashion-home's products`}
+      />
+
+      <SimilarSearches data={similarSearchData} />
     </div>
   );
 };
