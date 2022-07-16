@@ -1,17 +1,26 @@
 import ProfilePic from '../../../assets/imgFiles/styles/15.jpg';
+import ProfilePic1 from '../../../assets/imgFiles/styles/20.jpg';
+import ProfilePic2 from '../../../assets/imgFiles/styles/18.jpg';
 import { ReactComponent as EyeIcon } from '../../../assets/eye.svg';
 import { ReactComponent as CartIcon } from '../../../assets/cart.svg';
 import { ReactComponent as ClockwiseIcon } from '../../../assets/clockwise.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/wallet.svg';
 import { ReactComponent as MessageIcon } from '../../../assets/message.svg';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+// import { useSwiper } from 'swiper/react';
+import 'swiper/swiper.scss'; //
+import 'swiper/modules/navigation/navigation.scss';
+import 'swiper/modules/lazy/lazy.scss';
+import { Navigation, Lazy } from 'swiper';
+
 import './ImagesAndDetails.styles.scss';
+
+const imageArr = [ProfilePic, ProfilePic1, ProfilePic2];
 
 const MoreDetailsItem = ({ icon, text }) => (
   <div className='row'>
     {icon}
-    {/* <EyeIcon className='row-icon' /> */}
     <span className='row-text'>{text}</span>
-    {/* <span className='row-text'>Eye 106 views in the last days!</span> */}
   </div>
 );
 
@@ -19,7 +28,21 @@ const ImagesAndDetails = () => {
   return (
     <div className='images-and-details'>
       <div className='images-container'>
-        <img src={ProfilePic} alt='full' className='carousel-img' />
+        <Swiper
+          style={{
+            '--swiper-navigation-color': '#673ab7',
+          }}
+          navigation={true}
+          autoHeight={true}
+          modules={[Navigation, Lazy]}
+          className='mySwiper'
+        >
+          {imageArr.map((item) => (
+            <SwiperSlide>
+              <img src={item} alt='full' className='carousel-img' />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       <div className='details-container'>
         <p className='description'>
