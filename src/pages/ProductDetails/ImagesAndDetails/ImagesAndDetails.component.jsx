@@ -6,16 +6,21 @@ import { ReactComponent as CartIcon } from '../../../assets/cart.svg';
 import { ReactComponent as ClockwiseIcon } from '../../../assets/clockwise.svg';
 import { ReactComponent as WalletIcon } from '../../../assets/wallet.svg';
 import { ReactComponent as MessageIcon } from '../../../assets/message.svg';
+import { ReactComponent as HeartIcon } from '../../../assets/heart.svg';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
-// import { useSwiper } from 'swiper/react';
-import 'swiper/swiper.scss'; //
+import { Navigation, Lazy, Pagination } from 'swiper';
+import 'swiper/swiper.scss';
 import 'swiper/modules/navigation/navigation.scss';
 import 'swiper/modules/lazy/lazy.scss';
-import { Navigation, Lazy } from 'swiper';
+import 'swiper/modules/pagination/pagination.scss';
 
 import './ImagesAndDetails.styles.scss';
 
-const imageArr = [ProfilePic, ProfilePic1, ProfilePic2];
+const imageArr = [
+  { image: ProfilePic, likesCount: 35 },
+  { image: ProfilePic1, likesCount: 24 },
+  { image: ProfilePic2, likesCount: 12 },
+];
 
 const MoreDetailsItem = ({ icon, text }) => (
   <div className='row'>
@@ -31,15 +36,28 @@ const ImagesAndDetails = () => {
         <Swiper
           style={{
             '--swiper-navigation-color': '#673ab7',
+            '--swiper-pagination-color': '#673ab7',
+          }}
+          pagination={{
+            dynamicBullets: true,
           }}
           navigation={true}
           autoHeight={true}
-          modules={[Navigation, Lazy]}
+          modules={[Navigation, Lazy, Pagination]}
+          loop={true}
           className='mySwiper'
         >
-          {imageArr.map((item) => (
-            <SwiperSlide>
-              <img src={item} alt='full' className='carousel-img' />
+          {imageArr.map(({ image, likesCount }, index) => (
+            <SwiperSlide key={index} className='mySwiperSlide'>
+              <img src={image} alt='full' className='carousel-img' />
+              <div className='image-likes'>
+                <span className='image-likes-text'>{likesCount}</span>
+                <span className='image-likes-icon'>
+                  <HeartIcon
+                    style={{ width: '1rem', height: '1rem', fill: '#673ab7' }}
+                  />
+                </span>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

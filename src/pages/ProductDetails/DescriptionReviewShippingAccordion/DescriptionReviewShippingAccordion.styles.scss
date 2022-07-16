@@ -85,6 +85,23 @@
           border: 1px solid $transparentGray;
           min-height: 4rem;
         }
+
+        .total-rating {
+          display: flex;
+          align-items: center;
+
+          &-stars {
+            display: flex;
+            align-items: center;
+          }
+
+          &-text {
+            vertical-align: middle;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-left: 3px;
+          }
+        }
       }
 
       .shipping-content {

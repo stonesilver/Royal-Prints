@@ -19,10 +19,39 @@
       width: 100%;
       height: 100%;
 
-      .carousel-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .mySwiperSlide {
+        position: relative;
+
+        .image-likes {
+          position: absolute;
+          top: 5%;
+          right: 1.5rem;
+          display: flex;
+          align-items: center;
+          padding: 1px 5px;
+          border-radius: 10px;
+          background-color: $primaryWhite;
+
+          &-text {
+            font-size: 0.75rem;
+            margin-right: 2px;
+          }
+
+          &-icon {
+            cursor: pointer;
+          }
+        }
+
+        .carousel-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-weight: 700;
       }
     }
   }

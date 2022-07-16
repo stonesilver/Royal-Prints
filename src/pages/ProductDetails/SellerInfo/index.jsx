@@ -4,6 +4,11 @@ import { ReactComponent as VerifyIcon } from '../../../assets/circle-check.svg';
 import sellerPic from '../../../assets/imgFiles/styles/3.jpg';
 import './index.styles.scss';
 
+const style = {
+  width: '1rem',
+  height: '1rem',
+};
+
 const SellerInfo = () => {
   return (
     <div className='seller-info'>
@@ -21,15 +26,15 @@ const SellerInfo = () => {
         <div className='verify-status-rating'>
           <div className='rating'>
             {[
-              <StarIcon />,
-              <StarIcon />,
-              <StarIcon />,
-              <StarIcon />,
-              <StarIcon />,
+              <StarIcon style={style} />,
+              <StarIcon style={style} />,
+              <StarIcon style={style} />,
+              <StarIcon style={style} />,
+              <StarIcon style={style} />,
             ].map((star, index) => (
               <span key={index}>{star}</span>
             ))}
-            <span>(26)</span>
+            <span className='review-count'>(26)</span>
           </div>
           <div className='verify'>
             <div className='icon'>

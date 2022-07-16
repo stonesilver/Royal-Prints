@@ -1,32 +1,14 @@
 import SellerInfo from './SellerInfo';
 import ImagesAndDetails from './ImagesAndDetails/ImagesAndDetails.component';
-import DescriptionReviewShippingAccordion from './DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
 import MoreProductComponent from './MoreProductComponent/MoreProductComponent.component';
 import RecentlyViewed from '../../components/RecentlyViewed/RecentlyViewed.component';
 import SimilarSearches from './SimilarSearches/SimilarSearches.component';
 import { pepperDemStyles } from '../../utils/carouselData';
-import {
-  detail,
-  deliveryDelay,
-  RefundsAndExchanges,
-  condition,
-  shippingDetails,
-  similarSearchData,
-} from './data';
+import { similarSearchData } from './data';
+import Description from './Description';
+import Shipping from './Shipping';
+import Review from './Review';
 import './index.styles.scss';
-
-const ListComponent = ({ header, list }) => {
-  return (
-    <div className='list-component'>
-      <h3 className='list-component-header'>{header}</h3>
-      <ul>
-        {list.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
 
 const ProductDetails = () => {
   const flattenarray = pepperDemStyles.flat();
@@ -36,167 +18,23 @@ const ProductDetails = () => {
   return (
     <div className='product-detail'>
       <SellerInfo />
-
       <ImagesAndDetails />
-
-      <DescriptionReviewShippingAccordion initState={true} header='Description'>
-        <p>
-          This elegant outfit is handmade and designed with high quality
-          material. It is suitable for all kinds of occasion and comes with a
-          matching pant with a draw string for wearers ease.
-        </p>
-        <p>
-          For custom orders, please provide the following measurement details
-        </p>
-        <p>
-          Chest
-          <br />
-          Shoulder
-          <br />
-          Waist
-          <br />
-          NeckCrouch length
-          <br />
-          Shirt
-          <br />
-          length
-          <br />
-          Pant
-          <br />
-          length
-        </p>
-        <p>My standard measurement chart is listed below</p>
-        <p>
-          Xs
-          <br />
-          Neck: 13-13.5
-          <br />
-          Chest: 33-34
-          <br />
-          Sleeve: 31.5-32
-          <br />
-          Waist: 27-28
-        </p>
-        <p>
-          S<br />
-          Neck: 14-14.5
-          <br />
-          Chest: 35-37
-          <br />
-          Sleeve: 32.5-33
-          <br />
-          Waist: 29-31
-        </p>
-        <p>
-          M<br />
-          Neck: 15-15.5
-          <br />
-          Chest: 38-40
-          <br />
-          Sleeve: 33.5-34
-          <br />
-          Waist: 32-34
-        </p>
-        <p>
-          L<br /> Neck: 16-16.5
-          <br />
-          Chest: 42-44
-          <br />
-          Sleeve: 34.5-35
-          <br />
-          Waist: 36-38
-        </p>
-        <p>
-          XL <br /> Neck: 17-17.5
-          <br />
-          Chest: 46-48
-          <br />
-          Sleeve: 35.5-36
-          <br />
-          Waist: 40-42
-        </p>
-        <p>
-          XXL
-          <br />
-          Neck: 18-18.5
-          <br />
-          Chest: 5-52
-          <br />
-          Sleeve: 36-36.5
-          <br />
-          Waist: 44-46
-        </p>
-        <p>
-          Please feel free to start a conversation for further enquiries. I hope
-          you have a pleasurable shopping experience.
-        </p>
-        <div className='cloth-detail'>
-          {detail.map((item, index) => (
-            <div key={index} className='cloth-detail-row'>
-              <span className='cloth-detail-row-key'>{Object.keys(item)}:</span>
-              <span className='cloth-detail-row-value'>
-                {Object.values(item)}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <ListComponent header='DELIVERY DELAY' list={deliveryDelay} />
-        <ListComponent
-          header='REFUNDS AND EXCHANGES'
-          list={RefundsAndExchanges}
-        />
-        <ListComponent header='CONDITION' list={condition} />
-      </DescriptionReviewShippingAccordion>
-
-      <DescriptionReviewShippingAccordion initState={false} header='Reviews'>
-        <div className='review-content'>
-          <div className='review-ratings'></div>
-          <div className='review-comments'></div>
-        </div>
-      </DescriptionReviewShippingAccordion>
-
-      <DescriptionReviewShippingAccordion initState={false} header='Shipping'>
-        <div className='shipping-content'>
-          {shippingDetails.map((item, index) => (
-            <div key={index} className='content-column'>
-              <p className='column-heading'>
-                {Object.keys(item).toString().replace('_', ' ')}
-              </p>
-              <p
-                className='column-value'
-                style={{
-                  color:
-                    Object.values(item).toString() === 'Free'
-                      ? 'green'
-                      : 'black',
-                  fontWeight:
-                    Object.values(item).toString() === 'Free' ? 600 : 'normal',
-                }}
-              >
-                {Object.values(item)}
-              </p>
-            </div>
-          ))}
-        </div>
-      </DescriptionReviewShippingAccordion>
-
+      <Description />
+      <Review />
+      <Shipping />
       <MoreProductComponent
         header='Similar products'
         data={SimilarData}
         btnText='See More'
       />
-
       <div className='product-detail-recently-viewed'>
         <RecentlyViewed />
       </div>
-
       <MoreProductComponent
         header="Other fashion-home's products"
         data={sellerData}
         btnText={`All fashion-home's products`}
       />
-
       <SimilarSearches data={similarSearchData} />
     </div>
   );
