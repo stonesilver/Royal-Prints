@@ -9,7 +9,20 @@ const rating = (filled, width, height) => {
   );
 };
 
-// [rating(true, '1rem', '1rem'), rating(false, '1rem', '1rem')]
+const ratingsArray = [
+  rating(true, '1rem', '1rem'),
+  rating(true, '1rem', '1rem'),
+  rating(true, '1rem', '1rem'),
+  rating(true, '1rem', '1rem'),
+  rating(true, '1rem', '1rem'),
+  rating(false, '1rem', '1rem'),
+  rating(false, '1rem', '1rem'),
+  rating(false, '1rem', '1rem'),
+  rating(false, '1rem', '1rem'),
+  rating(false, '1rem', '1rem'),
+];
+
+const getRating = (stars) => ratingsArray.slice(5 - stars, 10 - stars);
 
 const Review = () => {
   return (
@@ -22,7 +35,16 @@ const Review = () => {
                 <span key={star}>{rating(true, '1.5rem', '1.5rem')}</span>
               ))}
             </div>
-            <div className='total-rating-text'>5 of 5</div>
+            <p className='total-rating-text'>5 of 5</p>
+          </div>
+          <p className='global-rating'>241 global ratings</p>
+          <div className='rating-by-stars'>
+            {[...Array(5).keys()].map((star) => (
+              <div key={star} className='rating-by-stars-row'>
+                <div className='stars-row'>{getRating(5 - star)}</div>
+                <p className='rating-percentage'>{((5 - star) / 5) * 100}%</p>
+              </div>
+            ))}
           </div>
         </div>
         <div className='review-comments'></div>

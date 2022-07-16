@@ -93,13 +93,31 @@
           &-stars {
             display: flex;
             align-items: center;
+            margin-right: 7px;
           }
 
           &-text {
             vertical-align: middle;
             font-size: 1.25rem;
             font-weight: 700;
-            margin-left: 3px;
+          }
+        }
+
+        .global-rating {
+          color: $headerBackgroundHoverColor;
+        }
+
+        .rating-by-stars {
+          &-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+
+            .stars-row {
+              display: flex;
+              align-items: center;
+              margin-right: 7px;
+            }
           }
         }
       }
