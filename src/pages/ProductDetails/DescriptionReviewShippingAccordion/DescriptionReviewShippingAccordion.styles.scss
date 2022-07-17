@@ -76,47 +76,141 @@
         gap: 1rem;
 
         @include sm {
-          grid-template-columns: 0.4fr 1fr;
+          grid-template-columns: 0.3fr 1fr;
           gap: 0.5rem;
         }
 
-        .review-ratings,
-        .review-comments {
-          border: 1px solid $transparentGray;
-          min-height: 4rem;
-        }
+        .review-ratings {
+          position: sticky;
+          top: 0;
+          height: max-content;
+          padding: 1rem 0;
+          border-bottom: 1px solid $transparentGray;
 
-        .total-rating {
-          display: flex;
-          align-items: center;
-
-          &-stars {
+          .total-rating {
             display: flex;
             align-items: center;
-            margin-right: 7px;
-          }
 
-          &-text {
-            vertical-align: middle;
-            font-size: 1.25rem;
-            font-weight: 700;
-          }
-        }
-
-        .global-rating {
-          color: $headerBackgroundHoverColor;
-        }
-
-        .rating-by-stars {
-          &-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-
-            .stars-row {
+            &-stars {
               display: flex;
               align-items: center;
               margin-right: 7px;
+            }
+
+            &-text {
+              vertical-align: middle;
+              font-size: 1.25rem;
+              font-weight: 700;
+            }
+          }
+
+          .global-rating {
+            color: $headerBackgroundHoverColor;
+          }
+
+          .rating-by-stars {
+            margin-top: 5px;
+
+            &-row {
+              display: flex;
+              align-items: center;
+              margin-bottom: 5px;
+
+              .stars-row {
+                display: flex;
+                align-items: center;
+                margin-right: 7px;
+              }
+
+              .rating-percentage {
+                font-size: 0.75rem;
+              }
+            }
+          }
+        }
+
+        .review-comments {
+          height: 100%;
+
+          .review-card {
+            height: max-content;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid $transparentGray;
+            margin-bottom: 2rem;
+
+            &-date {
+              font-size: 0.75rem;
+
+              @include sm {
+                font-size: 0.875rem;
+              }
+            }
+
+            &-icon-name {
+              display: flex;
+              align-items: center;
+              margin-top: 0.5rem;
+
+              .face-icon {
+                width: 1.6rem;
+                height: 1.6rem;
+                border: 1px solid $transparentGray;
+                border-radius: 50%;
+                padding: 1px;
+                margin-right: 5px;
+              }
+
+              .reviewer-name {
+                font-weight: 500;
+                font-size: 1rem;
+              }
+            }
+
+            .rating-and-links {
+              display: flex;
+              align-items: center;
+              margin-top: 0.75rem;
+
+              .stars-row {
+                display: flex;
+                align-items: center;
+              }
+
+              .on-text {
+                margin-left: 5px;
+              }
+
+              .link-to-item {
+                text-decoration: underline;
+                color: $secondaryColor;
+                margin-left: 5px;
+                cursor: pointer;
+
+                &:hover {
+                  opacity: 0.9;
+                }
+              }
+            }
+
+            .review-comment {
+              font-size: 0.875rem;
+              margin-top: 0.75rem;
+            }
+
+            .images-container {
+              display: grid;
+              grid-template-columns: 0.9fr;
+              margin-top: 0.75rem;
+              justify-content: center;
+
+              @include sm {
+                grid-template-columns: repeat(2, 1fr);
+              }
+
+              .mySwiper {
+                width: 100%;
+                height: 100%;
+              }
             }
           }
         }

@@ -1,5 +1,13 @@
 import DescriptionReviewShippingAccordion from './DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
 import { ReactComponent as RatingIcon } from '../../assets/star.svg';
+import { ReactComponent as FaceIcon } from '../../assets/face.svg';
+import { userReviews } from './data';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+import { Navigation, Lazy, Pagination } from 'swiper';
+import 'swiper/swiper.scss';
+import 'swiper/modules/navigation/navigation.scss';
+import 'swiper/modules/lazy/lazy.scss';
+import 'swiper/modules/pagination/pagination.scss';
 
 const rating = (filled, width, height) => {
   return (
@@ -24,6 +32,55 @@ const ratingsArray = [
 
 const getRating = (stars) => ratingsArray.slice(5 - stars, 10 - stars);
 
+const ReviewCard = ({ review }) => {
+  const { date, name, star, commentedOn, comment, photos } = review;
+  return (
+    <div className='review-card'>
+      <p className='review-card-date'>{date}</p>
+      <div className='review-card-icon-name'>
+        <span className='face-icon'>
+          <FaceIcon />
+        </span>
+        <div className='reviewer-name'>{name}</div>
+      </div>
+      <div className='rating-and-links'>
+        <div className='stars-row'>{getRating(star)}</div>
+        <span className='on-text'>on</span>
+        {commentedOn.map((comment, index) => (
+          <span className='link-to-item' key={index}>
+            {comment}
+          </span>
+        ))}
+      </div>
+      {comment && <p className='review-comment'>{comment}</p>}
+      {photos && (
+        <div className='images-container'>
+          <Swiper
+            style={{
+              '--swiper-navigation-color': '#673ab7',
+              '--swiper-pagination-color': '#673ab7',
+            }}
+            pagination={{
+              dynamicBullets: true,
+            }}
+            navigation={true}
+            autoHeight={true}
+            modules={[Navigation, Lazy, Pagination]}
+            loop={true}
+            className='mySwiper'
+          >
+            {photos.map((image, index) => (
+              <SwiperSlide key={index}>
+                <img src={image} alt='' className='sample-screenshot' />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Review = () => {
   return (
     <DescriptionReviewShippingAccordion initState={false} header='Reviews'>
@@ -47,7 +104,11 @@ const Review = () => {
             ))}
           </div>
         </div>
-        <div className='review-comments'></div>
+        <div className='review-comments'>
+          {userReviews.map((review, index) => (
+            <ReviewCard key={index} review={review} />
+          ))}
+        </div>
       </div>
     </DescriptionReviewShippingAccordion>
   );

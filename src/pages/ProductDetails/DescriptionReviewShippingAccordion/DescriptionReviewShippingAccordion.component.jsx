@@ -26,7 +26,7 @@ const DescriptionReviewShippingAccordion = ({
       </div>
       <div
         className='product-accordion-content-container'
-        style={{ maxHeight: toggle ? '2000px' : '0px' }}
+        style={{ maxHeight: toggle ? '100%' : '0px' }}
       >
         <div className='product-accordion-content-container-content'>
           {children}
