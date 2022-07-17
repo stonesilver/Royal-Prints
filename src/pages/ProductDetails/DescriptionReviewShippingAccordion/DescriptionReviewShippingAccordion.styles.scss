@@ -5,6 +5,11 @@
   border: 1px solid $transparentGray;
   margin-bottom: 0.75rem;
   overflow: hidden;
+  margin: 0.75rem 1rem 0 1rem;
+
+  @include sm {
+    margin: 0.75rem 0 0 0;
+  }
 
   .header-toggle-btn {
     display: flex;
