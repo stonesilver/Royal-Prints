@@ -1,4 +1,4 @@
-import CategoryPageImageCard from '../../../components/CategoryPageImageCard/CategoryPageImageCard.component';
+import CategoryPageImageCard from '../CategoryPageImageCard/CategoryPageImageCard.component';
 import { pepperDemStyles } from '../../../utils/carouselData';
 import './CategoryDisplay.styles.scss';
 

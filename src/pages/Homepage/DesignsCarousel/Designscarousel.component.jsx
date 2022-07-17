@@ -4,7 +4,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import StyleCard from '../../../components/StylesCard/StylesCard.component';
 
-const Designscarousel = ({ headerText, stylesArray }) => {
+const Designscarousel = ({ headerText, stylesArray, link }) => {
   return (
     <div className='trending-design'>
       <div className='header'>
@@ -23,7 +23,7 @@ const Designscarousel = ({ headerText, stylesArray }) => {
           </Carousel>
         </div>
       </div>
-      <Link className='view-all'>
+      <Link className='view-all' to={link}>
         <span>View All</span>
         <span className='view-all-icon'>
           <FontAwesomeIcon icon={faAngleRight} />

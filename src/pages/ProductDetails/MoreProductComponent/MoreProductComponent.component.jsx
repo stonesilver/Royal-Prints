@@ -1,4 +1,4 @@
-import CategoryPageImageCard from '../../../components/CategoryPageImageCard/CategoryPageImageCard.component';
+import CategoryPageImageCard from '../../CateoryPage/CategoryPageImageCard/CategoryPageImageCard.component';
 import './MoreProductComponent.styles.scss';
 
 const MoreProductComponent = ({ header, data, btnText }) => {

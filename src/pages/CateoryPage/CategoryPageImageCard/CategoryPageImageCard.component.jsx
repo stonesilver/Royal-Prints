@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import TestImg from '../../assets/imgFiles/fabrics/2.jpg';
+import { useState } from 'react';
+import TestImg from '../../../assets/imgFiles/fabrics/2.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import './categoryPageImageCard.styles.scss';
 
 const CategoryPageImageCard = ({ image, title, description, sponsored }) => {
@@ -10,7 +11,10 @@ const CategoryPageImageCard = ({ image, title, description, sponsored }) => {
     setImageSrc(image);
   };
   return (
-    <div className='category-page-image-card'>
+    <Link
+      className='category-page-image-card'
+      to='/en/article/black-jacket-JD52S5E'
+    >
       <div className='category-page-image-card-image-container'>
         <img
           src={imageSrc}
@@ -40,7 +44,7 @@ const CategoryPageImageCard = ({ image, title, description, sponsored }) => {
           <span className='shipping'>Free Shipping</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

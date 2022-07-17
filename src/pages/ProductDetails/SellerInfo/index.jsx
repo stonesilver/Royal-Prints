@@ -1,6 +1,7 @@
 import { ReactComponent as ChevronLeft } from '../../../assets/chevron-left.svg';
 import { ReactComponent as StarIcon } from '../../../assets/star.svg';
 import { ReactComponent as VerifyIcon } from '../../../assets/circle-check.svg';
+import { useHistory } from 'react-router-dom';
 import sellerPic from '../../../assets/imgFiles/styles/3.jpg';
 import './index.styles.scss';
 
@@ -10,9 +11,11 @@ const style = {
 };
 
 const SellerInfo = () => {
+  const { goBack } = useHistory();
+
   return (
     <div className='seller-info'>
-      <div className='back-btn'>
+      <div className='back-btn' onClick={() => goBack()}>
         <ChevronLeft />
       </div>
       <div className='seller-info-seller-img-container'>

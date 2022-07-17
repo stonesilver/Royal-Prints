@@ -5,6 +5,10 @@
   margin: 0 auto;
 
   @include sm {
+    width: 95%;
+  }
+
+  @include lg {
     width: 80%;
   }
 

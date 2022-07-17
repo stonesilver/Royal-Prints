@@ -14,10 +14,12 @@ const Homepage = () => {
       <Designscarousel
         headerText='Pepper Dem Styles'
         stylesArray={pepperDemStyles}
+        link='/en/category'
       />
       <Designscarousel
         headerText='Trending Fabrics'
         stylesArray={trendingFabrics}
+        link='/en/category'
       />
       <OnInstagram />
       <TheyTalkedAboutUs />

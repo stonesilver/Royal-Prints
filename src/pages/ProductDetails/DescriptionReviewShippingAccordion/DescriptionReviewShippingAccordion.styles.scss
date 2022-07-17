@@ -80,7 +80,7 @@
         grid-template-columns: auto;
         gap: 1rem;
 
-        @include sm {
+        @include md {
           grid-template-columns: 0.3fr 1fr;
           gap: 1rem;
         }
@@ -218,8 +218,8 @@
               margin-top: 0.75rem;
               justify-content: center;
 
-              @include sm {
-                grid-template-columns: repeat(2, 1fr);
+              @include md {
+                grid-template-columns: 1fr 0.8fr;
               }
 
               .mySwiper {

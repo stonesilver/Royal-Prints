@@ -51,9 +51,7 @@ const ReviewCard = ({ review }) => {
             {index + 1 === 1 ? (
               ''
             ) : index + 1 === commentedOn.length ? (
-              <span className='and'>
-                and
-              </span>
+              <span className='and'>and</span>
             ) : (
               ','
             )}
@@ -105,8 +103,8 @@ const Review = () => {
           </div>
           <p className='global-rating'>241 global ratings</p>
           <div className='rating-by-stars'>
-            {[...Array(5).keys()].map((star) => (
-              <div key={star} className='rating-by-stars-row'>
+            {[...Array(5).keys()].map((star, index) => (
+              <div key={index} className='rating-by-stars-row'>
                 <div className='stars-row'>{getRating(5 - star)}</div>
                 <p className='rating-percentage'>{((5 - star) / 5) * 100}%</p>
               </div>
