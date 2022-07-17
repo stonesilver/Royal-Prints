@@ -44,7 +44,7 @@ const ImagesAndDetails = () => {
           navigation={true}
           autoHeight={true}
           modules={[Navigation, Lazy, Pagination]}
-          loop={true}
+          loop={imageArr?.length > 1 ? true : false}
           className='mySwiper'
         >
           {imageArr.map(({ image, likesCount }, index) => (

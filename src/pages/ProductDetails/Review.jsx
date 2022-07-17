@@ -47,9 +47,18 @@ const ReviewCard = ({ review }) => {
         <div className='stars-row'>{getRating(star)}</div>
         <span className='on-text'>on</span>
         {commentedOn.map((comment, index) => (
-          <span className='link-to-item' key={index}>
+          <div className='link-to-item' key={index}>
+            {index + 1 === 1 ? (
+              ''
+            ) : index + 1 === commentedOn.length ? (
+              <span className='and'>
+                and
+              </span>
+            ) : (
+              ','
+            )}
             {comment}
-          </span>
+          </div>
         ))}
       </div>
       {comment && <p className='review-comment'>{comment}</p>}
@@ -66,7 +75,7 @@ const ReviewCard = ({ review }) => {
             navigation={true}
             autoHeight={true}
             modules={[Navigation, Lazy, Pagination]}
-            loop={true}
+            loop={photos?.length > 1 ? true : false}
             className='mySwiper'
           >
             {photos.map((image, index) => (
