@@ -20,6 +20,7 @@ const Header = () => {
     e.preventDefault();
     alert(`searching ${searchInput}`);
   };
+
   return (
     <div className='header'>
       <div className='mainNav'>
@@ -45,24 +46,24 @@ const Header = () => {
               id='search'
               placeholder='search items and brands'
             />
-            <span className='searchIcon'>
-              <SearchIcon />
-            </span>
+            <button type='submit' className='searchIcon'>
+              <SearchIcon className='search-icon' />
+            </button>
           </div>
         </form>
         <div className='accountFavCart'>
           <div className='mobileSearch'>
-            <SearchIcon />
+            <SearchIcon className='nav-icon' />
           </div>
           <Link to='/profile'>
-            <UserIcon />
+            <UserIcon className='nav-icon' />
           </Link>
           <Link to='/favourites' className='icon'>
-            <HeartIcon className='count-position' />
+            <HeartIcon className='count-position nav-icon' />
             <div className='icon-count'>2</div>
           </Link>
           <Link to='/cart' className='icon'>
-            <CartIcon className='count-position' />
+            <CartIcon className='count-position nav-icon' />
             <div className='icon-count'>5</div>
           </Link>
         </div>

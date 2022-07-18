@@ -1,4 +1,5 @@
-@import '../../../scss//media-query-mixins';
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
 
 .sort-and-filter {
   display: none;
@@ -32,10 +33,11 @@
     // }
 
     &-first {
+      font-size: 0.875rem;
       cursor: pointer;
 
       &:hover {
-        color: rgb(80, 185, 19);
+        color: $secondaryColor;
       }
     }
 
@@ -56,14 +58,17 @@
       &-item {
         display: block;
         padding: 0.5em;
-        color: rgb(97, 96, 96);
+        font-size: 0.875rem;
+        color: $headerBackgroundColor;
 
-        &:first-child {
-          background: black;
-        }
+        // &:first-child {
+        //   background: $primaryBlack;
+        // }
 
         &:hover {
-          background: rgb(231, 230, 230);
+          background: $primaryBlack;
+          color: $primaryWhite;
+          cursor: pointer;
         }
       }
     }

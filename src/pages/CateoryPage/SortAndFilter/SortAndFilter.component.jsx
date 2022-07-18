@@ -23,7 +23,7 @@ const SortAndFilter = () => {
         <div key={index} className='sort-and-filter-item'>
           <span
             className='sort-and-filter-item-first'
-            onClick={(e) => showSubMenu(category_name)}
+            onClick={() => showSubMenu(category_name)}
           >
             {category_name}
           </span>
@@ -34,9 +34,9 @@ const SortAndFilter = () => {
             }`}
           >
             {links.map((item, index) => (
-              <Link key={index} className='sub-item-item active'>
+              <span key={index} className='sub-item-item active'>
                 {item}
-              </Link>
+              </span>
             ))}
           </div>
         </div>
