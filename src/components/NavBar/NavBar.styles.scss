@@ -13,11 +13,12 @@
     justify-content: space-between;
     height: 3.3rem;
     background-color: $secondaryColor;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     color: #ffffff;
 
     @include md {
       height: 4rem;
+      padding: 0 1.5rem;
     }
 
     .brandName {
@@ -34,7 +35,6 @@
         justify-content: center;
         font-size: 1.8rem;
         color: $primaryWhite;
-        // padding: 0 1.5rem;
         height: 100%;
         width: max-content;
 
@@ -45,8 +45,8 @@
 
       &-crown {
         position: absolute;
-        top: -3px;
-        left: 0.55rem;
+        top: -1px;
+        left: -1rem;
         transform: rotate(-45deg);
         width: 2rem;
         height: 2rem;
@@ -54,8 +54,7 @@
 
         @include sm {
           top: 3px;
-          left: 0.65rem;
-          transform: rotate(-45deg);
+          left: -1rem;
           width: 2.2rem;
           height: 2.2rem;
         }
@@ -146,6 +145,13 @@
 
         .nav-icon {
           stroke: $primaryWhite;
+          width: 1.75rem;
+          height: 1.75rem;
+
+          @include sm {
+            width: 1.875rem;
+            height: 1.875rem;
+          }
         }
       }
 
@@ -155,6 +161,13 @@
 
       .nav-icon {
         stroke: $primaryWhite;
+        width: 1.75rem;
+        height: 1.75rem;
+
+        @include sm {
+          width: 1.875rem;
+          height: 1.875rem;
+        }
       }
 
       .icon {
@@ -246,7 +259,7 @@
             width: 70vw;
             box-shadow: 0 0 2px $primaryBlack;
             background: $primaryWhite;
-            // z-index: 1;
+            z-index: 1;
             transform: scale(1, 0);
             transform-origin: top;
             height: 0;
@@ -257,6 +270,7 @@
 
             &:hover {
               transform: scale(1, 1);
+              height: auto;
             }
 
             .subs {

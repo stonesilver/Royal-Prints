@@ -2,7 +2,7 @@
 @import '../../../scss/sass-variables';
 
 .product-accordion {
-  border: 1px solid $transparentGray;
+  border: 1px solid $muted-300;
   overflow: hidden;
   margin: 0.75rem 1rem 0 1rem;
 
@@ -33,7 +33,7 @@
 
   &-content-container {
     transition: all 0.5s ease-in-out;
-    outline: 1px solid $transparentGray;
+    outline: 1px solid $muted-300;
 
     &-content {
       display: grid;
@@ -44,7 +44,7 @@
 
       .cloth-detail {
         padding-bottom: 1rem;
-        border-bottom: 1px solid $transparentGray;
+        border-bottom: 1px solid $muted-300;
 
         &-row {
           display: flex;
@@ -89,7 +89,7 @@
           top: 0;
           height: max-content;
           padding: 1rem 0;
-          border-bottom: 1px solid $transparentGray;
+          border-bottom: 1px solid $muted-300;
 
           .total-rating {
             display: flex;
@@ -109,7 +109,7 @@
           }
 
           .global-rating {
-            color: $headerBackgroundHoverColor;
+            color: $muted-200;
           }
 
           .rating-by-stars {
@@ -139,7 +139,7 @@
           .review-card {
             height: max-content;
             padding-bottom: 2rem;
-            border-bottom: 1px solid $transparentGray;
+            border-bottom: 1px solid $muted-300;
             margin-bottom: 2rem;
 
             &:last-child {
@@ -163,7 +163,7 @@
               .face-icon {
                 width: 1.6rem;
                 height: 1.6rem;
-                border: 1px solid $transparentGray;
+                border: 1px solid $muted-300;
                 border-radius: 50%;
                 padding: 1px;
                 margin-right: 5px;

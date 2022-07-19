@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import SellerInfo from './SellerInfo';
 import ImagesAndDetails from './ImagesAndDetails/ImagesAndDetails.component';
 import MoreProductComponent from './MoreProductComponent/MoreProductComponent.component';
@@ -8,12 +9,19 @@ import { similarSearchData } from './data';
 import Description from './Description';
 import Shipping from './Shipping';
 import Review from './Review';
+import { useScrollToTop } from '../../Hooks/useScrollToTop';
 import './index.styles.scss';
 
 const ProductDetails = () => {
   const flattenarray = pepperDemStyles.flat();
   const SimilarData = flattenarray.filter((item, index) => index < 8);
   const sellerData = flattenarray.filter((item, index) => index < 4);
+
+  const scrollToTop = useScrollToTop();
+
+  useEffect(() => {
+    scrollToTop();
+  }, [scrollToTop]);
 
   return (
     <div className='product-detail'>
