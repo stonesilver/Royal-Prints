@@ -36,20 +36,44 @@ const ItemSubMenu = () => {
           <header className='header'>Women Clothings</header>
           <div className='content'>
             <div className='groupContent contentLeft'>
-              <Link className='subLink'>New in</Link>
-              <Link className='subLink'>No Ankara Allowed</Link>
-              <Link className='subLink'>Hot products</Link>
-              <Link className='subLink'>Sexy</Link>
-              <Link className='subLink'>Black Pride</Link>
-              <Link className='subLink'>Spring Drops</Link>
+              <Link to='/' className='subLink'>
+                New in
+              </Link>
+              <Link to='/' className='subLink'>
+                No Ankara Allowed
+              </Link>
+              <Link to='/' className='subLink'>
+                Hot products
+              </Link>
+              <Link to='/' className='subLink'>
+                Sexy
+              </Link>
+              <Link to='/' className='subLink'>
+                Black Pride
+              </Link>
+              <Link to='/' className='subLink'>
+                Spring Drops
+              </Link>
             </div>
             <div className='groupContent contentRight'>
-              <Link className='subLink'>Summer Attire</Link>
-              <Link className='subLink'>Evening Wear</Link>
-              <Link className='subLink'>The Best-Sellers</Link>
-              <Link className='subLink'>Masks and headwraps</Link>
-              <Link className='subLink'>Face Masks</Link>
-              <Link className='subLink'>Cowrie is the new chic</Link>
+              <Link to='/' className='subLink'>
+                Summer Attire
+              </Link>
+              <Link to='/' className='subLink'>
+                Evening Wear
+              </Link>
+              <Link to='/' className='subLink'>
+                The Best-Sellers
+              </Link>
+              <Link to='/' className='subLink'>
+                Masks and headwraps
+              </Link>
+              <Link to='/' className='subLink'>
+                Face Masks
+              </Link>
+              <Link to='/' className='subLink'>
+                Cowrie is the new chic
+              </Link>
             </div>
           </div>
         </div>

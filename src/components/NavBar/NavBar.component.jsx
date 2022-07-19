@@ -7,9 +7,9 @@ import { ReactComponent as SearchIcon } from '../../assets/search.svg';
 import { ReactComponent as CrownIcon } from '../../assets/crown.svg';
 import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
-import './Header.styles.scss';
+import './NavBar.styles.scss';
 
-const Header = () => {
+const NavBar = () => {
   const [searchInput, setSearchInput] = useState('');
 
   const handleChange = (e) => {
@@ -106,4 +106,4 @@ const Header = () => {
     </div>
   );
 };
-export default Header;
+export default NavBar;

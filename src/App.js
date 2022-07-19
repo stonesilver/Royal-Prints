@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import Header from './components/Header/Header.component';
+import NavBar from './components/NavBar/NavBar.component';
 import Footer from './components/Footer/Footer.component';
 import Homepage from './pages/Homepage/Homepage.component';
 import CateoryPage from './pages/CateoryPage/CateoryPage.component';
@@ -10,7 +10,7 @@ import './App.scss';
 const App = () => {
   return (
     <div className='App'>
-      <Header />
+      <NavBar />
       <div className='main-content'>
         <Switch>
           <Route exact path='/' component={Homepage} />

@@ -8,9 +8,15 @@ const SelectionSubMenu = () => {
           <header className='header'>Selections</header>
           <div className='content'>
             <div className='groupContent contentLeft'>
-              <Link className='subLink'>New in</Link>
-              <Link className='subLink'>Cheap and Sleek</Link>
-              <Link className='subLink'>Deals</Link>
+              <Link to='/' className='subLink'>
+                New in
+              </Link>
+              <Link to='/' className='subLink'>
+                Cheap and Sleek
+              </Link>
+              <Link to='/' className='subLink'>
+                Deals
+              </Link>
             </div>
           </div>
         </div>

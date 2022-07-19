@@ -10,13 +10,14 @@
   .mainNav {
     display: flex;
     align-items: center;
-    height: 3.8rem;
+    justify-content: space-between;
+    height: 3.3rem;
     background-color: $secondaryColor;
+    padding: 0 1.5rem;
     color: #ffffff;
 
-    @media screen and (max-width: 768px) {
-      justify-content: space-between;
-      height: 3rem;
+    @include md {
+      height: 4rem;
     }
 
     .brandName {
@@ -33,7 +34,7 @@
         justify-content: center;
         font-size: 1.8rem;
         color: $primaryWhite;
-        padding: 0 1.5rem;
+        // padding: 0 1.5rem;
         height: 100%;
         width: max-content;
 
@@ -62,14 +63,14 @@
     }
 
     .menOrWomenCategory {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       border-left: 1px solid $borderColor;
       height: 100%;
 
-      @media screen and (max-width: 768px) {
-        display: none;
+      @include md {
+        display: flex;
       }
 
       .menWomen {
@@ -88,6 +89,7 @@
     }
 
     .form {
+      display: none;
       width: 50%;
       height: 2.1rem;
       border: none;
@@ -95,8 +97,8 @@
       overflow: hidden;
       margin: 0 1.5rem;
 
-      @media screen and (max-width: 768px) {
-        display: none;
+      @include md {
+        display: block;
       }
 
       .formContainer {
@@ -202,7 +204,7 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 0.8rem;
+      // gap: 0.8rem;
       position: relative;
       border-bottom: 1px solid $borderColor;
 
@@ -221,6 +223,7 @@
 
           &:hover ~ .itemMenu .itemMenucontainer {
             transform: scale(1, 1);
+            height: auto;
             transition: transform 0.2s ease-in-out 0.2s;
           }
         }
@@ -243,9 +246,10 @@
             width: 70vw;
             box-shadow: 0 0 2px $primaryBlack;
             background: $primaryWhite;
-            z-index: 1;
+            // z-index: 1;
             transform: scale(1, 0);
             transform-origin: top;
+            height: 0;
 
             @media screen and (max-width: 1024px) {
               width: 90vw;
