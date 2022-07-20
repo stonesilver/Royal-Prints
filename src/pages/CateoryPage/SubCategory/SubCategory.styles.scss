@@ -4,11 +4,13 @@
 .sub-category {
   width: 100%;
   margin: 1rem auto 0.75rem auto;
-  border: 1px solid $muted-100;
+  padding: 0 1rem;
+  overflow: hidden;
 
   @include md {
     width: 90%;
     margin: 0.75rem auto;
+    padding: 0;
   }
 
   &-container {
@@ -38,20 +40,28 @@
     overflow-x: scroll;
     margin-top: 1rem;
 
-    // ::-webkit-scrollbar {
-    //   display: none;
-    //   height: 0;
-    //   width: 0;
-    // }
-
     &-link {
       display: block;
-      width: max-content;
-      padding: 0.75rem;
+      min-width: max-content !important;
+      padding: 0.5rem;
       font-size: 0.75rem;
+      color: $muted-200;
       border: 2px solid $primaryBlack;
       margin-right: 0.5rem;
-      // min-w-max p-2 text-xs border-2 border-black hover:bg-black hover:text-gray-200
+      transition: all 0.5s ease-in-out;
+
+      @include md {
+        padding: 0.75rem;
+      }
+
+      &:hover {
+        background-color: $primaryBlack;
+        color: $primaryWhite;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 }

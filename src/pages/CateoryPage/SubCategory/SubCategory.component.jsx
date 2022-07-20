@@ -1,9 +1,16 @@
+import { useRef, useEffect } from 'react';
 import { categoryButtonData } from '../../../utils/catetoryButonData';
 import { ReactComponent as ChevronRight } from '../../../assets/chevron-right.svg';
 import { Link } from 'react-router-dom';
 import './SubCategory.styles.scss';
 
 const SubCategory = () => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    // ref.current.getBoundingClientRect()
+  }, []);
+
   return (
     <div className='sub-category'>
       <div className='sub-category-container'>
@@ -13,13 +20,9 @@ const SubCategory = () => {
           All Categories
         </Link>
       </div>
-      <div className='sub-category-row'>
+      <div className='sub-category-row' ref={ref}>
         {categoryButtonData.map(({ name }, index) => (
-          <Link
-            to='/en/category'
-            key={index}
-            className='sub-category-row-link'
-          >
+          <Link to='/en/category' key={index} className='sub-category-row-link'>
             {name}
           </Link>
         ))}
