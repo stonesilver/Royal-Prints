@@ -30,28 +30,37 @@
       z-index: 1;
     }
 
-    .favourite {
-      bottom: 1em;
+    .fav-cart {
       display: flex;
       justify-content: center;
       align-items: center;
       right: 1em;
       background: $primaryWhite;
-      padding: 0.4rem;
-      opacity: 0.7;
+      padding: 0.2rem 0.3rem;
       border-radius: 50%;
+
+      @include md {
+        padding: 0.3rem 0.4rem;
+      }
+
+      &-icon {
+        width: 1.125rem;
+        height: 1.125rem;
+        stroke-width: 1.5px;
+        z-index: 2;
+      }
+    }
+
+    .favourite {
+      bottom: 1em;
+
+      .fav-cart-icon {
+        fill: $secondaryColor;
+      }
     }
 
     .add-to-cart {
       top: 1em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      right: 1em;
-      background: $primaryWhite;
-      padding: 0.4rem;
-      opacity: 0.7;
-      border-radius: 50%;
     }
 
     .sponsored {
@@ -62,7 +71,6 @@
       background: $muted-300;
       color: $muted-200;
       padding: 0.2em;
-      opacity: 0.8;
     }
 
     .discount {

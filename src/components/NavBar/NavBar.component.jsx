@@ -7,10 +7,12 @@ import { ReactComponent as SearchIcon } from '../../assets/search.svg';
 import { ReactComponent as CrownIcon } from '../../assets/crown.svg';
 import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
+import { useStickyNavBar } from '../../Hooks/useStickyNavBar.js';
 import './NavBar.styles.scss';
 
 const NavBar = () => {
   const [searchInput, setSearchInput] = useState('');
+  const position = useStickyNavBar();
 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -22,7 +24,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className='header'>
+    <div className={`nav-bar ${position === 'sticky' && 'sticky'}`}>
       <div className='mainNav'>
         <Link to='/' className='brandName'>
           <span>Coronation</span>

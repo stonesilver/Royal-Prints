@@ -1,11 +1,8 @@
 @import '../../scss/sass-variables';
 @import '../../scss/media-query-mixins';
 
-.header {
+.nav-bar {
   width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 5;
 
   .mainNav {
     display: flex;
@@ -14,7 +11,7 @@
     height: 3.3rem;
     background-color: $secondaryColor;
     padding: 0 1rem;
-    color: #ffffff;
+    color: $primaryWhite;
 
     @include md {
       height: 4rem;
@@ -257,7 +254,7 @@
             width: 70vw;
             box-shadow: 0 0 2px $primaryBlack;
             background: $primaryWhite;
-            z-index: 1;
+            z-index: 2;
             transform: scale(1, 0);
             transform-origin: top;
             height: 0;
@@ -326,4 +323,10 @@
       }
     }
   }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }

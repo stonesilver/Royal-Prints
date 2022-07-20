@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import TestImg from '../../../assets/imgFiles/fabrics/2.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as HeartIcon } from '../../../assets/heart.svg';
+import { ReactComponent as BasketIcon } from '../../../assets/basket.svg';
 import { Link } from 'react-router-dom';
 import './categoryPageImageCard.styles.scss';
 
 const CategoryPageImageCard = ({ image, title, description, sponsored }) => {
   const [imageSrc, setImageSrc] = useState(TestImg);
+  const handleClick = (e) => {
+    e.preventDefault();
+    alert('Added to Favourite');
+  };
   const removePlaceholderImage = () => {
     setImageSrc(image);
   };
@@ -22,11 +26,11 @@ const CategoryPageImageCard = ({ image, title, description, sponsored }) => {
           className='category-img'
           onLoad={removePlaceholderImage}
         />
-        <span className='favourite'>
-          <FontAwesomeIcon icon={faHeart} />
+        <span className='favourite fav-cart' onClick={handleClick}>
+          <HeartIcon className='fav-cart-icon' />
         </span>
-        <span className='add-to-cart'>
-          <FontAwesomeIcon icon={faShoppingBasket} />
+        <span className='add-to-cart fav-cart' onClick={handleClick}>
+          <BasketIcon className='fav-cart-icon' />
         </span>
         {sponsored && <span className='sponsored'>sponsored</span>}
         <span className='discount'>14%</span>
