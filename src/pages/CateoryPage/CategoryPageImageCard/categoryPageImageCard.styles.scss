@@ -1,9 +1,9 @@
 @import '../../../scss/sass-variables';
+@import '../../../scss/media-query-mixins';
 
 .category-page-image-card {
   display: grid;
   grid-template-columns: 1fr;
-  // grid-template-rows: 1fr auto;
   overflow: hidden;
 
   &-image-container {
@@ -15,11 +15,11 @@
       height: calc(100vw / 2 + 50px);
       object-fit: cover;
 
-      @media screen and (min-width: 768px) {
+      @include sm {
         height: calc(100vw / 4 + 100px);
       }
 
-      @media screen and (min-width: 1024px) {
+      @include md {
         height: calc(100vw / 4 + 50px);
       }
     }
@@ -85,10 +85,11 @@
     overflow: hidden;
 
     .title-and-country-flag {
-      margin-top: 0.5em;
+      // margin-top: 0.5em;
 
       .title {
-        font-size: 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
         padding: 0.3em 0;
         line-height: 1.15;
       }
@@ -109,8 +110,9 @@
 
       .price {
         font-weight: bold;
-        margin-right: 0.5em;
         font-size: 0.85rem;
+        color: $muted-200;
+        margin-right: 0.5em;
       }
 
       .discounted-price {

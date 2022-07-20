@@ -17,7 +17,7 @@ const DescriptionReviewShippingAccordion = ({
   return (
     <div className='product-accordion'>
       <div className='header-toggle-btn' onClick={handleToggle}>
-        <h3 className='header-toggle-btn-header'>{header}</h3>
+        <p className='header-toggle-btn-header'>{header}</p>
         {toggle ? (
           <MinusIcon className='header-toggle-btn-btn' />
         ) : (

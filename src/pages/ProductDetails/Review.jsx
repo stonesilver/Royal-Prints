@@ -78,7 +78,7 @@ const ReviewCard = ({ review }) => {
           >
             {photos.map((image, index) => (
               <SwiperSlide key={index}>
-                <img src={image} alt='' className='sample-screenshot' />
+                <img src={image} alt='review snapshot' className='review-screenshot' />
               </SwiperSlide>
             ))}
           </Swiper>

@@ -108,9 +108,8 @@
         input {
           flex: 1;
           height: 100%;
-          outline: none;
-          border: none;
           font-size: 0.875rem;
+          font-weight: 500;
           padding-left: 1em;
           color: $primaryBlack;
         }
@@ -120,7 +119,7 @@
           align-items: center;
           justify-content: center;
           height: inherit;
-          background: white;
+          background: $primaryWhite;
           padding-right: 0.5em;
           cursor: pointer;
 
@@ -218,12 +217,17 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      // gap: 0.8rem;
       position: relative;
-      border-bottom: 1px solid $borderColor;
+      border-bottom: 2px solid $borderColor;
 
       .item {
         padding: 0.2em 0;
+
+        &:hover .itemMenu .itemMenucontainer {
+          transform: scale(1, 1);
+          height: auto;
+          transition: transform 0.2s ease-in-out 0.2s;
+        }
 
         .itemHeader {
           padding: 0 0.5rem;
@@ -234,24 +238,17 @@
           &:hover {
             box-shadow: 0 1.5px 1px $secondaryColor;
           }
-
-          &:hover ~ .itemMenu .itemMenucontainer {
-            transform: scale(1, 1);
-            height: auto;
-            transition: transform 0.2s ease-in-out 0.2s;
-          }
         }
 
         .itemMenu {
           position: absolute;
-          top: 30px;
-          left: 0px;
+          left: 0;
+          transform: translateY(5px);
           display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
-          margin: 0 auto;
-          font-size: 0.9rem;
+          font-size: 0.875rem;
 
           .itemMenucontainer {
             position: relative;

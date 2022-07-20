@@ -23,6 +23,7 @@
     }
 
     &-header {
+      font-size: 0.875rem;
       font-weight: 500;
     }
 
@@ -229,6 +230,12 @@
                 .swiper-button-next:after {
                   font-size: 1.5rem;
                   font-weight: 600;
+                }
+
+                .review-screenshot {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
                 }
               }
             }
