@@ -10,6 +10,7 @@ import Description from './Description';
 import Shipping from './Shipping';
 import Review from './Review';
 import { useScrollToTop } from '../../Hooks/useScrollToTop';
+import { findFlagUrlByIso3Code } from 'country-flags-svg';
 import './index.styles.scss';
 
 const ProductDetails = () => {
@@ -19,14 +20,16 @@ const ProductDetails = () => {
 
   const scrollToTop = useScrollToTop();
 
+  const flagUrl = findFlagUrlByIso3Code('NGA');
+
   useEffect(() => {
     scrollToTop();
   }, [scrollToTop]);
 
   return (
     <div className='product-detail'>
-      <SellerInfo />
-      <ImagesAndDetails />
+      <SellerInfo flagUrl={flagUrl} />
+      <ImagesAndDetails flagUrl={flagUrl} />
       <Description />
       <Review />
       <Shipping />

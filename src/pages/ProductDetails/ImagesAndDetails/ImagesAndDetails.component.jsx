@@ -29,7 +29,7 @@ const MoreDetailsItem = ({ icon, text }) => (
   </div>
 );
 
-const ImagesAndDetails = () => {
+const ImagesAndDetails = ({ flagUrl }) => {
   return (
     <div className='images-and-details'>
       <div className='images-container'>
@@ -82,7 +82,7 @@ const ImagesAndDetails = () => {
         </div>
         <div className='delivery-time'>
           <span className='days'>Get it in 3 days - </span>
-          <span className='icon'></span>
+          <img src={flagUrl} alt='buyer country' className='country-flag' />
           <span className='country'>Nigeria</span>
         </div>
         <div className='more-details'>

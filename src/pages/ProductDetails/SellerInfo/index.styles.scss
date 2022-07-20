@@ -44,14 +44,8 @@
       .country {
         width: 2rem;
         height: 1rem;
-        background: linear-gradient(
-          to right,
-          green 0,
-          white 33%,
-          white 66%,
-          green 100%
-        );
         margin-left: 0.75rem;
+        border-radius: 1px;
       }
     }
   }

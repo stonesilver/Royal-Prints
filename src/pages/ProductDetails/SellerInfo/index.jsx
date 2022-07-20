@@ -10,7 +10,7 @@ const style = {
   height: '1rem',
 };
 
-const SellerInfo = () => {
+const SellerInfo = ({ flagUrl }) => {
   const { goBack } = useHistory();
 
   return (
@@ -24,7 +24,7 @@ const SellerInfo = () => {
       <div className='seller-info-name-and-status'>
         <div className='name-country'>
           <h3 className='seller-name'>fashion-home</h3>
-          <div className='country'></div>
+          <img src={flagUrl} alt='country flag' className='country' />
         </div>
         <div className='verify-status-rating'>
           <div className='rating'>
