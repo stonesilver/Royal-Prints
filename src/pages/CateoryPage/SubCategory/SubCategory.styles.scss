@@ -1,0 +1,57 @@
+@import '../../../scss/sass-variables';
+@import '../../../scss/media-query-mixins';
+
+.sub-category {
+  width: 100%;
+  margin: 1rem auto 0.75rem auto;
+  border: 1px solid $muted-100;
+
+  @include md {
+    width: 90%;
+    margin: 0.75rem auto;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+    align-items: center;
+
+    &-seller-name {
+      font-size: 0.75rem;
+    }
+
+    &-next-icon {
+      width: 0.875rem;
+      height: 0.875rem;
+      stroke: $primaryBlack;
+    }
+
+    &-current-screen {
+      font-size: 0.75rem;
+      color: $muted-200;
+    }
+  }
+
+  &-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    margin-top: 1rem;
+
+    // ::-webkit-scrollbar {
+    //   display: none;
+    //   height: 0;
+    //   width: 0;
+    // }
+
+    &-link {
+      display: block;
+      width: max-content;
+      padding: 0.75rem;
+      font-size: 0.75rem;
+      border: 2px solid $primaryBlack;
+      margin-right: 0.5rem;
+      // min-w-max p-2 text-xs border-2 border-black hover:bg-black hover:text-gray-200
+    }
+  }
+}

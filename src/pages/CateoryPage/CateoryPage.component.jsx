@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import CategoryButton from './ButtonLink.component';
+import SubCategory from './SubCategory/SubCategory.component';
 import SortAndFilter from './SortAndFilter/SortAndFilter.component';
 import CategoryDisplay from './CategoryDisplay/CategoryDisplay.component';
 import { useScrollToTop } from '../../Hooks/useScrollToTop';
@@ -14,7 +14,7 @@ const CateoryPage = () => {
 
   return (
     <div className='category'>
-      <CategoryButton />
+      <SubCategory />
       <SortAndFilter />
       <CategoryDisplay />
     </div>
