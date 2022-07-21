@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TestImg from '../../../assets/imgFiles/fabrics/2.jpg';
+import TestImg from '../../../assets/imgFiles/image-placeholder.webp';
 import { ReactComponent as HeartIcon } from '../../../assets/heart.svg';
 import { ReactComponent as BasketIcon } from '../../../assets/basket.svg';
 import { Link } from 'react-router-dom';
@@ -11,8 +11,11 @@ const CategoryPageImageCard = ({ image, title, description, sponsored }) => {
     e.preventDefault();
     alert('Added to Favourite');
   };
+
   const removePlaceholderImage = () => {
-    setImageSrc(image);
+    setTimeout(() => {
+      setImageSrc(image);
+    }, 3000);
   };
   return (
     <Link

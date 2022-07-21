@@ -3,38 +3,45 @@
 
 .sort-and-filter {
   display: none;
+  background: #f7f4f4;
+  flex-direction: column;
+  gap: 1rem;
 
   @include sm {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     padding: 1.5em;
-    background: rgb(247, 244, 244);
   }
 
   @include md {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     padding: 2em 5em;
-    background: rgb(247, 244, 244);
+  }
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &-item {
-    display: flex;
     position: relative;
-    align-items: center;
     height: max-content;
-    border-bottom: 2px solid gray;
-    padding: 0.5em;
+    border-bottom: 1px solid $muted-300;
+    margin: 0 1em 1em 0;
 
-    // &:hover .sub-item {
-    //   display: flex;
-    // }
-
-    &-first {
+    &-select {
+      display: flex;
+      align-items: center;
+      height: 1.5rem;
       font-size: 0.875rem;
       cursor: pointer;
+
+      .state-icon {
+        width: 1rem;
+        height: 1rem;
+        stroke: $primaryBlack;
+        transform: rotate(90deg);
+        margin-left: 0.25rem;
+      }
 
       &:hover {
         color: $secondaryColor;
@@ -47,29 +54,30 @@
       flex-direction: column;
       left: 0;
       overflow-y: auto;
-      bottom: -12.4rem;
+      top: 1.5rem;
       min-width: 14rem;
       height: 12rem;
       max-height: 12rem;
       background: rgb(247, 244, 244);
-      box-shadow: 0 0 2px rgb(44, 44, 44);
+      box-shadow: 0 0 1px $muted-200;
       z-index: 5;
 
-      &-item {
+      &-option {
         display: block;
         padding: 0.5em;
         font-size: 0.875rem;
         color: $muted-100;
-
-        // &:first-child {
-        //   background: $primaryBlack;
-        // }
 
         &:hover {
           background: $primaryBlack;
           color: $primaryWhite;
           cursor: pointer;
         }
+      }
+
+      .active {
+        background: $primaryBlack;
+        color: $primaryWhite;
       }
     }
 
