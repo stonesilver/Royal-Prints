@@ -41,8 +41,8 @@ const SortAndFilter = () => {
           </div>
         ))}
       </div>
-      <div className='flex justify-center items-center w-full mt-4'>
-        <Link className='px-8 py-2 rounded bg-black text-center text-white hover:opacity-80'>
+      <div className='view-items'>
+        <Link className='view-items-link'>
           View Items
         </Link>
       </div>

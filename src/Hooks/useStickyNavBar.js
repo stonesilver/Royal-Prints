@@ -7,7 +7,7 @@ export const useStickyNavBar = () => {
     var lastScrollTop = 0;
 
     const callback = () => {
-      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var st = document.pageYOffset || document.documentElement.scrollTop;
       if (st > lastScrollTop) {
         setPosition('sticky');
       } else {
@@ -16,9 +16,9 @@ export const useStickyNavBar = () => {
       lastScrollTop = st <= 0 ? 0 : st;
     };
 
-    window.addEventListener('scroll', callback, false);
+    document.addEventListener('scroll', callback, true);
 
-    return window.removeEventListener('scroll', () => console.warn('error'));
+    return document.removeEventListener('scroll', () => callback);
   }, []);
 
   return position;

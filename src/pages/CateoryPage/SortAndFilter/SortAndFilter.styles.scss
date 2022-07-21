@@ -85,4 +85,20 @@
       display: flex;
     }
   }
+
+  .view-items {
+    display: flex;
+    justify-content: center;
+
+    &-link {
+      background-color: $primaryBlack;
+      color: $primaryWhite;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }
