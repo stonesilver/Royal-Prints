@@ -719,7 +719,6 @@ export const sortFilterData = [
       'kente',
       'maasai',
       'madras',
-      'mixed-print',
       'none',
       'precious-metals-gold-silver',
       'shweshwe',
@@ -1003,7 +1002,7 @@ export const sortFilterData = [
   },
   {
     category_name: 'Types of spices',
-    links: ['individual', 'mixed', 'individual', 'mixed'],
+    links: ['individual', 'mixed'],
   },
   {
     category_name: 'Shape',
