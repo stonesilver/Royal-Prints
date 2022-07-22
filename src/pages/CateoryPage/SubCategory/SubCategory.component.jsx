@@ -14,9 +14,11 @@ const SubCategory = () => {
   return (
     <div className='sub-category'>
       <div className='sub-category-container'>
-        <Link className='sub-category-container-seller-name'>Accueil</Link>
+        <Link to='/' className='sub-category-container-seller-name'>
+          Accueil
+        </Link>
         <ChevronRight className='sub-category-container-next-icon' />
-        <Link className='sub-category-container-current-screen'>
+        <Link to='/' className='sub-category-container-current-screen'>
           All Categories
         </Link>
       </div>

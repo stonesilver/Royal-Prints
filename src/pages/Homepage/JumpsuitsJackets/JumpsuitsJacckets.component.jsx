@@ -15,7 +15,7 @@ const JumpsuitsJacckets = () => {
               className='item-image-container-image'
             />
           </div>
-          <Link className='item-body'>
+          <Link to='/' className='item-body'>
             <span>Jump Suits</span>
           </Link>
         </div>
@@ -27,7 +27,7 @@ const JumpsuitsJacckets = () => {
               className='item-image-container-image'
             />
           </div>
-          <Link className='item-body'>
+          <Link to='/' className='item-body'>
             <span>Blazers</span>
           </Link>
         </div>
@@ -41,7 +41,7 @@ const JumpsuitsJacckets = () => {
               className='item-image-container-image'
             />
           </div>
-          <Link className='item-body'>
+          <Link to='/' className='item-body'>
             <span>The Bag Shop</span>
           </Link>
         </div>

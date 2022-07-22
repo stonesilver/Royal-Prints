@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
 
       {location.pathname === '/' && <RecentlyViewed />}
-      
+
       <div className='footer-grid'>
         <div className='footer-grid-first-card'>
           <p className='footer-grid-first-card-header'>Coronation</p>

@@ -42,7 +42,7 @@ const SortAndFilter = () => {
         ))}
       </div>
       <div className='view-items'>
-        <Link className='view-items-link'>
+        <Link to='/' className='view-items-link'>
           View Items
         </Link>
       </div>

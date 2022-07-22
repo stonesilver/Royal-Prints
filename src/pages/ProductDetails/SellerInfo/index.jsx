@@ -1,7 +1,7 @@
 import { ReactComponent as ChevronLeft } from '../../../assets/chevron-left.svg';
 import { ReactComponent as StarIcon } from '../../../assets/star.svg';
 import { ReactComponent as VerifyIcon } from '../../../assets/circle-check.svg';
-import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import sellerPic from '../../../assets/imgFiles/styles/3.jpg';
 import './index.styles.scss';
 
@@ -11,7 +11,7 @@ const style = {
 };
 
 const SellerInfo = ({ flagUrl }) => {
-  const { goBack } = useHistory();
+  const { goBack } = useLocation();
 
   return (
     <div className='seller-info'>
