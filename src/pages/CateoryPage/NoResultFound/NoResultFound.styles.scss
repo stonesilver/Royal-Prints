@@ -1,3 +1,60 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
 .no-result {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: auto;
+  padding: 0.875rem 1rem;
+  margin: 0 auto;
+  font-size: 0.875rem;
+
+  @include sm {
+    grid-template-columns: 0.3fr 1fr;
+    width: 90%;
+    padding: 0.875rem 0;
+  }
+
+  .empty-space {
+    display: none;
+
+    @include sm {
+      display: block;
+    }
+  }
+
+  &-main-content {
     display: block;
+
+    .header-text {
+      font-weight: 600;
+    }
+
+    .did-you {
+      margin: 0.75rem 0;
+    }
+
+    .try-content {
+      padding-left: 1rem;
+      margin-left: 1rem;
+    }
+
+    .shopping-suggestion {
+      display: block;
+
+      &-main-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+
+        @include sm {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include md {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+  }
 }
