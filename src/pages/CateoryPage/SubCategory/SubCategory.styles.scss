@@ -2,10 +2,14 @@
 @import '../../../scss/media-query-mixins';
 
 .sub-category {
-  width: 100%;
   margin: 1rem auto 0.75rem auto;
-  padding: 0 1rem;
+  padding: 0 0.75em;
   overflow: hidden;
+
+  @include sm {
+    margin: 0.75rem auto;
+    padding: 0 1em;
+  }
 
   @include md {
     width: 90%;

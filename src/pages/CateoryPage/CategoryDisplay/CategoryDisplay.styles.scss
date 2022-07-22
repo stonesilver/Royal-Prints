@@ -4,19 +4,19 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
-  padding: 1em;
+  padding: 1em 0.75em;
+  margin: 0 auto;
 
   @include sm {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3em 1em;
-    padding: 2em 5em;
+    padding: 2em 1em;
   }
 
   @include md {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3em 1em;
-    padding: 2em 5em;
+    width: 90%;
+    padding: 2em 0;
   }
 }
