@@ -33,7 +33,7 @@
   }
 
   &-content-container {
-    transition: all 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
     outline: 1px solid $muted-300;
 
     &-content {

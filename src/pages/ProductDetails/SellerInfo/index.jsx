@@ -1,7 +1,7 @@
 import { ReactComponent as ChevronLeft } from '../../../assets/chevron-left.svg';
 import { ReactComponent as StarIcon } from '../../../assets/star.svg';
 import { ReactComponent as VerifyIcon } from '../../../assets/circle-check.svg';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import sellerPic from '../../../assets/imgFiles/styles/3.jpg';
 import './index.styles.scss';
 
@@ -11,11 +11,11 @@ const style = {
 };
 
 const SellerInfo = ({ flagUrl }) => {
-  const { goBack } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div className='seller-info'>
-      <div className='back-btn' onClick={() => goBack()}>
+      <div className='back-btn' onClick={() => navigate(-1)}>
         <ChevronLeft />
       </div>
       <div className='seller-info-seller-img-container'>
