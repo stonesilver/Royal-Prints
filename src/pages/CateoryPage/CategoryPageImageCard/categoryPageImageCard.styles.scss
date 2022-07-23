@@ -2,25 +2,24 @@
 @import '../../../scss/media-query-mixins';
 
 .category-page-image-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: 1fr;
+  align-items: stretch;
   overflow: hidden;
 
   &-image-container {
     position: relative;
     overflow: hidden;
+    flex: 1;
 
     .category-img {
       width: 100%;
-      height: calc(100vw / 2 + 50px);
+      height: 100%;
       object-fit: cover;
 
-      @include sm {
-        height: calc(100vw / 4 + 100px);
-      }
-
-      @include md {
-        height: calc(100vw / 4 + 50px);
+      &:hover {
+        filter: brightness(1.1) contrast(105%);
       }
     }
 

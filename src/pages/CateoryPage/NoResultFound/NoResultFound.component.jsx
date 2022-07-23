@@ -6,8 +6,6 @@ const NoResultFound = () => {
   const flattenarray = pepperDemStyles.flat();
   return (
     <div className='no-result'>
-      <div className='empty-space'></div>
-
       <div className='no-result-main-content'>
         <p className='header-text'>Whoops, We couldn't find any results.</p>
         <p className='did-you'>Did you try:</p>
