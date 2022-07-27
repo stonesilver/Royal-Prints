@@ -1,5 +1,62 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
 .sign-in {
   display: flex;
   justify-content: center;
   padding: 3rem 0;
+
+  &-container {
+    width: 100%;
+    border: 1px solid $muted-300;
+    border-radius: 10px;
+    margin: 0 1rem;
+    padding: 1rem 0.75rem;
+
+    @include sm {
+      width: 34rem;
+      padding: 1rem 1.5rem;
+    }
+
+    &-header {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2rem;
+
+      @include sm {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    &-sign-in {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    &-desc {
+      font-size: 0.75rem;
+    }
+
+    .group-input {
+      margin-top: 1rem;
+    }
+
+    &-forgot-pwd {
+      display: flex;
+      justify-content: flex-end;
+
+      .text {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $secondaryColorgit;
+        margin-top: 0.35rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
