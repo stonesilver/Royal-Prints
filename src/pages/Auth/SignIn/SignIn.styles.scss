@@ -37,6 +37,7 @@
 
     &-desc {
       font-size: 0.75rem;
+      margin-bottom: 3rem;
     }
 
     .group-input {
@@ -56,6 +57,14 @@
         &:hover {
           cursor: pointer;
         }
+      }
+    }
+
+    &-submit-btn {
+      margin: 2rem 0 4rem 0;
+
+      @include sm {
+        margin: 4rem 0 5rem 0;
       }
     }
   }

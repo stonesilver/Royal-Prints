@@ -1,7 +1,11 @@
 import './SubmitBtn.styles.scss';
 
-const SubmitBtn = ({ text }) => {
-  return <button className='submit-btn' type='submit'>{text}</button>;
+const SubmitBtn = ({ children }) => {
+  return (
+    <button className='submit-btn' type='submit'>
+      {children}
+    </button>
+  );
 };
 
 export default SubmitBtn;
