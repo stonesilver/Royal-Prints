@@ -1,15 +1,72 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Input from '../../../components/base/Input/Input.component';
 import SubmitBtn from '../../../components/base/SubmitBtn/SubmitBtn.component';
+import { useNavigate } from 'react-router-dom';
 import './SignIn.styles.scss';
 
-const initState = {
-  email: '',
-  password: '',
-};
-
 const SignIn = () => {
+  const navigate = useNavigate();
+
+  const initState = {
+    email: '',
+    password: '',
+  };
+
   const [userInput, setUserInput] = useState(initState);
+
+  const [error, setError] = useState(initState);
+
+  const [validateStart, setValidateStart] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateInputs = useCallback(() => {
+    // regex for email
+    const re = /\S+@\S+\.\S+/;
+    const isEmail = re.test(userInput.email);
+
+    //   checking if email is valid
+    if (!isEmail) {
+      setError((prevS) => ({
+        ...prevS,
+        email: 'Enter a valid email',
+      }));
+    } else {
+      setError((prevS) => ({
+        ...prevS,
+        email: '',
+      }));
+    }
+
+    //   checking if password is up to 8 characters
+    if (userInput.password.length < 8) {
+      setError((prevS) => ({
+        ...prevS,
+        password: 'Password should be at least 8 charaters',
+      }));
+    } else {
+      setError((prevS) => ({
+        ...prevS,
+        password: '',
+      }));
+    }
+    // check if validation is true
+    if (isEmail && userInput.password.length > 7) {
+      setIsValid(true);
+    }
+  }, [userInput.email, userInput.password.length]);
+
+  useEffect(() => {
+    if (validateStart) {
+      validateInputs();
+    }
+  }, [
+    validateStart,
+    validateInputs,
+    error.email,
+    error.password,
+    navigate,
+    isValid,
+  ]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,7 +78,11 @@ const SignIn = () => {
 
   const HandleSubmit = (event) => {
     event.preventDefault();
-    alert('Submitted!!!');
+    setValidateStart(true);
+
+    if (!error.email && !error.password && isValid) {
+      navigate('/');
+    }
   };
 
   return (
@@ -40,6 +101,7 @@ const SignIn = () => {
               value={userInput.email}
               placeHolder='Enter your email'
               handleChange={handleChange}
+              error={error.email}
             />
           </div>
           <div className='sign-in-container-pwd group-input'>
@@ -49,6 +111,7 @@ const SignIn = () => {
               value={userInput.password}
               placeHolder='Enter your password'
               handleChange={handleChange}
+              error={error.password}
             />
           </div>
           <div className='sign-in-container-forgot-pwd'>

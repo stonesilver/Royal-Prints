@@ -14,7 +14,7 @@
     padding: 1rem 0.75rem;
 
     @include sm {
-      width: 34rem;
+      width: 30rem;
       padding: 1rem 1.5rem;
     }
 
@@ -61,10 +61,10 @@
     }
 
     &-submit-btn {
-      margin: 2rem 0 4rem 0;
+      margin: 4rem 0;
 
       @include sm {
-        margin: 4rem 0 5rem 0;
+        margin: 5rem 0;
       }
     }
   }

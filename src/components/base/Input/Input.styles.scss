@@ -11,8 +11,8 @@
   width: 100%;
   border: 1px solid $muted-300;
   font-size: 0.875rem;
-  background-color: $primaryWhite;
-  border-radius: 8px;
+  background-color: $primaryWhite !important;
+  border-radius: 5px;
   padding: 1rem;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -22,4 +22,14 @@
   &:focus {
     border: 1px solid $secondaryColor;
   }
+}
+
+.border-error {
+  border: 1px solid $error;
+}
+
+.user-input-error {
+  display: block;
+  color: $error;
+  font-size: 0.65rem;
 }

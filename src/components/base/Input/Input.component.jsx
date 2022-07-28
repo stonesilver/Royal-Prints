@@ -1,6 +1,14 @@
 import './Input.styles.scss';
 
-const Input = ({ type, label, props, value, placeHolder, handleChange }) => {
+const Input = ({
+  type,
+  label,
+  props,
+  value,
+  placeHolder,
+  handleChange,
+  error,
+}) => {
   return (
     <>
       <label htmlFor={type} className='input-label'>
@@ -12,10 +20,10 @@ const Input = ({ type, label, props, value, placeHolder, handleChange }) => {
           placeholder={placeHolder}
           onChange={handleChange}
           {...props}
-          required
-          className='user-input'
+          className={`user-input ${Boolean(error) && 'border-error'}`}
         />
       </label>
+      {Boolean(error) && <span className='user-input-error'>{error}</span>}
     </>
   );
 };
