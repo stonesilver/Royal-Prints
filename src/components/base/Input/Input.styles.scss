@@ -26,6 +26,10 @@
 
 .border-error {
   border: 1px solid $error;
+
+  &:focus {
+    border: 1px solid $error;
+  }
 }
 
 .user-input-error {

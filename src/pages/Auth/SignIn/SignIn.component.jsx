@@ -17,7 +17,13 @@ const SignIn = () => {
   const [error, setError] = useState(initState);
 
   const [validateStart, setValidateStart] = useState(false);
-  const [isValid, setIsValid] = useState(false);
+
+  const validateBeforeSubmit = new Promise((resolve, reject) => {
+    const re = /\S+@\S+\.\S+/;
+    const isEmail = re.test(userInput.email);
+    const isPasswordGTEight = userInput.password.length > 7;
+    isEmail && isPasswordGTEight ? resolve() : reject();
+  });
 
   const validateInputs = useCallback(() => {
     // regex for email
@@ -49,10 +55,6 @@ const SignIn = () => {
         password: '',
       }));
     }
-    // check if validation is true
-    if (isEmail && userInput.password.length > 7) {
-      setIsValid(true);
-    }
   }, [userInput.email, userInput.password.length]);
 
   useEffect(() => {
@@ -73,9 +75,11 @@ const SignIn = () => {
     event.preventDefault();
     setValidateStart(true);
 
-    if (!error.email && !error.password && isValid) {
-      navigate('/');
-    }
+    validateBeforeSubmit.then(() => navigate('/'));
+
+    // if (validateBeforeSubmit()) {
+    //   navigate('/');
+    // }
   };
 
   return (
