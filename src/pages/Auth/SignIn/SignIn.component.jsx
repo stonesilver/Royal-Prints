@@ -76,10 +76,6 @@ const SignIn = () => {
     setValidateStart(true);
 
     validateBeforeSubmit.then(() => navigate('/'));
-
-    // if (validateBeforeSubmit()) {
-    //   navigate('/');
-    // }
   };
 
   return (
