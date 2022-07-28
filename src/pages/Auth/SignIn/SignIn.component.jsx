@@ -59,14 +59,7 @@ const SignIn = () => {
     if (validateStart) {
       validateInputs();
     }
-  }, [
-    validateStart,
-    validateInputs,
-    error.email,
-    error.password,
-    navigate,
-    isValid,
-  ]);
+  }, [validateStart, validateInputs]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
