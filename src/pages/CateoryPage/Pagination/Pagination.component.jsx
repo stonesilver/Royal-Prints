@@ -6,12 +6,12 @@ import './Pagination.styles.scss';
 const Pagination = () => {
   const [current, setCurrent] = useState(1);
   const dataArray = [...Array(50).keys()];
-  const maxBtn = current + 6;
 
-  const start = current - 1;
+  const start = current >= 7 ? current + 1 - 7 : 0;
+  
   const paginationInDisplayArray = dataArray
     .slice(start)
-    .filter((item) => item < maxBtn);
+    .filter((item, index) => index < 7);
 
   const handlePaginationBtnClick = (currentNumber) => {
     setCurrent(currentNumber);
