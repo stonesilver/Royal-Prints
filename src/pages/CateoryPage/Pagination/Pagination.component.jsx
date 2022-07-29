@@ -6,8 +6,24 @@ import './Pagination.styles.scss';
 const Pagination = () => {
   const [current, setCurrent] = useState(1);
   const dataArray = [...Array(50).keys()];
-  const maxBtn = current + 5;
+  const maxBtn = current + 6;
+  const displayPagination = [];
 
+  const start =
+    parseInt(current) > parseInt(Math.max(...displayPagination))
+      ? `${current - 3}, ${dataArray.length - 1}`
+      : `${0} , ${dataArray.length - 1}`;
+  console.log(parseInt(current) > parseInt(Math.max(...displayPagination))-3);
+  const paginationInDisplayArray = dataArray.slice(start).forEach((item) => {
+    if (item < 7) {
+      displayPagination.push(item);
+    }
+  });
+  console.log({
+    current: parseInt(current),
+    high: parseInt(Math.max(...displayPagination)),
+    start,
+  });
   const handlePaginationBtnClick = (currentNumber) => {
     setCurrent(currentNumber);
   };
@@ -34,20 +50,25 @@ const Pagination = () => {
         }`}
         onClick={() => handleNextPrevClick('left')}
       />
-      {dataArray
-        .slice(current - 1)
-        .filter((item) => item < maxBtn || item === dataArray.length - 1)
-        .map((paginationBtn) => (
-          <span
-            key={paginationBtn}
-            className={`pagination-btn ${
-              current === paginationBtn + 1 && 'activeBtn'
-            }`}
-            onClick={() => handlePaginationBtnClick(paginationBtn + 1)}
-          >
-            {paginationBtn + 1}
-          </span>
-        ))}
+      {displayPagination.map((paginationBtn) => (
+        <span
+          key={paginationBtn}
+          className={`pagination-btn ${
+            current === paginationBtn + 1 && 'activeBtn'
+          }`}
+          onClick={() => handlePaginationBtnClick(paginationBtn + 1)}
+        >
+          {paginationBtn + 1}
+        </span>
+      ))}
+      <span
+        className={`pagination-btn ${
+          current === dataArray.length && 'activeBtn'
+        }`}
+        onClick={() => handlePaginationBtnClick(dataArray.length)}
+      >
+        {dataArray.length}
+      </span>
       <Chevronright
         className={`pagination-btn pagination-next-prev ${
           current === dataArray.length && 'out-of-reach'
