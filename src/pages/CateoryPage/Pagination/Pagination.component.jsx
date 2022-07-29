@@ -12,9 +12,28 @@ const Pagination = () => {
     setCurrent(currentNumber);
   };
 
+  const handleNextPrevClick = (direction) => {
+    if (direction === 'left') {
+      if (current === 1) return;
+
+      setCurrent((prevS) => prevS - 1);
+    }
+
+    if (direction === 'right') {
+      if (current === dataArray.length) return;
+
+      setCurrent((prevS) => prevS + 1);
+    }
+  };
+
   return (
     <div className='pagination'>
-      <ChevronLeft className='pagination-btn pagination-next-prev' />
+      <ChevronLeft
+        className={`pagination-btn pagination-next-prev ${
+          current === 1 && 'out-of-reach'
+        }`}
+        onClick={() => handleNextPrevClick('left')}
+      />
       {dataArray
         .slice(current - 1)
         .filter((item) => item < maxBtn || item === dataArray.length - 1)
@@ -29,7 +48,12 @@ const Pagination = () => {
             {paginationBtn + 1}
           </span>
         ))}
-      <Chevronright className='pagination-btn pagination-next-prev' />
+      <Chevronright
+        className={`pagination-btn pagination-next-prev ${
+          current === dataArray.length && 'out-of-reach'
+        }`}
+        onClick={() => handleNextPrevClick('right')}
+      />
     </div>
   );
 };

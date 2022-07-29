@@ -48,4 +48,14 @@
       stroke: $primaryWhite;
     }
   }
+
+  .out-of-reach {
+    background-color: $muted-300;
+    color: $primaryWhite;
+
+    &:hover {
+      background-color: $muted-300;
+      color: $primaryWhite;
+    }
+  }
 }
