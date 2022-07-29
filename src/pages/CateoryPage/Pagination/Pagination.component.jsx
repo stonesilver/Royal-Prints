@@ -5,13 +5,15 @@ import './Pagination.styles.scss';
 
 const Pagination = () => {
   const [current, setCurrent] = useState(1);
-  const dataArray = [...Array(50).keys()];
+  const dataArray = [...Array(12).keys()];
 
   const start = current >= 7 ? current + 1 - 7 : 0;
-  
+
   const paginationInDisplayArray = dataArray
     .slice(start)
-    .filter((item, index) => index < 7);
+    .filter(
+      (item, index) => index < 7 && parseInt(item) !== dataArray.length - 1
+    );
 
   const handlePaginationBtnClick = (currentNumber) => {
     setCurrent(currentNumber);
