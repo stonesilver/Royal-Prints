@@ -7,23 +7,12 @@ const Pagination = () => {
   const [current, setCurrent] = useState(1);
   const dataArray = [...Array(50).keys()];
   const maxBtn = current + 6;
-  const displayPagination = [];
 
-  const start =
-    parseInt(current) > parseInt(Math.max(...displayPagination))
-      ? `${current - 3}, ${dataArray.length - 1}`
-      : `${0} , ${dataArray.length - 1}`;
-  console.log(parseInt(current) > parseInt(Math.max(...displayPagination))-3);
-  const paginationInDisplayArray = dataArray.slice(start).forEach((item) => {
-    if (item < 7) {
-      displayPagination.push(item);
-    }
-  });
-  console.log({
-    current: parseInt(current),
-    high: parseInt(Math.max(...displayPagination)),
-    start,
-  });
+  const start = current - 1;
+  const paginationInDisplayArray = dataArray
+    .slice(start)
+    .filter((item) => item < maxBtn);
+
   const handlePaginationBtnClick = (currentNumber) => {
     setCurrent(currentNumber);
   };
@@ -50,7 +39,7 @@ const Pagination = () => {
         }`}
         onClick={() => handleNextPrevClick('left')}
       />
-      {displayPagination.map((paginationBtn) => (
+      {paginationInDisplayArray.map((paginationBtn) => (
         <span
           key={paginationBtn}
           className={`pagination-btn ${
