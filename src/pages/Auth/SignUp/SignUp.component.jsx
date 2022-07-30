@@ -18,31 +18,15 @@ const SignUp = () => {
   const [userInput, setUserInput] = useState(initState);
 
   const [error, setError] = useState(initState);
-  console.log(error);
+
   const [validateStart, setValidateStart] = useState(false);
 
   const validateBeforeSubmit = new Promise((resolve, reject) => {
-    const regex = /\S+@\S+\.\S+/;
-    const usernameGtTwoCharaters = userInput.username.length > 2;
-    const isEmail = regex.test(userInput.email);
-    const isPasswordGTEight = userInput.password.length > 7;
-    const confirmPassword = userInput.password === userInput.confirmPassword;
-    const acceptedTAndC = userInput.termsAndConditions;
-    console.log(
-      isEmail,
-      isPasswordGTEight,
-      usernameGtTwoCharaters,
-      confirmPassword,
-      acceptedTAndC
-    );
+    const isValid = Boolean(Object.keys(error).length);
 
-    isEmail &&
-    isPasswordGTEight &&
-    usernameGtTwoCharaters &&
-    confirmPassword &&
-    acceptedTAndC
-      ? resolve()
-      : reject();
+    if (!isValid) {
+      resolve();
+    }
   });
 
   const validateInputs = useCallback(() => {
@@ -51,11 +35,16 @@ const SignUp = () => {
     const isEmail = regex.test(userInput.email);
 
     // username validation
-    if (userInput.username.length < 2) {
+    if (parseInt(userInput.username.length) < 3) {
       setError((prevS) => ({
         ...prevS,
         username: 'Minimum of 3 characters',
       }));
+    } else {
+      setError((prevS) => {
+        const { username, ...others } = prevS;
+        return others;
+      });
     }
 
     //   checking if email is valid
@@ -65,10 +54,10 @@ const SignUp = () => {
         email: 'Enter a valid email',
       }));
     } else {
-      setError((prevS) => ({
-        ...prevS,
-        email: '',
-      }));
+      setError((prevS) => {
+        const { email, ...others } = prevS;
+        return others;
+      });
     }
 
     //   checking if password is up to 8 characters
@@ -78,10 +67,10 @@ const SignUp = () => {
         password: 'Password should be at least 8 charaters',
       }));
     } else {
-      setError((prevS) => ({
-        ...prevS,
-        password: '',
-      }));
+      setError((prevS) => {
+        const { password, ...others } = prevS;
+        return others;
+      });
     }
 
     // validate confirm password
@@ -93,6 +82,11 @@ const SignUp = () => {
         ...prevS,
         confirmPassword: 'Password does not match',
       }));
+    } else {
+      setError((prevS) => {
+        const { confirmPassword, ...others } = prevS;
+        return others;
+      });
     }
 
     // validate terms and conditions
@@ -102,6 +96,11 @@ const SignUp = () => {
         termsAndConditions:
           'Read and acknowledge coronation terms and conditions',
       }));
+    } else {
+      setError((prevS) => {
+        const { termsAndConditions, ...others } = prevS;
+        return others;
+      });
     }
   }, [
     userInput.email,
