@@ -8,6 +8,7 @@ const Input = ({
   placeHolder,
   handleChange,
   error,
+  name,
 }) => {
   return (
     <>
@@ -15,7 +16,7 @@ const Input = ({
         {label}
         <input
           type={type}
-          name={type}
+          name={name}
           value={value}
           placeholder={placeHolder}
           onChange={handleChange}

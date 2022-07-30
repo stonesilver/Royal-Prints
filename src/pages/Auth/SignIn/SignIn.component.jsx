@@ -91,6 +91,7 @@ const SignIn = () => {
             <Input
               type='email'
               label='Email'
+              name='email'
               value={userInput.email}
               placeHolder='Enter your email'
               handleChange={handleChange}
@@ -101,6 +102,7 @@ const SignIn = () => {
             <Input
               type='password'
               label='Password'
+              name='password'
               value={userInput.password}
               placeHolder='Enter your password'
               handleChange={handleChange}

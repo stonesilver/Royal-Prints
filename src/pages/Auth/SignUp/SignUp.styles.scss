@@ -4,7 +4,15 @@
 .sign-up {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 3rem 0;
+  padding: 0 0 3rem 0;
+
+  @include sm {
+    padding: 1rem 2rem;
+  }
+
+  @include md {
+    padding: 3rem 2rem;
+  }
 
   &-container {
     display: grid;
@@ -22,22 +30,125 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        background-color: $secondaryColor;
         color: $primaryWhite;
+        background: linear-gradient(#1d1d1b70, #21221e71),
+          url('../../../assets/imgFiles/login.jpg') 50% 50% no-repeat;
       }
 
-      .text-1 {
-        max-width: 17rem;
+      &-header {
+        font-size: 3rem;
+        font-weight: 400;
       }
 
-      .text-2 {
-        margin-top: 2rem;
+      &-description {
+        .text-1 {
+          max-width: 17rem;
+        }
+
+        .text-2 {
+          margin-top: 2rem;
+        }
       }
     }
 
     &-right-column {
-      border: 1px solid $secondaryColor;
-      min-height: 60vh;
+      padding: 3rem 1rem;
+      width: auto;
+
+      @include md {
+        width: 70%;
+        margin: 0 auto;
+        padding: 3rem 0;
+      }
+
+      .mobile-header {
+        display: block;
+        margin-bottom: 3rem;
+
+        @include md {
+          display: none;
+        }
+
+        .desc {
+          font-size: 0.75rem;
+          margin-top: 5px;
+        }
+      }
+
+      .form-input {
+        margin-bottom: 1.5rem;
+
+        #termsAndConditions {
+          display: flex;
+          align-items: center;
+          font-size: 0.75rem;
+
+          .TAndC {
+            display: grid;
+            place-content: center;
+            appearance: none;
+            background-color: $primaryWhite;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            border: 2px solid currentColor;
+            transform: translateY(-0.075em);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 0.15em;
+            margin-right: 0.4rem;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &::before {
+              content: '';
+              width: 0.875rem;
+              height: 0.875rem;
+              transform: scale(0);
+              transform-origin: bottom left;
+              clip-path: polygon(
+                14% 44%,
+                0 65%,
+                50% 100%,
+                100% 16%,
+                80% 0%,
+                43% 62%
+              );
+              transition: 120ms transform ease-in-out;
+              box-shadow: inset 1em 1em $secondaryColor;
+            }
+
+            &:checked::before {
+              transform: scale(1);
+            }
+
+            &:checked {
+              border: 2px solid $secondaryColor;
+            }
+          }
+        }
+      }
+
+      .submit-btn-and-login-link {
+        display: flex;
+        align-items: center;
+        font-size: 0.75rem;
+        margin-top: 2rem;
+
+        .submit {
+          flex: 0.4;
+          margin-right: 1rem;
+        }
+        .login {
+          // flex: 1;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: $mainBlue;
+          margin-left: 0.3rem;
+        }
+      }
     }
   }
 }
