@@ -19,16 +19,16 @@ const SignIn = () => {
   const [validateStart, setValidateStart] = useState(false);
 
   const validateBeforeSubmit = new Promise((resolve, reject) => {
-    const re = /\S+@\S+\.\S+/;
-    const isEmail = re.test(userInput.email);
+    const regex = /\S+@\S+\.\S+/;
+    const isEmail = regex.test(userInput.email);
     const isPasswordGTEight = userInput.password.length > 7;
     isEmail && isPasswordGTEight ? resolve() : reject();
   });
 
   const validateInputs = useCallback(() => {
     // regex for email
-    const re = /\S+@\S+\.\S+/;
-    const isEmail = re.test(userInput.email);
+    const regex = /\S+@\S+\.\S+/;
+    const isEmail = regex.test(userInput.email);
 
     //   checking if email is valid
     if (!isEmail) {
@@ -71,7 +71,7 @@ const SignIn = () => {
     }));
   };
 
-  const HandleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setValidateStart(true);
 
@@ -86,7 +86,7 @@ const SignIn = () => {
         <p className='sign-in-container-desc'>
           Enter your email and password below to sign in.
         </p>
-        <form onSubmit={HandleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className='sign-in-container-email group-input'>
             <Input
               type='email'

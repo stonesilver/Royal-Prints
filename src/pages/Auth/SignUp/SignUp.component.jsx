@@ -1,21 +1,128 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Input from '../../../components/base/Input/Input.component';
 import SubmitBtn from '../../../components/base/SubmitBtn/SubmitBtn.component';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.styles.scss';
 
+const initState = {
+  username: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
+  termsAndConditions: false,
+};
+
 const SignUp = () => {
-  const initState = {
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    termsAndConditions: false,
-  };
+  const navigate = useNavigate();
 
   const [userInput, setUserInput] = useState(initState);
 
   const [error, setError] = useState(initState);
+  console.log(error);
+  const [validateStart, setValidateStart] = useState(false);
+
+  const validateBeforeSubmit = new Promise((resolve, reject) => {
+    const regex = /\S+@\S+\.\S+/;
+    const usernameGtTwoCharaters = userInput.username.length > 2;
+    const isEmail = regex.test(userInput.email);
+    const isPasswordGTEight = userInput.password.length > 7;
+    const confirmPassword = userInput.password === userInput.confirmPassword;
+    const acceptedTAndC = userInput.termsAndConditions;
+    console.log(
+      isEmail,
+      isPasswordGTEight,
+      usernameGtTwoCharaters,
+      confirmPassword,
+      acceptedTAndC
+    );
+
+    isEmail &&
+    isPasswordGTEight &&
+    usernameGtTwoCharaters &&
+    confirmPassword &&
+    acceptedTAndC
+      ? resolve()
+      : reject();
+  });
+
+  const validateInputs = useCallback(() => {
+    // regex for email
+    const regex = /\S+@\S+\.\S+/;
+    const isEmail = regex.test(userInput.email);
+
+    // username validation
+    if (userInput.username.length < 2) {
+      setError((prevS) => ({
+        ...prevS,
+        username: 'Minimum of 3 characters',
+      }));
+    }
+
+    //   checking if email is valid
+    if (!isEmail) {
+      setError((prevS) => ({
+        ...prevS,
+        email: 'Enter a valid email',
+      }));
+    } else {
+      setError((prevS) => ({
+        ...prevS,
+        email: '',
+      }));
+    }
+
+    //   checking if password is up to 8 characters
+    if (userInput.password.length < 8) {
+      setError((prevS) => ({
+        ...prevS,
+        password: 'Password should be at least 8 charaters',
+      }));
+    } else {
+      setError((prevS) => ({
+        ...prevS,
+        password: '',
+      }));
+    }
+
+    // validate confirm password
+    if (
+      userInput.confirmPassword !== userInput.password ||
+      !userInput.confirmPassword
+    ) {
+      setError((prevS) => ({
+        ...prevS,
+        confirmPassword: 'Password does not match',
+      }));
+    }
+
+    // validate terms and conditions
+    if (!userInput.termsAndConditions) {
+      setError((prevS) => ({
+        ...prevS,
+        termsAndConditions:
+          'Read and acknowledge coronation terms and conditions',
+      }));
+    }
+  }, [
+    userInput.email,
+    userInput.password,
+    userInput.username,
+    userInput.confirmPassword,
+    userInput.termsAndConditions,
+  ]);
+
+  useEffect(() => {
+    if (validateStart) {
+      validateInputs();
+    }
+  }, [validateStart, validateInputs]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setValidateStart(true);
+
+    validateBeforeSubmit.then(() => navigate('/'));
+  };
 
   const handleChange = (event) => {
     const { name, value, type } = event.target;
@@ -42,11 +149,11 @@ const SignUp = () => {
             <p className='text-1'>
               Coronation is much better when you have an account.
             </p>
-            <p className='text-2'>Get yourself one</p>
+            <p className='text-2'>Get yourself one. It's easy</p>
           </div>
         </div>
         <form
-          onSubmit={() => console.log('Submitted!!!')}
+          onSubmit={handleSubmit}
           className='sign-up-container-right-column'
         >
           <div className='mobile-header'>
@@ -108,7 +215,7 @@ const SignUp = () => {
                 name='termsAndConditions'
                 checked={userInput.termsAndConditions}
                 onChange={handleChange}
-                className='TAndC'
+                className={`TAndC ${error.termsAndConditions && 'error'}`}
               />
               By signing up i agree with coronation terms and conditions
             </label>

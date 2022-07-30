@@ -46,6 +46,7 @@
         }
 
         .text-2 {
+          font-weight: 600;
           margin-top: 2rem;
         }
       }
@@ -127,6 +128,10 @@
             &:checked {
               border: 2px solid $secondaryColor;
             }
+          }
+
+          .error {
+            border: 2px solid $error;
           }
         }
       }
