@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage/Homepage.component';
 import CateoryPage from './pages/CateoryPage/CateoryPage.component';
 import ProductDetails from './pages/ProductDetails';
 import SignIn from './pages/Auth/SignIn/SignIn.component';
+import SignUp from './pages/Auth/SignUp/SignUp.component';
 import PageNotFound from './pages/PageNotFound';
 import './App.scss';
 
@@ -15,7 +16,8 @@ const App = () => {
       <div className='main-content'>
         <Routes>
           <Route path='/' element={<Homepage />} />
-          <Route path='sign-In' element={<SignIn />} />
+          <Route path='auth/sign-In' element={<SignIn />} />
+          <Route path='auth/sign-up' element={<SignUp />} />
           <Route path='en/category' element={<CateoryPage />} />
           <Route path='en/article/:productId' element={<ProductDetails />} />
           <Route path='*' element={<PageNotFound />} />
