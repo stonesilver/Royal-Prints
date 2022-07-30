@@ -19,10 +19,11 @@ const SignIn = () => {
   const [validateStart, setValidateStart] = useState(false);
 
   const validateBeforeSubmit = new Promise((resolve, reject) => {
-    const isValid = Boolean(Object.keys(error).length);
-
-    if (!isValid) {
-      return resolve();
+    const regex = /\S+@\S+\.\S+/;
+    const isEmail = regex.test(userInput.email);
+    const isPasswordGTEight = userInput.password.length > 7;
+    if (isEmail && isPasswordGTEight) {
+      resolve();
     }
   });
 
