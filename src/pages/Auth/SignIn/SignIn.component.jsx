@@ -4,13 +4,13 @@ import SubmitBtn from '../../../components/base/SubmitBtn/SubmitBtn.component';
 import { useNavigate } from 'react-router-dom';
 import './SignIn.styles.scss';
 
+const initState = {
+  email: '',
+  password: '',
+};
+
 const SignIn = () => {
   const navigate = useNavigate();
-
-  const initState = {
-    email: '',
-    password: '',
-  };
 
   const [userInput, setUserInput] = useState(initState);
 
@@ -19,10 +19,11 @@ const SignIn = () => {
   const [validateStart, setValidateStart] = useState(false);
 
   const validateBeforeSubmit = new Promise((resolve, reject) => {
-    const regex = /\S+@\S+\.\S+/;
-    const isEmail = regex.test(userInput.email);
-    const isPasswordGTEight = userInput.password.length > 7;
-    isEmail && isPasswordGTEight ? resolve() : reject();
+    const isValid = Boolean(Object.keys(error).length);
+
+    if (!isValid) {
+      return resolve();
+    }
   });
 
   const validateInputs = useCallback(() => {
@@ -37,10 +38,10 @@ const SignIn = () => {
         email: 'Enter a valid email',
       }));
     } else {
-      setError((prevS) => ({
-        ...prevS,
-        email: '',
-      }));
+      setError((prevS) => {
+        const { email, ...others } = prevS;
+        return others;
+      });
     }
 
     //   checking if password is up to 8 characters
@@ -50,10 +51,10 @@ const SignIn = () => {
         password: 'Password should be at least 8 charaters',
       }));
     } else {
-      setError((prevS) => ({
-        ...prevS,
-        password: '',
-      }));
+      setError((prevS) => {
+        const { password, ...others } = prevS;
+        return others;
+      });
     }
   }, [userInput.email, userInput.password.length]);
 
