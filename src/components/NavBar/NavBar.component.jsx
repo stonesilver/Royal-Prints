@@ -8,6 +8,7 @@ import { ReactComponent as CrownIcon } from '../../assets/crown.svg';
 import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
 import { useStickyNavBar } from '../../Hooks/useStickyNavBar.js';
+import Cart from '../Cart/Cart.component';
 import './NavBar.styles.scss';
 
 const NavBar = () => {
@@ -64,10 +65,11 @@ const NavBar = () => {
             <HeartIcon className='count-position nav-icon' />
             <div className='icon-count'>2</div>
           </Link>
-          <Link to='/cart' className='icon'>
+          <div to='/cart' className='icon'>
             <CartIcon className='count-position nav-icon' />
             <div className='icon-count'>5</div>
-          </Link>
+            <Cart />
+          </div>
         </div>
       </div>
       <div className='subNav'>
