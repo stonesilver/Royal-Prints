@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Input from '../../../components/base/Input/Input.component';
 import SubmitBtn from '../../../components/base/SubmitBtn/SubmitBtn.component';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignIn.styles.scss';
 
 const initState = {
@@ -116,6 +116,12 @@ const SignIn = () => {
           </div>
           <div className='sign-in-container-submit-btn'>
             <SubmitBtn>Sign in</SubmitBtn>
+            <p className='create-account'>
+              Don't have an account?{' '}
+              <Link to='/auth/sign-up' className='create-account-link'>
+                create account.
+              </Link>
+            </p>
           </div>
         </form>
       </div>
