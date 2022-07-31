@@ -21,7 +21,7 @@ const Cart = () => {
             </p>
             <SadMoodIcon className='empty-cart-icon' />
           </div>
-          {[...Array(5).keys()].map((item) => (
+          {[...Array(2).keys()].map((item) => (
             <CartCard key={item} />
           ))}
         </div>

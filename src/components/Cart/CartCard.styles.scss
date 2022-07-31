@@ -2,5 +2,103 @@
 @import '../../scss/media-query-mixins';
 
 .cart-card {
-    display: block;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $muted-300;
+
+  .seller-name-star-rating {
+    display: flex;
+    align-items: center;
+
+    .seller-name {
+      font-weight: 500;
+      color: $mainBlue;
+    }
+
+    .star-rating {
+      display: flex;
+      align-items: center;
+      margin-left: 0.75rem;
+
+      .stars-rows {
+        display: flex;
+      }
+
+      .review-count {
+        font-size: 0.75rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .content-row {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    .image-container {
+    //   width: 100%;
+
+      .seller-img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .item-details {
+      display: block;
+
+      .item-name-price {
+        display: flex;
+        // justify-content: space-between;
+        font-size: 0.875rem;
+
+        .item-name {
+          flex: 1;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .item-price {
+          font-weight: 600;
+        }
+      }
+
+      .mutate-item-quantity-delete-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.5rem;
+
+        .mutate-item-quantity {
+          display: flex;
+
+          .mutation-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 0.75rem;
+            margin-right: 1px;
+            border: 1px solid $muted-300;
+          }
+        }
+
+        .delete-btn {
+          width: 1.25rem;
+          height: 1.25rem;
+
+          &:hover {
+            stroke: $secondaryColor;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }
