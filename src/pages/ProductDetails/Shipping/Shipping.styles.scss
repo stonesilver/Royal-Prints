@@ -1,0 +1,26 @@
+@import '../../../scss/sass-variables';
+@import '../../../scss/media-query-mixins';
+
+.shipping-content {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 0.75rem;
+
+  @include sm {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  .content-column {
+    font-size: 0.875rem;
+
+    .column-heading {
+      font-weight: 600;
+    }
+
+    .column-value {
+      @include sm {
+        margin-top: 5px;
+      }
+    }
+  }
+}

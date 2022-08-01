@@ -1,0 +1,67 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.review-content {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+
+  @include md {
+    grid-template-columns: 0.3fr 1fr;
+    gap: 1rem;
+  }
+
+  .review-ratings {
+    position: sticky;
+    top: 0;
+    height: max-content;
+    padding: 1rem 0;
+    border-bottom: 1px solid $muted-300;
+
+    .total-rating {
+      display: flex;
+      align-items: center;
+
+      &-stars {
+        display: flex;
+        align-items: center;
+        margin-right: 7px;
+      }
+
+      &-text {
+        vertical-align: middle;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+    }
+
+    .global-rating {
+      color: $muted-200;
+      margin-bottom: 0.75rem;
+    }
+
+    .rating-by-stars {
+      margin-top: 5px;
+
+      &-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+
+        .stars-row {
+          display: flex;
+          align-items: center;
+          margin-right: 7px;
+        }
+
+        .rating-percentage {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+
+  .review-comments {
+    height: 100%;
+  }
+}

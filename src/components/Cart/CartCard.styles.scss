@@ -3,7 +3,7 @@
 
 .cart-card {
   margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  padding: 0 1rem 1rem 1rem;
   border-bottom: 1px solid $muted-300;
 
   .seller-name-star-rating {
@@ -39,7 +39,7 @@
     margin-top: 1rem;
 
     .image-container {
-    //   width: 100%;
+      //   width: 100%;
 
       .seller-img {
         width: 100%;
@@ -52,12 +52,12 @@
       display: block;
 
       .item-name-price {
-        display: flex;
-        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        justify-content: space-between;
         font-size: 0.875rem;
 
         .item-name {
-          flex: 1;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;

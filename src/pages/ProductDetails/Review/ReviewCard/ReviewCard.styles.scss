@@ -1,0 +1,107 @@
+@import '../../../../scss/media-query-mixins';
+@import '../../../../scss/sass-variables';
+
+.review-card {
+    height: max-content;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $muted-300;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    &-date {
+      font-size: 0.75rem;
+
+      @include sm {
+        font-size: 0.875rem;
+      }
+    }
+
+    &-icon-name {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+
+      .face-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        stroke: $muted-100;
+        border: 1px solid $muted-300;
+        border-radius: 50%;
+        padding: 1px;
+        margin-right: 5px;
+      }
+
+      .reviewer-name {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+    }
+
+    .rating-and-links {
+      display: flex;
+      align-items: center;
+      margin-top: 0.75rem;
+
+      .stars-row {
+        display: flex;
+        align-items: center;
+      }
+
+      .on-text {
+        margin-left: 5px;
+      }
+
+      .link-to-item {
+        text-decoration: underline;
+        color: $secondaryColor;
+        margin-left: 5px;
+        // cursor: pointer;
+
+        .and {
+          color: $primaryBlack;
+          margin: 0 3px;
+        }
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .review-comment {
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+
+    .images-container {
+      display: grid;
+      grid-template-columns: 0.9fr;
+      margin-top: 0.75rem;
+      justify-content: center;
+
+      @include md {
+        grid-template-columns: 1fr 0.8fr;
+      }
+
+      .mySwiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+
+        .review-screenshot {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }

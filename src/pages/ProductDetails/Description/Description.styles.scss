@@ -1,0 +1,34 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.cloth-detail {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $muted-300;
+
+    &-row {
+      display: flex;
+      align-items: center;
+
+      &-key {
+        font-weight: 600;
+        margin-right: 5px;
+      }
+
+      &-value {
+        flex: 1;
+      }
+    }
+  }
+
+  .list-component {
+    &-header {
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 1em;
+      padding-left: 1em;
+    }
+  }

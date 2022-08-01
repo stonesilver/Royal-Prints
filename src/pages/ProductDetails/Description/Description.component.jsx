@@ -1,5 +1,6 @@
-import DescriptionReviewShippingAccordion from './DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
-import { detail, deliveryDelay, RefundsAndExchanges, condition } from './data';
+import DescriptionReviewShippingAccordion from '../DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
+import { detail, deliveryDelay, RefundsAndExchanges, condition } from '../data';
+import './Description.styles.scss'
 
 const ListComponent = ({ header, list }) => {
   return (

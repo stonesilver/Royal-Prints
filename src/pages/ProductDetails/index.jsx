@@ -6,9 +6,9 @@ import RecentlyViewed from '../../components/RecentlyViewed/RecentlyViewed.compo
 import SimilarSearches from './SimilarSearches/SimilarSearches.component';
 import { pepperDemStyles } from '../../utils/carouselData';
 import { similarSearchData } from './data';
-import Description from './Description';
-import Shipping from './Shipping';
-import Review from './Review';
+import Description from './Description/Description.component';
+import Shipping from './Shipping/Shipping.component';
+import Review from './Review/Review.component';
 import { useScrollToTop } from '../../Hooks/useScrollToTop';
 import { findFlagUrlByIso3Code } from 'country-flags-svg';
 import './index.styles.scss';

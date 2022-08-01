@@ -1,5 +1,6 @@
-import DescriptionReviewShippingAccordion from './DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
-import { shippingDetails } from './data';
+import DescriptionReviewShippingAccordion from '../DescriptionReviewShippingAccordion/DescriptionReviewShippingAccordion.component';
+import { shippingDetails } from '../data';
+import './Shipping.styles.scss';
 
 const Shipping = () => {
   return (

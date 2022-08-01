@@ -9,7 +9,7 @@ const CartCard = () => {
       <div className='seller-name-star-rating'>
         <p className='seller-name'>Rolloyds</p>
         <div className='star-rating'>
-          <div className='stars-rows'>{getRating(5)}</div>
+          <div className='stars-rows'>{getRating(5, '0.75rem', '0.75rem')}</div>
           <span className='review-count'>(145)</span>{' '}
         </div>
       </div>
@@ -24,11 +24,15 @@ const CartCard = () => {
           </div>
           <div className='mutate-item-quantity-delete-btn'>
             <div className='mutate-item-quantity'>
-              <div className='mutate-item-quantity-decrease mutation-column'>-</div>
+              <div className='mutate-item-quantity-decrease mutation-column'>
+                -
+              </div>
               <div className='mutate-item-quantity-current-quantity mutation-column'>
                 1
               </div>
-              <div className='mutate-item-quantity-increase mutation-column'>+</div>
+              <div className='mutate-item-quantity-increase mutation-column'>
+                +
+              </div>
             </div>
             <TrashIcon className='delete-btn' />
           </div>

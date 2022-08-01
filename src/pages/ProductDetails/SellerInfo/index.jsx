@@ -1,14 +1,9 @@
 import { ReactComponent as ChevronLeft } from '../../../assets/chevron-left.svg';
-import { ReactComponent as StarIcon } from '../../../assets/star.svg';
 import { ReactComponent as VerifyIcon } from '../../../assets/circle-check.svg';
 import { useNavigate } from 'react-router-dom';
 import sellerPic from '../../../assets/imgFiles/styles/3.jpg';
+import { getRating } from '../../../utils/rating';
 import './index.styles.scss';
-
-const style = {
-  width: '1rem',
-  height: '1rem',
-};
 
 const SellerInfo = ({ flagUrl }) => {
   const navigate = useNavigate();
@@ -28,13 +23,7 @@ const SellerInfo = ({ flagUrl }) => {
         </div>
         <div className='verify-status-rating'>
           <div className='rating'>
-            {[
-              <StarIcon style={style} />,
-              <StarIcon style={style} />,
-              <StarIcon style={style} />,
-              <StarIcon style={style} />,
-              <StarIcon style={style} />,
-            ].map((star, index) => (
+            {getRating(5, '0.875rem', '0.875rem').map((star, index) => (
               <span key={index}>{star}</span>
             ))}
             <span className='review-count'>(26)</span>
