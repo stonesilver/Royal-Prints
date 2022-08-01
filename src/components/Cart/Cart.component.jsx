@@ -1,4 +1,4 @@
-import CartCard from './CartCard.component';
+import CartCard from './CartCard/CartCard.component';
 import { ReactComponent as CloseBtn } from '../../assets/x.svg';
 import { ReactComponent as SadMoodIcon } from '../../assets/mood-sad.svg';
 import './Cart.styles.scss';
@@ -21,9 +21,21 @@ const Cart = () => {
             </p>
             <SadMoodIcon className='empty-cart-icon' />
           </div>
-          {[...Array(2).keys()].map((item) => (
-            <CartCard key={item} />
-          ))}
+          <div className='cart-content'>
+            {[...Array(3).keys()].map((item) => (
+              <CartCard key={item} />
+            ))}
+          </div>
+          <div className='cart-checkout'>
+            <div className='cart-checkout-total'>
+              <div className='cart-checkout-total-label'>
+                <span className='total'>Total</span>
+                <span className='without-shipping'>without shipping</span>
+              </div>
+              <p className='cart-checkout-total-price'>₦47,920</p>
+            </div>
+            <button className='cart-checkout-btn'>Checkout</button>
+          </div>
         </div>
       </div>
     </div>
