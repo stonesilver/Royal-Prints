@@ -5,7 +5,7 @@ import './Description.styles.scss'
 const ListComponent = ({ header, list }) => {
   return (
     <div className='list-component'>
-      <h3 className='list-component-header'>{header}</h3>
+      <h4 className='list-component-header'>{header}</h4>
       <ul>
         {list.map((item, index) => (
           <li key={index}>{item}</li>

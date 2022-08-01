@@ -63,6 +63,7 @@
     .price-and-shipping {
       display: flex;
       align-items: baseline;
+      margin-top: 0.5rem;
 
       .price {
         font-size: 1.25rem;
@@ -79,8 +80,6 @@
 
     .pay-today {
       font-size: 0.75rem;
-      padding: 0;
-      margin: 0;
 
       .bold {
         font-weight: 700;
@@ -89,9 +88,9 @@
 
     .special-offer {
       position: relative;
-      margin-top: 1rem;
-      border: 1px dashed $muted-100;
+      margin-top: $lg;
       padding: 0.5rem;
+      border: 1px dashed $muted-100;
 
       .offer-detail {
         font-style: italic;

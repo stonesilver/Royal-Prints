@@ -29,9 +29,7 @@ const SellerInfo = ({ flagUrl }) => {
             <span className='review-count'>(26)</span>
           </div>
           <div className='verify'>
-            <div className='icon'>
-              <VerifyIcon />
-            </div>
+              <VerifyIcon className='verify-icon' />
             <span>Verified seller</span>
           </div>
         </div>

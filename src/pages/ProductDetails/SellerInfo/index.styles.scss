@@ -59,7 +59,7 @@
       align-items: center;
 
       .review-count {
-        font-size: 0.875rem;
+        font-size: $xs;
         margin-left: 5px;
       }
     }
@@ -67,15 +67,19 @@
     .verify {
       display: flex;
       align-items: center;
-      margin-left: 0.75rem;
+      margin-left: $xs;
+
+      &-icon {
+        stroke: $verifyGreen;
+      }
 
       span {
-        font-size: 0.875rem;
+        font-size: $md;
         font-weight: 600;
-        color: $secondaryColor;
+        color: $verifyGreen;
 
         @include sm {
-          font-size: 1rem;
+          font-size: $md;
         }
       }
     }

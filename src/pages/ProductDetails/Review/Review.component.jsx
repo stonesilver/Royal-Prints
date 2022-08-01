@@ -2,7 +2,7 @@ import DescriptionReviewShippingAccordion from '../DescriptionReviewShippingAcco
 import { userReviews } from '../data';
 import ReviewCard from './ReviewCard/ReviewCard.component';
 import { getRating } from '../../../utils/rating';
-import './Review.styles.scss'
+import './Review.styles.scss';
 
 const Review = () => {
   return (
@@ -11,8 +11,8 @@ const Review = () => {
         <div className='review-ratings'>
           <div className='total-rating'>
             <div className='total-rating-stars'>
-              {getRating(5, '1.5rem', '1.5rem').map((star) => (
-                <span key={star}>{star}</span>
+              {getRating(5, '1.5rem', '1.5rem').map((star, index) => (
+                <span key={index}>{star}</span>
               ))}
             </div>
             <p className='total-rating-text'>5 of 5</p>
