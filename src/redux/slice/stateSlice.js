@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 export const stateSlice = createSlice({
   name: 'state',
   initialState: {
-    cart: false,
+    cartIsOpen: false,
   },
   reducers: {
     toggleCart: (state) => {
-      state.cart = !state.cart;
+      state.cartIsOpen = !state.cartIsOpen;
     },
   },
 });

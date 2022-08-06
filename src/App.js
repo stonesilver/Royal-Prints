@@ -12,15 +12,15 @@ import { useSelector } from 'react-redux';
 import './App.scss';
 
 const App = () => {
-  const { cart } = useSelector((state) => state.state);
+  const { cartIsOpen } = useSelector((state) => state.state);
 
   useEffect(() => {
-    if (cart) {
+    if (cartIsOpen) {
       document.querySelector('body').style.overflow = 'hidden';
     } else {
       document.querySelector('body').style.overflow = 'auto';
     }
-  }, [cart]);
+  }, [cartIsOpen]);
 
   return (
     <div className='App'>

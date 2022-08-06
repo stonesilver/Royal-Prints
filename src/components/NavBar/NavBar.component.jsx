@@ -17,7 +17,7 @@ const NavBar = () => {
   const [searchInput, setSearchInput] = useState('');
   const position = useStickyNavBar();
 
-  const { cart } = useSelector((state) => state.state);
+  const { cartIsOpen } = useSelector((state) => state.state);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -33,7 +33,7 @@ const NavBar = () => {
 
   return (
     <div className={`nav-bar ${position === 'sticky' && 'sticky'}`}>
-      {cart && <Cart />}
+      {cartIsOpen && <Cart />}
       <div className='mainNav'>
         <Link to='/' className='brandName'>
           <span>Coronation</span>
