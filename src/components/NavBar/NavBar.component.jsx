@@ -9,11 +9,16 @@ import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
 import { useStickyNavBar } from '../../Hooks/useStickyNavBar.js';
 import Cart from '../Cart/Cart.component';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleCart } from '../../redux/slice/stateSlice';
 import './NavBar.styles.scss';
 
 const NavBar = () => {
   const [searchInput, setSearchInput] = useState('');
   const position = useStickyNavBar();
+
+  const { cart } = useSelector((state) => state.state);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -24,8 +29,11 @@ const NavBar = () => {
     alert(`searching ${searchInput}`);
   };
 
+  const showCart = () => dispatch(toggleCart());
+
   return (
     <div className={`nav-bar ${position === 'sticky' && 'sticky'}`}>
+      {cart && <Cart />}
       <div className='mainNav'>
         <Link to='/' className='brandName'>
           <span>Coronation</span>
@@ -65,10 +73,9 @@ const NavBar = () => {
             <HeartIcon className='count-position nav-icon' />
             <div className='icon-count'>2</div>
           </Link>
-          <div to='/cart' className='icon'>
+          <div to='/cart' className='icon' onClick={showCart}>
             <CartIcon className='count-position nav-icon' />
             <div className='icon-count'>5</div>
-            <Cart />
           </div>
         </div>
       </div>
