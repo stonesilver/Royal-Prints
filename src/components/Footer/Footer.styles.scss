@@ -26,20 +26,14 @@
       text-align: center;
 
       &-icon {
-        font-size: 2rem;
-      }
-
-      .three-x {
-        display: block;
-        font-size: 1.1rem;
-
-        span {
-          font-size: 0.9rem;
-        }
+        width: 2rem;
+        height: 2rem;
+        stroke: #ffffff;
       }
 
       &-text {
         font-size: 0.9rem;
+        margin-top: 0.5rem;
       }
     }
   }
@@ -104,12 +98,18 @@
 
       &-links {
         &-link {
+          display: flex;
+          align-items: center;
+          gap: 0.3em;
           width: fit-content;
           font-size: 0.9rem;
           margin: 0.3em;
 
-          span {
-            margin-left: 0.3em;
+          .footer-link-icon {
+            width: 1rem;
+            height: 1rem;
+            stroke: #ffffff !important;
+            stroke-width: 1.5 !important;
           }
 
           &:hover {

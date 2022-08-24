@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faAngleRight,
-  faThumbsUp,
-  faComments,
-  faCoins,
-  faLock,
-} from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as CommentIcon } from '../../assets/comment.svg';
+import { ReactComponent as DatabaseIcon } from '../../assets/database.svg';
+import { ReactComponent as LockIcon } from '../../assets/lock.svg';
+import { ReactComponent as ThumbUpIcon } from '../../assets/thumb-up.svg';
+import { ReactComponent as ChevronRightIcon } from '../../assets/chevron-right.svg';
 import {
   faFacebookF,
   faTwitter,
@@ -23,34 +21,25 @@ const Footer = () => {
     <div className='footer'>
       <div className='satisfaction-secured-transactions'>
         <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon'>
-            <FontAwesomeIcon icon={faThumbsUp} />
-          </span>
+          <ThumbUpIcon className='satisfaction-secured-transactions-card-icon' />
           <p className='satisfaction-secured-transactions-card-text'>
             97% satisfaction
           </p>
         </div>
         <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon'>
-            <FontAwesomeIcon icon={faComments} />
-          </span>
+          <CommentIcon className='satisfaction-secured-transactions-card-icon' />
           <p className='satisfaction-secured-transactions-card-text'>
             Discuss with designers
           </p>
         </div>
         <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon three-x'>
-            <FontAwesomeIcon icon={faCoins} />{' '}
-            <span className='three-x'>3X</span>
-          </span>
+          <DatabaseIcon className='satisfaction-secured-transactions-card-icon ' />
           <p className='satisfaction-secured-transactions-card-text'>
             Payments in 3 times
           </p>
         </div>
         <div className='satisfaction-secured-transactions-card'>
-          <span className='satisfaction-secured-transactions-card-icon'>
-            <FontAwesomeIcon icon={faLock} />
-          </span>
+          <LockIcon className='satisfaction-secured-transactions-card-icon' />
           <p className='satisfaction-secured-transactions-card-text'>
             Secured transactions
           </p>
@@ -86,23 +75,23 @@ const Footer = () => {
           <p className='footer-grid-nav-header'>Wanna know more ?</p>
           <div className='footer-grid-nav-links'>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>About</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Press</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Jobs</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Legal</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Policies</span>
             </p>
           </div>
@@ -111,23 +100,23 @@ const Footer = () => {
           <p className='footer-grid-nav-header'>Need Help ?</p>
           <div className='footer-grid-nav-links'>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Sell on coronation</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>General Help</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Buyers Help</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Size Guide</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Sell everywhere with CONA</span>
             </p>
           </div>
@@ -136,19 +125,19 @@ const Footer = () => {
           <p className='footer-grid-nav-header'>What else ?</p>
           <div className='footer-grid-nav-links'>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Shops Directory</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Contact Us</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>African fashion white paper</span>
             </p>
             <p className='footer-grid-nav-links-link'>
-              <FontAwesomeIcon icon={faAngleRight} />
+              <ChevronRightIcon className='footer-link-icon' />
               <span>Blog</span>
             </p>
           </div>
