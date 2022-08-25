@@ -1,15 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactComponent as CommentIcon } from '../../assets/comment.svg';
 import { ReactComponent as DatabaseIcon } from '../../assets/database.svg';
 import { ReactComponent as LockIcon } from '../../assets/lock.svg';
 import { ReactComponent as ThumbUpIcon } from '../../assets/thumb-up.svg';
 import { ReactComponent as ChevronRightIcon } from '../../assets/chevron-right.svg';
-import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-  faPinterestP,
-} from '@fortawesome/free-brands-svg-icons';
+import { ReactComponent as FacebookIcon } from '../../assets/facebook.svg';
+import { ReactComponent as TwitterIcon } from '../../assets/twitter.svg';
+import { ReactComponent as InstagramIcon } from '../../assets/instagram.svg';
+import { ReactComponent as PinterestIcon } from '../../assets/pinterest.svg';
 import { useLocation } from 'react-router-dom';
 import RecentlyViewed from '../RecentlyViewed/RecentlyViewed.component';
 import './Footer.styles.scss';
@@ -57,18 +54,10 @@ const Footer = () => {
             anywhere in the world.
           </p>
           <div className='footer-grid-first-card-social-media-handles'>
-            <span className='social-icon facebook'>
-              <FontAwesomeIcon icon={faFacebookF} />
-            </span>
-            <span className='social-icon twitter'>
-              <FontAwesomeIcon icon={faTwitter} />
-            </span>
-            <span className='social-icon instagram'>
-              <FontAwesomeIcon icon={faInstagram} />
-            </span>
-            <span className='social-icon pinterest'>
-              <FontAwesomeIcon icon={faPinterestP} />
-            </span>
+            <FacebookIcon className='social-icon facebook' />
+            <TwitterIcon className='social-icon twitter' />
+            <InstagramIcon className='social-icon instagram' />
+            <PinterestIcon className='social-icon pinterest' />
           </div>
         </div>
         <div className='footer-grid-nav'>
