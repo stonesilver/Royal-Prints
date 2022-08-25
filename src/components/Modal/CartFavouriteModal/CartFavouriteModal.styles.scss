@@ -1,0 +1,73 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  background-color: #201f1f94;
+  z-index: 99;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 6rem);
+    max-height: calc(100% - 6rem);
+    background-color: $primaryWhite;
+    color: $muted-100;
+    padding: 1rem 0;
+    margin-top: 5.7rem;
+    overflow-y: auto;
+
+    @include sm {
+      width: 28rem;
+    }
+
+    @include md {
+      width: 24rem;
+    }
+
+    @include xl {
+      position: relative;
+      right: 32rem;
+      width: 35rem;
+    }
+
+    .title-and-close-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+
+      .cart-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+
+      .cart-close-btn {
+        width: 1.75rem;
+        height: 1.75rem;
+        stroke-width: 2px;
+
+        &:hover {
+          stroke: $secondaryColor;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-top: 2.5rem;
+    }
+  }
+}

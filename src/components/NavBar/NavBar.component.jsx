@@ -8,7 +8,7 @@ import { ReactComponent as CrownIcon } from '../../assets/crown.svg';
 import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
 import { useStickyNavBar } from '../../Hooks/useStickyNavBar.js';
-import Cart from '../Cart/Cart.component';
+import CartModal from '../CartModal/CartModal.component';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleCart } from '../../redux/slice/stateSlice';
 import './NavBar.styles.scss';
@@ -33,7 +33,7 @@ const NavBar = () => {
 
   return (
     <div className={`nav-bar ${position === 'sticky' && 'sticky'}`}>
-      {cartIsOpen && <Cart />}
+      {cartIsOpen && <CartModal />}
       <div className='mainNav'>
         <Link to='/' className='brandName'>
           <span>Coronation</span>

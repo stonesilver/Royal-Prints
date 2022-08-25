@@ -1,7 +1,7 @@
 import SellerPic from '../../../assets/imgFiles/styles/31.jpg';
 import { ReactComponent as TrashIcon } from '../../../assets/trash.svg';
 import { getRating } from '../../../utils/rating';
-import './CartCard.styles.scss';
+import './CartItemCard.styles.scss';
 
 const CartCard = () => {
   return (
