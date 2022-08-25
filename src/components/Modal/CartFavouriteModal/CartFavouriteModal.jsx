@@ -7,7 +7,7 @@ const CartModal = ({ children }) => {
   const dispatch = useDispatch();
 
   const closeCart = () => {
-    dispatch(toggleCart());
+    dispatch(toggleCart(''));
   };
 
   return (
