@@ -1,9 +1,10 @@
 import { ReactComponent as CloseBtn } from '../../../assets/x.svg';
 import { toggleCart } from '../../../redux/slice/stateSlice';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './CartFavouriteModal.styles.scss';
 
 const CartModal = ({ children }) => {
+  const { activeModal } = useSelector((state) => state.state);
   const dispatch = useDispatch();
 
   const closeCart = () => {
@@ -15,7 +16,7 @@ const CartModal = ({ children }) => {
       <div className='cart-modal-container'>
         {/* header and close btn */}
         <div className='title-and-close-btn'>
-          <p className='cart-title'>MY CART</p>
+          <p className='cart-title'>{activeModal}</p>
           <CloseBtn className='cart-close-btn' onClick={closeCart} />
         </div>
 

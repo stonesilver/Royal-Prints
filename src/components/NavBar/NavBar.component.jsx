@@ -9,6 +9,7 @@ import ItemSubMenu from '../ItemSubMenu/ItemSubMenu.component';
 import SelectionSubMenu from '../SelectionsSubMenu/SelectionSubMenu.component';
 import { useStickyNavBar } from '../../Hooks/useStickyNavBar.js';
 import CartModal from '../CartModal/CartModal.component';
+import FavouriteModal from '../FavouriteModal/FavouriteModal.component';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleCart } from '../../redux/slice/stateSlice';
 import './NavBar.styles.scss';
@@ -29,11 +30,13 @@ const NavBar = () => {
     alert(`searching ${searchInput}`);
   };
 
-  const showCart = () => dispatch(toggleCart('cart'));
+  const showCart = () => dispatch(toggleCart('my cart'));
+  const showFavourite = () => dispatch(toggleCart('favourites'));
 
   return (
     <div className={`nav-bar ${position === 'sticky' && 'sticky'}`}>
-      {activeModal === 'cart' && <CartModal />}
+      {activeModal === 'my cart' && <CartModal />}
+      {activeModal === 'favourites' && <FavouriteModal />}
       <div className='mainNav'>
         <Link to='/' className='brandName'>
           <span>Coronation</span>
@@ -69,11 +72,11 @@ const NavBar = () => {
           <Link to='/profile'>
             <UserIcon className='nav-icon' />
           </Link>
-          <Link to='/favourites' className='icon'>
+          <div className='icon' onClick={showFavourite}>
             <HeartIcon className='count-position nav-icon' />
             <div className='icon-count'>2</div>
-          </Link>
-          <div to='/cart' className='icon' onClick={showCart}>
+          </div>
+          <div className='icon' onClick={showCart}>
             <CartIcon className='count-position nav-icon' />
             <div className='icon-count'>5</div>
           </div>
