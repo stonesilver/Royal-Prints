@@ -1,11 +1,12 @@
 import CartFavouriteModal from '../Modal/CartFavouriteModal/CartFavouriteModal';
-import './FavouriteModal.styles.scss'
+import './FavouriteModal.styles.scss';
 
 const FavouriteModal = () => {
   return (
     <CartFavouriteModal>
       <div className='favourite-modal'>
-        <p className='nofav'>You have no favorite</p>
+        <img src='/images/file-folder.gif' alt='empty favourite' />
+        <p className='nofav'>You have no favourites</p>
       </div>
     </CartFavouriteModal>
   );
