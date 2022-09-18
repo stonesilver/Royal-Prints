@@ -69,7 +69,7 @@ const NavBar = () => {
           <div className='mobileSearch'>
             <SearchIcon className='nav-icon' />
           </div>
-          <Link to='/profile'>
+          <Link to='/auth/sign-up'>
             <UserIcon className='nav-icon' />
           </Link>
           <div className='icon' onClick={showFavourite}>
