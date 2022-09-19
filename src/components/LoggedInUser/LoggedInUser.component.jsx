@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import { useClickOutside } from '../../Hooks/useClickOutside';
 import './LoggedInUser.styles.scss';
 
 const navLinks = ['My Account', 'Conversations', 'Purchases', 'Logout'];
 
 const LoggedInUser = () => {
-  const [open, setOpen] = useState(false);
+  const { ref, visible, setVisible } = useClickOutside();
 
   const handleToggle = () => {
-    setOpen((prevS) => !prevS);
+    setVisible((prevS) => !prevS);
   };
 
   return (
@@ -18,8 +19,8 @@ const LoggedInUser = () => {
         alt='auth user'
         onClick={handleToggle}
       />
-      {open && (
-        <div className='user-dropdown'>
+      {visible && (
+        <div ref={ref} className='user-dropdown'>
           <p className='user-dropdown-user-email'>Logged in as stonesilver12</p>
           <div className='user-dropdown-nav-row'>
             {navLinks.map((item) => (
