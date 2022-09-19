@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateY(2rem);
+    transform: translateY(2.5rem);
     width: max-content;
     background-color: $primaryWhite;
     z-index: 22;
@@ -46,6 +46,7 @@
         &-icon {
           width: 1.125rem;
           height: 1.125rem;
+          stroke: $primaryBlack;
         }
 
         &:hover {

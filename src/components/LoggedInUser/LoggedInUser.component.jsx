@@ -1,14 +1,16 @@
 import { useClickOutside } from '../../Hooks/useClickOutside';
 import { ReactComponent as PowerIcon } from '../../assets/svg/power.svg';
 import { ReactComponent as MailIcon } from '../../assets/svg/mail.svg';
+import { ReactComponent as CartIcon } from '../../assets/cart.svg';
+import { ReactComponent as ApertureIcon } from '../../assets/svg/aperture.svg';
 import './LoggedInUser.styles.scss';
 
 const className = 'user-dropdown-nav-row-auth-nav-icon';
 
 const navLinks = [
-  { name: 'My Account', icon: <MailIcon className={className} /> },
+  { name: 'My Account', icon: <ApertureIcon className={className} /> },
   { name: 'Conversations', icon: <MailIcon className={className} /> },
-  { name: 'Purchases', icon: <MailIcon className={className} /> },
+  { name: 'Purchases', icon: <CartIcon className={className} /> },
   { name: 'Logout', icon: <PowerIcon className={className} /> },
 ];
 
