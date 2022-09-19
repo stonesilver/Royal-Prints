@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useClickOutside } from '../../Hooks/useClickOutside';
 import './LoggedInUser.styles.scss';
 
