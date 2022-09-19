@@ -23,6 +23,7 @@
     background-color: $primaryWhite;
     z-index: 22;
     border: 1px solid $muted-300;
+    box-shadow: 0 1px 10px $muted-300;
 
     &-user-email {
       font-size: 0.75rem;
@@ -36,8 +37,16 @@
       margin-top: 0.75rem;
 
       &-auth-nav {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
         font-size: 0.875rem;
-        padding: 0.3rem 0.75rem;
+        padding: 0.5rem 0.75rem;
+
+        &-icon {
+          width: 1.125rem;
+          height: 1.125rem;
+        }
 
         &:hover {
           background-color: $borderColor;

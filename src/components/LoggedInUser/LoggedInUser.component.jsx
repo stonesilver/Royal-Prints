@@ -1,7 +1,16 @@
 import { useClickOutside } from '../../Hooks/useClickOutside';
+import { ReactComponent as PowerIcon } from '../../assets/svg/power.svg';
+import { ReactComponent as MailIcon } from '../../assets/svg/mail.svg';
 import './LoggedInUser.styles.scss';
 
-const navLinks = ['My Account', 'Conversations', 'Purchases', 'Logout'];
+const className = 'user-dropdown-nav-row-auth-nav-icon';
+
+const navLinks = [
+  { name: 'My Account', icon: <MailIcon className={className} /> },
+  { name: 'Conversations', icon: <MailIcon className={className} /> },
+  { name: 'Purchases', icon: <MailIcon className={className} /> },
+  { name: 'Logout', icon: <PowerIcon className={className} /> },
+];
 
 const LoggedInUser = () => {
   const { ref, visible, setVisible } = useClickOutside();
@@ -22,10 +31,15 @@ const LoggedInUser = () => {
         <div ref={ref} className='user-dropdown'>
           <p className='user-dropdown-user-email'>Logged in as stonesilver12</p>
           <div className='user-dropdown-nav-row'>
-            {navLinks.map((item) => (
-              <p key={item} className='user-dropdown-nav-row-auth-nav'>
-                {item}
-              </p>
+            {navLinks.map(({ name, icon }) => (
+              <div
+                key={name}
+                className='user-dropdown-nav-row-auth-nav'
+                onClick={handleToggle}
+              >
+                {icon}
+                <p>{name}</p>
+              </div>
             ))}
           </div>
         </div>

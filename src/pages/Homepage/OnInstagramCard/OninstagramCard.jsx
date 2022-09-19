@@ -19,7 +19,7 @@ const OninstagramCard = ({ image }) => {
           <span>25</span>
         </div>
         <div className='on-instagram-card-hover-state-like-and-comment'>
-          <MessageIcon onClick={() => alert('Dummy Comment!!!')} />
+          <MessageIcon className='on-instagram-card-hover-state-like-and-comment-icon' onClick={() => alert('Dummy Comment!!!')} />
           <span>12</span>
         </div>
       </div>
