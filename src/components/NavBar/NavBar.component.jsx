@@ -13,6 +13,7 @@ import FavouriteModal from '../FavouriteModal/FavouriteModal.component';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleCart } from '../../redux/slice/stateSlice';
 import './NavBar.styles.scss';
+import LoggedInUser from '../LoggedInUser/LoggedInUser.component';
 
 const NavBar = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -69,9 +70,10 @@ const NavBar = () => {
           <div className='mobileSearch'>
             <SearchIcon className='nav-icon' />
           </div>
-          <Link to='/auth/sign-up'>
+          {/* <Link to='/auth/sign-up'>
             <UserIcon className='nav-icon' />
-          </Link>
+          </Link> */}
+          <LoggedInUser />
           <div className='icon' onClick={showFavourite}>
             <HeartIcon className='count-position nav-icon' />
             <div className='icon-count'>2</div>

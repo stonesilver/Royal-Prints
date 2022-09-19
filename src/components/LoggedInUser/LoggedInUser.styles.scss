@@ -1,0 +1,53 @@
+@import '../../scss/media-query-mixins';
+@import '../../scss/sass-variables';
+
+.auth-user {
+  position: relative;
+  color: $primaryBlack;
+
+  .user-avatar {
+    width: 2rem;
+    height: 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .user-dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(2rem);
+    width: max-content;
+    background-color: $primaryWhite;
+    z-index: 22;
+    border: 1px solid $muted-300;
+
+    &-user-email {
+      font-size: 0.75rem;
+      color: $muted-200;
+      padding: 0.3rem 0.75rem 0 0.75rem;
+    }
+
+    &-nav-row {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.3rem;
+
+      &-auth-nav {
+        font-size: 0.875rem;
+        padding: 0.3rem 0.75rem;
+
+        &:hover {
+          background-color: $borderColor;
+          cursor: pointer;
+        }
+
+        &:last-child {
+          background-color: $muted-300;
+        }
+      }
+    }
+  }
+}
