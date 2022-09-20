@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar.component';
 import Footer from './components/Footer/Footer.component';
 import Homepage from './pages/Homepage/Homepage.component';
 import CateoryPage from './pages/CateoryPage/CateoryPage.component';
@@ -12,6 +11,7 @@ import { useSelector } from 'react-redux';
 import './App.scss';
 import ProtectRoute from './Auth/ProtectRoute';
 import Account from './pages/Auth/Account/Account.component';
+import MainNavBar from './Layout/MainNavBar/MainNavBar.component';
 
 const App = () => {
   const { activeModal } = useSelector((state) => state.state);
@@ -26,20 +26,21 @@ const App = () => {
 
   return (
     <div className='App'>
-      <NavBar />
       <div className='main-content'>
         <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path='auth/sign-In' element={<SignIn />} />
-          <Route path='auth/sign-up' element={<SignUp />} />
-          <Route path='en/category' element={<CateoryPage />} />
-          <Route path='en/article/:productId' element={<ProductDetails />} />
+          <Route element={<MainNavBar />}>
+            <Route path='/' element={<Homepage />} />
+            <Route path='auth/sign-In' element={<SignIn />} />
+            <Route path='auth/sign-up' element={<SignUp />} />
+            <Route path='en/category' element={<CateoryPage />} />
+            <Route path='en/article/:productId' element={<ProductDetails />} />
+          </Route>
 
           {/* protected routes */}
           <Route element={<ProtectRoute />}>
             <Route path='account' element={<Account />} />
           </Route>
-          
+
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
