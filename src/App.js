@@ -10,6 +10,8 @@ import SignUp from './pages/Auth/SignUp/SignUp.component';
 import PageNotFound from './pages/PageNotFound';
 import { useSelector } from 'react-redux';
 import './App.scss';
+import ProtectRoute from './Auth/ProtectRoute';
+import Account from './pages/Auth/Account/Account.component';
 
 const App = () => {
   const { activeModal } = useSelector((state) => state.state);
@@ -32,6 +34,12 @@ const App = () => {
           <Route path='auth/sign-up' element={<SignUp />} />
           <Route path='en/category' element={<CateoryPage />} />
           <Route path='en/article/:productId' element={<ProductDetails />} />
+
+          {/* protected routes */}
+          <Route element={<ProtectRoute />}>
+            <Route path='account' element={<Account />} />
+          </Route>
+          
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
