@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import MainNavBar from './Layout/MainNavBar/MainNavBar.component';
 import Footer from './components/Footer/Footer.component';
@@ -8,22 +7,11 @@ import ProductDetails from './pages/ProductDetails';
 import SignIn from './pages/Auth/SignIn/SignIn.component';
 import SignUp from './pages/Auth/SignUp/SignUp.component';
 import PageNotFound from './pages/PageNotFound';
-import { useSelector } from 'react-redux';
 import './App.scss';
 import ProtectRoute from './Auth/ProtectRoute';
 import Account from './pages/Auth/Account/Account.component';
 
 const App = () => {
-  const { activeModal } = useSelector((state) => state.state);
-
-  useEffect(() => {
-    if (activeModal) {
-      document.querySelector('body').style.overflow = 'hidden';
-    } else {
-      document.querySelector('body').style.overflow = 'auto';
-    }
-  }, [activeModal]);
-
   return (
     <div className='App'>
       <div className='main-content'>

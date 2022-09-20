@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { ReactComponent as CloseBtn } from '../../../assets/x.svg';
 import { toggleCart } from '../../../redux/slice/stateSlice';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,6 +7,14 @@ import './CartFavouriteModal.styles.scss';
 const CartModal = ({ children }) => {
   const { activeModal } = useSelector((state) => state.state);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (activeModal) {
+      document.querySelector('body').style.overflow = 'hidden';
+    } else {
+      document.querySelector('body').style.overflow = 'auto';
+    }
+  }, [activeModal]);
 
   const closeCart = () => {
     dispatch(toggleCart(''));

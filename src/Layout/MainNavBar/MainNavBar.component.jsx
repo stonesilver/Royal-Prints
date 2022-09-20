@@ -15,6 +15,7 @@ import { toggleCart } from '../../redux/slice/stateSlice';
 import './MainNavBar.styles.scss';
 import LoggedInUser from '../../components/LoggedInUser/LoggedInUser.component';
 import Hamburger from '../../components/Hamburger/Hamburger.component';
+import MobileSideBar from '../MobileSideBar/MobileSideBar.component';
 
 const loginedIn = true;
 
@@ -47,6 +48,7 @@ const MainNavBar = () => {
       <div className={`nav-bar ${position === 'sticky' && 'sticky'}`}>
         {activeModal === 'my cart' && <CartModal />}
         {activeModal === 'favourites' && <FavouriteModal />}
+
         <div className='mainNav'>
           <div className='brandName-hamburger'>
             <Hamburger open={open} handleMenuToggle={handleMenuToggle} />
@@ -55,6 +57,7 @@ const MainNavBar = () => {
               <CrownIcon className='brand-crown' />
             </Link>
           </div>
+
           <div className='menOrWomenCategory'>
             <Link to='/men' className='menWomen men'>
               Men
@@ -63,6 +66,7 @@ const MainNavBar = () => {
               Women
             </Link>
           </div>
+
           <form onSubmit={onFormSubmit} className='form'>
             <div className='formContainer'>
               <input
@@ -78,6 +82,7 @@ const MainNavBar = () => {
               </button>
             </div>
           </form>
+
           <div className='accountFavCart'>
             <SearchIcon className='mobileSearch' />
 
@@ -98,7 +103,10 @@ const MainNavBar = () => {
               <div className='icon-count'>5</div>
             </div>
           </div>
+
+          {open && <MobileSideBar open={open} />}
         </div>
+
         <div className='subNav'>
           <div className='subNavItem'>
             <div className='item'>
