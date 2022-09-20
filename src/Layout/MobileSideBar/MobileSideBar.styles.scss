@@ -8,22 +8,26 @@
   width: 100%;
   height: calc(100vh - 3.3rem);
   background-color: #ffffffda;
-  animation: slide 0.3s ease-in-out;
+  animation: slide-in 0.3s ease-in-out;
   color: $primaryBlack;
   z-index: 9999;
   overflow-y: auto;
+  text-align: center;
+  padding: 1rem 0.5rem;
 
   @include md {
     display: none;
   }
 
-  @keyframes slide {
+  @keyframes slide-in {
     0% {
-        transform: scale(0);
-        transform-origin: center;
+      transform: scale(0);
+      transform-origin: center;
+      opacity: 0;
     }
     100% {
-        transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
     }
   }
 }

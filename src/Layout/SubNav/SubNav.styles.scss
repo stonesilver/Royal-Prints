@@ -1,0 +1,125 @@
+@import '../../scss/media-query-mixins';
+@import '../../scss/sass-variables';
+
+.subNav {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 3px $borderColor;
+  background-color: $primaryWhite;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  .subNavItem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 2px solid $borderColor;
+
+    .item {
+      padding: 0.2em 0;
+
+      &:hover .itemMenu .itemMenucontainer {
+        transform: scale(1, 1);
+        height: auto;
+        transition: transform 0.2s ease-in-out 0.2s;
+      }
+
+      .itemHeader {
+        padding: 0 0.5rem;
+        box-shadow: 0 3px 3px transparent;
+        transition: all 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 1.5px 1px $secondaryColor;
+        }
+      }
+
+      .itemMenu {
+        position: absolute;
+        left: 0;
+        transform: translateY(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 0.875rem;
+
+        .itemMenucontainer {
+          position: relative;
+          display: grid;
+          grid-template-columns: 0.4fr 1fr;
+          width: 70vw;
+          box-shadow: 0 0 2px $primaryBlack;
+          background: $primaryWhite;
+          z-index: 2;
+          transform: scale(1, 0);
+          transform-origin: top;
+          height: 0;
+
+          @media screen and (max-width: 1024px) {
+            width: 90vw;
+          }
+
+          &:hover {
+            transform: scale(1, 1);
+            height: auto;
+          }
+
+          .subs {
+            .header {
+              font-size: 1.1rem;
+              padding: 0.5rem 0.5rem 0 0.5rem;
+            }
+
+            .content {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+              .groupContent .subLink {
+                margin: 0.8rem 0;
+                width: max-content;
+                padding: 0 0.5rem;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+
+              .contentLeft {
+                width: 100%;
+
+                .subMenuLink {
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 0.9rem;
+                  padding: 0.7rem 0.6rem;
+                  margin: 0;
+
+                  &:hover {
+                    background: #000000;
+                    color: #ffffff;
+                    cursor: pointer;
+                  }
+
+                  span:nth-child(2) {
+                    font-size: 1.1rem;
+                  }
+                }
+              }
+            }
+          }
+
+          .itemRight {
+            border-left: 1px solid $borderColor;
+            padding-bottom: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

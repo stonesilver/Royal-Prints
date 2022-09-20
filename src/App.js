@@ -14,15 +14,14 @@ import Account from './pages/Auth/Account/Account.component';
 const App = () => {
   return (
     <div className='App'>
+      <MainNavBar />
       <div className='main-content'>
         <Routes>
-          <Route element={<MainNavBar />}>
-            <Route path='/' element={<Homepage />} />
-            <Route path='auth/sign-In' element={<SignIn />} />
-            <Route path='auth/sign-up' element={<SignUp />} />
-            <Route path='en/category' element={<CateoryPage />} />
-            <Route path='en/article/:productId' element={<ProductDetails />} />
-          </Route>
+          <Route path='/' element={<Homepage />} />
+          <Route path='auth/sign-In' element={<SignIn />} />
+          <Route path='auth/sign-up' element={<SignUp />} />
+          <Route path='en/category' element={<CateoryPage />} />
+          <Route path='en/article/:productId' element={<ProductDetails />} />
 
           {/* protected routes */}
           <Route element={<ProtectRoute />}>
