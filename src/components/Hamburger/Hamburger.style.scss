@@ -1,0 +1,54 @@
+@import '../../scss/sass-variables';
+@import '../../scss/media-query-mixins';
+
+.hamburger {
+  position: relative;
+  width: 1.5rem;
+  height: 1rem;
+  cursor: pointer;
+
+  @include sm {
+    display: none;
+  }
+
+  .bar {
+    display: inline-block;
+    position: absolute;
+    width: 1.5625rem;
+    height: 2px;
+    border-radius: 100px;
+    background-color: $primaryWhite;
+    transition: 0.3s ease;
+    left: 0;
+  }
+
+  .bar:first-child {
+    top: 0;
+  }
+
+  .bar:nth-child(2) {
+    top: calc(50% - 1px);
+  }
+
+  .bar:nth-child(3) {
+    bottom: 0;
+  }
+
+  .top {
+    transform: rotate(45deg);
+    transform-origin: top left;
+    left: 2px;
+  }
+
+  .middle {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  .bottom {
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    bottom: -3px !important;
+    box-shadow: 0 0 5px $secondaryColor;
+  }
+}

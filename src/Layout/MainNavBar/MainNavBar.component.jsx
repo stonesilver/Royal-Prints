@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleCart } from '../../redux/slice/stateSlice';
 import './MainNavBar.styles.scss';
 import LoggedInUser from '../../components/LoggedInUser/LoggedInUser.component';
+import Hamburger from '../../components/Hamburger/Hamburger.component';
 
 const loginedIn = true;
 
@@ -42,6 +43,7 @@ const MainNavBar = () => {
         {activeModal === 'my cart' && <CartModal />}
         {activeModal === 'favourites' && <FavouriteModal />}
         <div className='mainNav'>
+          <Hamburger />
           <Link to='/' className='brandName'>
             <span>Coronation</span>
             <CrownIcon className='brandName-crown' />
