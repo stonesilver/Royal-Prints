@@ -1,13 +1,6 @@
-import { useState } from 'react';
 import './Hamburger.style.scss';
 
-const Hamburger = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleMenuToggle = () => {
-    setOpen((prevS) => !prevS);
-  };
-
+const Hamburger = ({ open, handleMenuToggle }) => {
   return (
     <div className='hamburger' onClick={handleMenuToggle}>
       <div className={`bar ${open && `top`}`}></div>

@@ -20,10 +20,15 @@ const loginedIn = true;
 
 const MainNavBar = () => {
   const [searchInput, setSearchInput] = useState('');
+  const [open, setOpen] = useState(false);
   const position = useStickyNavBar();
 
   const { activeModal } = useSelector((state) => state.state);
   const dispatch = useDispatch();
+
+  const handleMenuToggle = () => {
+    setOpen((prevS) => !prevS);
+  };
 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -44,7 +49,7 @@ const MainNavBar = () => {
         {activeModal === 'favourites' && <FavouriteModal />}
         <div className='mainNav'>
           <div className='brandName-hamburger'>
-            <Hamburger />
+            <Hamburger open={open} handleMenuToggle={handleMenuToggle} />
             <Link to='/' className='brand'>
               <span className='name'>Coronation</span>
               <CrownIcon className='brand-crown' />
