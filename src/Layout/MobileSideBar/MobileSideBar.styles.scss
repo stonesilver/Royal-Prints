@@ -19,10 +19,11 @@
 
   @keyframes slide {
     0% {
-      left: -100vw;
+        transform: scale(0);
+        transform-origin: center;
     }
     100% {
-      left: 0;
+        transform: scale(1);
     }
   }
 }
