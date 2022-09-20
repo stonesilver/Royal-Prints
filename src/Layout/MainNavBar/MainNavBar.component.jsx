@@ -43,11 +43,13 @@ const MainNavBar = () => {
         {activeModal === 'my cart' && <CartModal />}
         {activeModal === 'favourites' && <FavouriteModal />}
         <div className='mainNav'>
-          <Hamburger />
-          <Link to='/' className='brandName'>
-            <span>Coronation</span>
-            <CrownIcon className='brandName-crown' />
-          </Link>
+          <div className='brandName-hamburger'>
+            <Hamburger />
+            <Link to='/' className='brand'>
+              <span className='name'>Coronation</span>
+              <CrownIcon className='brand-crown' />
+            </Link>
+          </div>
           <div className='menOrWomenCategory'>
             <Link to='/men' className='menWomen men'>
               Men

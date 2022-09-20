@@ -7,7 +7,7 @@
   height: 1rem;
   cursor: pointer;
 
-  @include sm {
+  @include md {
     display: none;
   }
 
