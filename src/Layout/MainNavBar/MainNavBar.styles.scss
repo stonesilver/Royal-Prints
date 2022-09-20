@@ -131,70 +131,65 @@
 
     .accountFavCart {
       display: flex;
+      align-items: center;
+      gap: 0.3rem;
       justify-content: flex-end;
+
+      @include md {
+        gap: 1em;
+      }
 
       .mobileSearch {
         display: block;
+        stroke: $primaryWhite;
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
 
         @include sm {
           display: none;
         }
+      }
+
+      .icon-container {
+        position: relative;
+        cursor: pointer;
+
+        .count-position {
+          position: relative;
+        }
 
         .nav-icon {
           stroke: $primaryWhite;
-          width: 1.75rem;
-          height: 1.75rem;
+          width: 1.5rem;
+          height: 1.5rem;
 
           @include sm {
             width: 1.875rem;
             height: 1.875rem;
           }
         }
-      }
 
-      .count-position {
-        position: relative;
-      }
-
-      .nav-icon {
-        stroke: $primaryWhite;
-        width: 1.75rem;
-        height: 1.75rem;
-
-        @include sm {
-          width: 1.875rem;
-          height: 1.875rem;
-        }
-      }
-
-      .icon {
-        position: relative;
-        cursor: pointer;
-
-        @include md {
-          margin-left: 1em;
-        }
-
-        &-count {
+        .icon-count {
           display: flex;
           justify-content: center;
           align-items: center;
           position: absolute;
           top: 0;
           right: 0;
-          width: 15px;
-          height: 15px;
+          width: 0.75rem;
+          height: 0.75rem;
           font-size: 0.625rem;
           font-weight: 600;
           z-index: 1;
           background: $primaryWhite;
           color: $secondaryColor;
           border-radius: 50%;
-        }
 
-        @media screen and (max-width: 768px) {
-          margin-right: 1rem;
-          font-size: 1rem;
+          @include sm {
+            width: 0.95rem;
+            height: 0.95rem;
+          }
         }
       }
     }

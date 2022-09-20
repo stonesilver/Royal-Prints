@@ -15,6 +15,8 @@ import { toggleCart } from '../../redux/slice/stateSlice';
 import './MainNavBar.styles.scss';
 import LoggedInUser from '../../components/LoggedInUser/LoggedInUser.component';
 
+const loginedIn = true;
+
 const MainNavBar = () => {
   const [searchInput, setSearchInput] = useState('');
   const position = useStickyNavBar();
@@ -68,18 +70,21 @@ const MainNavBar = () => {
             </div>
           </form>
           <div className='accountFavCart'>
-            <div className='mobileSearch'>
-              <SearchIcon className='nav-icon' />
-            </div>
-            {/* <Link to='/auth/sign-up'>
-            <UserIcon className='nav-icon' />
-          </Link> */}
-            <LoggedInUser />
-            <div className='icon' onClick={showFavourite}>
+            <SearchIcon className='mobileSearch' />
+
+            {loginedIn ? (
+              <LoggedInUser />
+            ) : (
+              <Link to='/auth/sign-up' className='icon-container'>
+                <UserIcon className='nav-icon' />
+              </Link>
+            )}
+
+            <div className='icon-container' onClick={showFavourite}>
               <HeartIcon className='count-position nav-icon' />
               <div className='icon-count'>2</div>
             </div>
-            <div className='icon' onClick={showCart}>
+            <div className='icon-container' onClick={showCart}>
               <CartIcon className='count-position nav-icon' />
               <div className='icon-count'>5</div>
             </div>

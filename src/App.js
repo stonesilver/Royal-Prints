@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import MainNavBar from './Layout/MainNavBar/MainNavBar.component';
 import Footer from './components/Footer/Footer.component';
 import Homepage from './pages/Homepage/Homepage.component';
 import CateoryPage from './pages/CateoryPage/CateoryPage.component';
@@ -11,7 +12,6 @@ import { useSelector } from 'react-redux';
 import './App.scss';
 import ProtectRoute from './Auth/ProtectRoute';
 import Account from './pages/Auth/Account/Account.component';
-import MainNavBar from './Layout/MainNavBar/MainNavBar.component';
 
 const App = () => {
   const { activeModal } = useSelector((state) => state.state);
