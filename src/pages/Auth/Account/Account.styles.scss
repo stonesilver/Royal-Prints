@@ -6,16 +6,15 @@
   gap: 1.5rem;
   max-width: 71.25rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 0;
 
   &-sidebar {
     flex: 1 1 25%;
-    border: 1px solid $muted-300;
-    height: 50vh;
 
     .profile-detail {
       text-align: center;
-      padding: 1rem;
+      padding-top: 1.5rem;
+      border: 1px solid $muted-300;
 
       .dummy-avatar {
         position: relative;
@@ -49,6 +48,7 @@
         background-color: $primaryBlack;
         color: $primaryWhite;
         border-radius: 10px;
+        font-weight: 500;
         padding: 0.3rem 0.75rem;
         margin: 1rem auto;
 
@@ -62,6 +62,35 @@
   &-content {
     flex: 1 1 75%;
     border: 1px solid $muted-300;
-    height: 50vh;
+  }
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: $muted-300;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: $muted-300;
+  }
+
+  &:hover .sidebar-item-icon {
+    transform: perspective(5rem) rotateY(45deg);
+  }
+
+  &-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke: $primaryBlack;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &-text {
+    flex: 1;
+    text-align: left;
   }
 }
