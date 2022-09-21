@@ -37,6 +37,12 @@ const Account = () => {
             <SideBarItem key={name} name={name} icon={icon} link={link} />
           ))}
         </div>
+        <hr className='horizontal-line' />
+        <div className='more-items'>
+          {sideBarItem.map(({ name, icon, link }) => (
+            <SideBarItem key={name} name={name} icon={icon} link={link} />
+          ))}
+        </div>
       </div>
       <div className='user-account-content'></div>
     </div>
