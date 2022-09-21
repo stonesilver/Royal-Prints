@@ -25,7 +25,7 @@ const App = () => {
 
           {/* protected routes */}
           <Route element={<ProtectRoute />}>
-            <Route path='account' element={<Account />} />
+            <Route path='account/en' element={<Account />} />
           </Route>
 
           <Route path='*' element={<PageNotFound />} />

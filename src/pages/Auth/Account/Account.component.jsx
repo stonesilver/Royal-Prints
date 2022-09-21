@@ -9,17 +9,17 @@ const sideBarItem = [
   {
     name: 'My Account',
     icon: <HomeIcon className='sidebar-item-icon' />,
-    link: '/',
+    link: '/account/en',
   },
   {
     name: 'Conversation',
     icon: <MessageIcon className='sidebar-item-icon' />,
-    link: '/',
+    link: '/account/en/message',
   },
   {
     name: 'Wallet ($0)',
     icon: <WalletIcon className='sidebar-item-icon' />,
-    link: '/',
+    link: '/account/en/wallet',
   },
 ];
 
