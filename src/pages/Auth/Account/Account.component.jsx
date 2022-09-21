@@ -8,7 +8,7 @@ const Account = () => {
         <div className='profile-detail'>
           <div className='dummy-avatar'></div>
           <p className='username'>stonesilver12</p>
-          <Link to='account/en/profile' className='my-profile-btn'>
+          <Link to='en/profile' className='my-profile-btn'>
             My Profile
           </Link>
         </div>

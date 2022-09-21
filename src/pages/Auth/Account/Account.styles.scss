@@ -3,36 +3,65 @@
 
 .user-account {
   display: flex;
-  gap: 0.75rem;
+  gap: 1.5rem;
   max-width: 71.25rem;
   margin: 0 auto;
   padding: 1rem;
 
   &-sidebar {
     flex: 1 1 25%;
-    border: 1px solid #ff0000;
+    border: 1px solid $muted-300;
     height: 50vh;
 
     .profile-detail {
       text-align: center;
-      margin: 0 auto;
       padding: 1rem;
 
       .dummy-avatar {
+        position: relative;
         width: 9.375rem;
         height: 9.375rem;
         border: 1px solid $muted-300;
+        border-radius: 50%;
+        box-shadow: 0 0 2px $secondaryColor;
+        margin: 0 auto;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 3px;
+          right: 3px;
+          bottom: 3px;
+          left: 3px;
+          border-radius: 50%;
+          border: 1px dashed $muted-300;
+        }
       }
 
       .username {
+        font-size: 1rem;
+        font-weight: 500;
         margin-top: 2.5rem;
+      }
+
+      .my-profile-btn {
+        width: fit-content;
+        background-color: $primaryBlack;
+        color: $primaryWhite;
+        border-radius: 10px;
+        padding: 0.3rem 0.75rem;
+        margin: 1rem auto;
+
+        &:hover {
+          background-color: $secondaryColor;
+        }
       }
     }
   }
 
   &-content {
     flex: 1 1 75%;
-    border: 1px solid #13dd61;
+    border: 1px solid $muted-300;
     height: 50vh;
   }
 }
