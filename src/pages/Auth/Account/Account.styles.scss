@@ -47,7 +47,7 @@
         width: fit-content;
         background-color: $primaryBlack;
         color: $primaryWhite;
-        border-radius: 10px;
+        border-radius: 1rem;
         font-weight: 500;
         padding: 0.3rem 0.75rem;
         margin: 1rem auto;
@@ -66,7 +66,7 @@
     .more-items {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
     }
   }
 
@@ -104,4 +104,8 @@
     flex: 1;
     text-align: left;
   }
+}
+
+.full-border {
+  border: 1px solid $muted-300;
 }
