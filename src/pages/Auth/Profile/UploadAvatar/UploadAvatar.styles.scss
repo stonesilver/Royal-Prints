@@ -1,3 +1,57 @@
-// .profile-upload-avatar {
+@import '../../../../scss/media-query-mixins';
+@import '../../../../scss/sass-variables';
 
-// }
+.profile-upload-avatar {
+  padding: 1rem 0;
+
+  &:hover .profile-upload-avatar-dummy-avatar::after {
+    background-color: $muted-300;
+  }
+
+  &:hover .add-icon {
+    display: block;
+  }
+
+  &:hover .text {
+    display: block;
+  }
+
+  &-dummy-avatar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 9.375rem;
+    height: 9.375rem;
+    border: 1px solid $muted-300;
+    border-radius: 50%;
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 0 2px $secondaryColor;
+    margin: 0 auto;
+    cursor: pointer;
+
+    .add-icon {
+      display: none;
+      stroke: $primaryBlack;
+      stroke-width: 4;
+    }
+
+    .text {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      bottom: 3px;
+      left: 3px;
+      border-radius: 50%;
+      border: 1px dashed $muted-300;
+    }
+  }
+}
