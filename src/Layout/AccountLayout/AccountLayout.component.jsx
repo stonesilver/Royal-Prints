@@ -50,9 +50,9 @@ const AccountLayout = () => {
     <div className='account-layout'>
       <div className='account-layout-sidebar'>
         <div className='profile-detail'>
-          <Link to='en/profile' className='dummy-avatar'></Link>
+          <Link to='profile' className='dummy-avatar'></Link>
           <p className='username'>stonesilver12</p>
-          <Link to='en/profile' className='my-profile-btn'>
+          <Link to='profile' className='my-profile-btn'>
             My Profile
           </Link>
           {sideBarItem.map(({ name, icon, link }) => (

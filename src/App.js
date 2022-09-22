@@ -10,6 +10,7 @@ import PageNotFound from './pages/PageNotFound';
 import './App.scss';
 import ProtectRoute from './Auth/ProtectRoute';
 import Account from './pages/Auth/Account/Account.component';
+import Profile from './pages/Auth/Profile/Profile.component';
 
 const App = () => {
   return (
@@ -24,8 +25,9 @@ const App = () => {
           <Route path='en/article/:productId' element={<ProductDetails />} />
 
           {/* protected routes */}
-          <Route element={<ProtectRoute />}>
-            <Route path='account/en' element={<Account />} />
+          <Route path='account/en' element={<ProtectRoute />}>
+            <Route index element={<Account />} />
+            <Route path='profile' element={<Profile />} />
           </Route>
 
           <Route path='*' element={<PageNotFound />} />
