@@ -1,0 +1,21 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.user-profile {
+  .quick-nav-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include md {
+      flex-wrap: nowrap;
+    }
+
+    .quick-nav-card {
+      flex: 1 1 33.3%;
+      height: 6rem;
+      border-radius: 3px;
+      border: 1px solid $muted-400;
+    }
+  }
+}
