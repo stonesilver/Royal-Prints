@@ -1,0 +1,123 @@
+@import '../../scss/media-query-mixins';
+@import '../../scss/sass-variables';
+
+.account-layout {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 71.25rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+
+  &-sidebar {
+    display: none;
+    flex: 1 1 25%;
+
+    @include md {
+      display: block;
+    }
+
+    .profile-detail {
+      text-align: center;
+      padding-top: 1.5rem;
+      border: 1px solid $muted-300;
+
+      .dummy-avatar {
+        position: relative;
+        width: 9.375rem;
+        height: 9.375rem;
+        border: 1px solid $muted-300;
+        border-radius: 50%;
+        box-shadow: 0 0 2px $secondaryColor;
+        margin: 0 auto;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 3px;
+          right: 3px;
+          bottom: 3px;
+          left: 3px;
+          border-radius: 50%;
+          border: 1px dashed $muted-300;
+        }
+      }
+
+      .username {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 2.5rem;
+      }
+
+      .my-profile-btn {
+        width: fit-content;
+        background-color: $primaryBlack;
+        color: $primaryWhite;
+        border-radius: 1rem;
+        font-weight: 500;
+        padding: 0.3rem 0.75rem;
+        margin: 1rem auto;
+
+        &:hover {
+          background-color: $secondaryColor;
+        }
+      }
+    }
+
+    .horizontal-line {
+      border: 1px solid $muted-300;
+      margin: 1.5rem 0;
+    }
+
+    .more-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  &-content {
+    flex: 1 1 75%;
+    height: fit-content;
+    border-radius: 5px;
+    border: 1px solid $muted-300;
+    margin: 0 1rem;
+
+    @include md {
+      margin: 0;
+    }
+  }
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: $muted-300;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: $muted-300;
+  }
+
+  &:hover .sidebar-item-icon {
+    transform: perspective(5rem) rotateY(45deg);
+  }
+
+  &-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke: $primaryBlack;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &-text {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+.full-border {
+  border: 1px solid $muted-300;
+}
