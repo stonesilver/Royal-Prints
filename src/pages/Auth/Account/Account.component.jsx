@@ -45,6 +45,8 @@ const moreItem = [
   },
 ];
 
+const contentRow = ['Waiting acceptation', 'In Preparation', 'In Transit'];
+
 const Account = () => {
   return (
     <div className='user-account'>
@@ -72,7 +74,15 @@ const Account = () => {
           ))}
         </div>
       </div>
-      <div className='user-account-content'></div>
+      <div className='user-account-content'>
+        <p className='user-account-content-header'>Current purchases</p>
+        {contentRow.map((item) => (
+          <div key={item} className='user-account-content-items-row'>
+            <p className='content-link'>{item}</p>
+            <p className='content-link-count'>0</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

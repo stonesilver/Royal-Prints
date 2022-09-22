@@ -9,7 +9,12 @@
   padding: 1rem 0;
 
   &-sidebar {
+    display: none;
     flex: 1 1 25%;
+
+    @include md {
+      display: block;
+    }
 
     .profile-detail {
       text-align: center;
@@ -73,6 +78,28 @@
   &-content {
     flex: 1 1 75%;
     border: 1px solid $muted-300;
+    height: fit-content;
+    border-radius: 5px;
+    margin: 0 1rem;
+
+    @include md {
+      margin: 0;
+    }
+
+    &-header,
+    &-items-row {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid $muted-300;
+    }
+
+    &-header {
+      background-color: $muted-300;
+    }
+
+    &-items-row {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 
