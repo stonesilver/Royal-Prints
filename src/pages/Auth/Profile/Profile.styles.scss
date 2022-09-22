@@ -12,10 +12,31 @@
     }
 
     .quick-nav-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.3rem;
       flex: 1 1 33.3%;
       height: 6rem;
       border-radius: 3px;
-      border: 1px solid $muted-400;
+      background: $muted-400;
+      border: 1px solid $muted-300;
+
+      &-icon {
+        width: 1.7rem;
+        height: 1.7rem;
+        stroke: $primaryBlack;
+      }
+
+      &-text {
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
     }
   }
 }

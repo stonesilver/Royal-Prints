@@ -4,10 +4,24 @@ import { ReactComponent as LocationIcon } from '../../../assets/svg/location.svg
 import './Profile.styles.scss';
 import QuickNavCard from './QuickNavCard';
 
+const className = 'quick-nav-card-icon';
+
 const quickNav = [
-  { name: 'Profile', icon: <UserIcon />, link: '#profile' },
-  { name: 'Credentials', icon: <KeyIcon />, link: '#credentials' },
-  { name: 'Address', icon: <LocationIcon />, link: '#address' },
+  {
+    name: 'Profile',
+    icon: <UserIcon className={className} />,
+    link: '#profile',
+  },
+  {
+    name: 'Credentials',
+    icon: <KeyIcon className={className} />,
+    link: '#credentials',
+  },
+  {
+    name: 'Address',
+    icon: <LocationIcon className={className} />,
+    link: '#address',
+  },
 ];
 
 const Profile = () => {
