@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Radio from '../../../../components/base/Radio/Radio.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
 
@@ -13,6 +14,11 @@ const ProfileDetails = () => {
     timeZone: '',
   });
 
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setFormData((prevS) => ({ ...prevS, [name]: value }));
+  };
+
   const handleSubmit = () => {
     alert(JSON.stringify(formData));
   };
@@ -23,17 +29,38 @@ const ProfileDetails = () => {
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Account Type</p>
-            <label htmlFor='account-type'>Personal</label>
-            <input type='radio' name='account-type' />
-            <label htmlFor='account-type'>Professional</label>
-            <input type='radio' name='account-type' />
+            <div className='profile-details-first-row-columns-row'>
+              <Radio
+                name='accountType'
+                checked={formData.accountType === 'Personal'}
+                onChange={handleChange}
+                label='Personal'
+              />
+              <Radio
+                name='accountType'
+                checked={formData.accountType === 'Professional'}
+                onChange={handleChange}
+                label='Professional'
+              />
+            </div>
           </div>
+
           <div className='profile-details-first-row-columns'>
             <p className='title'>Gender</p>
-            <label htmlFor='gender'>Male</label>
-            <input type='radio' name='gender' />
-            <label htmlFor='gender'>Female</label>
-            <input type='radio' name='gender' />
+            <div className='profile-details-first-row-columns-row'>
+              <Radio
+                name='accountType'
+                checked={formData.accountType === 'Personal'}
+                onChange={handleChange}
+                label='Personal'
+              />
+              <Radio
+                name='accountType'
+                checked={formData.accountType === 'Professional'}
+                onChange={handleChange}
+                label='Professional'
+              />
+            </div>
           </div>
         </div>
       </form>
