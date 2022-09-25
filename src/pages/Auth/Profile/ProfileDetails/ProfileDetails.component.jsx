@@ -49,16 +49,16 @@ const ProfileDetails = () => {
             <p className='title'>Gender</p>
             <div className='profile-details-first-row-columns-row'>
               <Radio
-                name='accountType'
-                checked={formData.accountType === 'Personal'}
+                name='gender'
+                checked={formData.gender === 'Male'}
                 onChange={handleChange}
-                label='Personal'
+                label='Male'
               />
               <Radio
-                name='accountType'
-                checked={formData.accountType === 'Professional'}
+                name='gender'
+                checked={formData.gender === 'Female'}
                 onChange={handleChange}
-                label='Professional'
+                label='Female'
               />
             </div>
           </div>
