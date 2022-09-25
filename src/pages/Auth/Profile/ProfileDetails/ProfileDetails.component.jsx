@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Radio from '../../../../components/base/Radio/Radio.component';
-// import Input from '@components/base/Input/Input.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
 
