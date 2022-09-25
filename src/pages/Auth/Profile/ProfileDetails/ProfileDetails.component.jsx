@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import Radio from '../../../../components/base/Radio/Radio.component';
+// import Input from '@components/base/Input/Input.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
 
 const ProfileDetails = () => {
   const [formData, setFormData] = useState({
-    accountType: false,
-    gender: 'male',
+    accountType: 'Personal',
+    gender: 'Male',
     firstName: '',
     lastName: '',
     phone: '',
@@ -26,6 +27,7 @@ const ProfileDetails = () => {
   return (
     <UserAccountItemCard title='Profile'>
       <form onSubmit={handleSubmit} className='profile-details'>
+        {/* account type and gender */}
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Account Type</p>
@@ -63,6 +65,9 @@ const ProfileDetails = () => {
             </div>
           </div>
         </div>
+
+        {/* First and last name */}
+        <div className='profile-details-second-row'></div>
       </form>
     </UserAccountItemCard>
   );
