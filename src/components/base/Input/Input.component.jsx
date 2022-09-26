@@ -13,7 +13,7 @@ const Input = ({
   return (
     <>
       <label htmlFor={type} className='input-label'>
-        {label && label}
+        <p className='input-label-label'>{label && label}</p>
         <input
           type={type}
           name={name}

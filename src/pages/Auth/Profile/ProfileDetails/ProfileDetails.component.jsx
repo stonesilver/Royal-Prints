@@ -3,6 +3,7 @@ import Radio from '../../../../components/base/Radio/Radio.component';
 import Input from '../../../../components/base/Input/Input.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
+import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.component';
 
 const ProfileDetails = () => {
   const [formData, setFormData] = useState({
@@ -79,6 +80,23 @@ const ProfileDetails = () => {
           </div>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Last Name</p>
+            <Input
+              type='text'
+              name='lastName'
+              value={formData.lastName}
+              handleChange={handleChange}
+            />
+          </div>
+        </div>
+
+        {/* Phone number and birth date */}
+        <div className='profile-details-first-row'>
+          <div className='profile-details-first-row-columns'>
+            <p className='title'>Phone Number</p>
+            <PhoneNumber />
+          </div>
+          <div className='profile-details-first-row-columns'>
+            <p className='title'>Birth Date</p>
             <Input
               type='text'
               name='lastName'

@@ -1,0 +1,8 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.custom-phone-number {
+  border: 1px solid $muted-300;
+  border-radius: 3px;
+  height: 3rem;
+}
