@@ -2,7 +2,44 @@
 @import '../../../scss/sass-variables';
 
 .custom-phone-number {
+  display: flex;
+  position: relative;
+  height: 3rem;
   border: 1px solid $muted-300;
   border-radius: 3px;
-  height: 3rem;
+
+  .country-code-select {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $muted-300;
+    }
+
+    &:hover ~ .countries-dropdown {
+      transform: scale(1);
+    }
+
+    .country-flag-svg {
+      width: 1.8rem;
+      height: 1.5rem;
+    }
+  }
+
+  .countries-dropdown {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    transform: scale(0);
+    background-color: $primaryWhite;
+    border: 1px solid $muted-300;
+    border-radius: 3px;
+    transform-origin: top;
+    transition: 0.3s ease-in-out;
+  }
 }
