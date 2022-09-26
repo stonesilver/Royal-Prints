@@ -2,10 +2,14 @@
 @import '../../../../scss/sass-variables';
 
 .profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   padding: 1.5rem;
 
   &-first-row {
     display: flex;
+    gap: 1.5rem;
 
     &-columns {
       flex: 1;
@@ -13,7 +17,7 @@
       .title {
         position: relative;
         width: fit-content;
-        font-size: $base;
+        font-size: $md;
         font-weight: 600;
         margin-bottom: 0.5rem;
 

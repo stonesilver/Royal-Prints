@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Radio from '../../../../components/base/Radio/Radio.component';
+import Input from '../../../../components/base/Input/Input.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
 
@@ -66,7 +67,26 @@ const ProfileDetails = () => {
         </div>
 
         {/* First and last name */}
-        <div className='profile-details-second-row'></div>
+        <div className='profile-details-first-row'>
+          <div className='profile-details-first-row-columns'>
+            <p className='title'>First Name</p>
+            <Input
+              type='text'
+              name='firstName'
+              value={formData.firstName}
+              handleChange={handleChange}
+            />
+          </div>
+          <div className='profile-details-first-row-columns'>
+            <p className='title'>Last Name</p>
+            <Input
+              type='text'
+              name='lastName'
+              value={formData.lastName}
+              handleChange={handleChange}
+            />
+          </div>
+        </div>
       </form>
     </UserAccountItemCard>
   );
