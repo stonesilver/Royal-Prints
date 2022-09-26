@@ -27,7 +27,14 @@ const PhoneNumber = ({ value, setState, handleChange, Iso2Code }) => {
         />
       </div>
 
-      <input type='text' name='phone' value={value} onChange={handleChange} />
+      <input
+        type='tel'
+        name='phone'
+        value={value}
+        onChange={(event) => {
+          !event.target.value.match(/[a-z]/gi) && handleChange(event);
+        }}
+      />
 
       {/* drop-down menu */}
       <div
