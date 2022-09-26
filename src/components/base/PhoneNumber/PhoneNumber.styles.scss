@@ -38,6 +38,7 @@
     border-radius: 3px;
     transform-origin: top;
     transition: 0.2s ease-in-out;
+    overflow-y: auto;
 
     &:focus {
       border: 0;
@@ -60,6 +61,7 @@
 
         .country-code {
           color: $muted-200;
+          margin-right: 8px;
         }
       }
 

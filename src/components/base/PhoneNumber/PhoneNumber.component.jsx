@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react';
-import { findFlagUrlByIso3Code } from 'country-flags-svg';
+import phoneCode from '../../../assets/countryDailingCode.json';
+import { flagSvg } from '../../../utils/flagSvg';
 import './PhoneNumber.styles.scss';
 
-const PhoneNumber = () => {
+const PhoneNumber = ({ value, setState, handleChange, Iso2Code }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -11,15 +12,22 @@ const PhoneNumber = () => {
     ref.current.focus();
   };
 
-  const flag = findFlagUrlByIso3Code('NGA');
+  const setCountryCode = (phoneCode, Iso2Code) => {
+    setState((prevS) => ({ ...prevS, phone: `+${phoneCode}`, Iso2Code }));
+    setOpen(false);
+  };
 
   return (
     <div className='custom-phone-number'>
       <div className='country-code-select' onClick={toggleDropDown}>
-        <img src={flag} alt='NGA' className='country-flag-svg' />
+        <img
+          src={flagSvg(Iso2Code)}
+          alt={Iso2Code}
+          className='country-flag-svg'
+        />
       </div>
 
-      <input type='text' value='+234' onChange={() => {}} />
+      <input type='text' name='phone' value={value} onChange={handleChange} />
 
       {/* drop-down menu */}
       <div
@@ -28,11 +36,19 @@ const PhoneNumber = () => {
         onBlur={() => setOpen(false)}
         tabIndex={0}
       >
-        {[0].map((item) => (
-          <div key={item} className='countries-dropdown-option'>
-            <img src={flag} alt='NGA' className='country-flag-svg' />
+        {phoneCode.map(({ country_code, country_en, phone_code }) => (
+          <div
+            key={country_en}
+            className='countries-dropdown-option'
+            onClick={() => setCountryCode(phone_code, country_code)}
+          >
+            <img
+              src={flagSvg(country_code)}
+              alt={country_en}
+              className='country-flag-svg'
+            />
             <p className='country-name'>
-              Nigeria <span className='country-code'>+234</span>
+              {country_en} <span className='country-code'>+{phone_code}</span>
             </p>
           </div>
         ))}

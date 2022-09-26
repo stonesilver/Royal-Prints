@@ -11,9 +11,10 @@ const ProfileDetails = () => {
     gender: 'Male',
     firstName: '',
     lastName: '',
-    phone: '',
+    phone: '+234',
     birthday: '',
     timeZone: '',
+    Iso2Code: 'NG',
   });
 
   const handleChange = (event) => {
@@ -93,7 +94,12 @@ const ProfileDetails = () => {
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Phone Number</p>
-            <PhoneNumber />
+            <PhoneNumber
+              value={formData.phone}
+              setState={setFormData}
+              handleChange={handleChange}
+              Iso2Code={formData.Iso2Code}
+            />
           </div>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Birth Date</p>
