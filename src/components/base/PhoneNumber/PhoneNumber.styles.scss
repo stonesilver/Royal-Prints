@@ -5,6 +5,7 @@
   display: flex;
   position: relative;
   height: 3rem;
+  font-size: 0.85rem;
   border: 1px solid $muted-300;
   border-radius: 3px;
 
@@ -36,7 +37,12 @@
     border: 1px solid $muted-300;
     border-radius: 3px;
     transform-origin: top;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
+
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
 
     &-option {
       display: flex;
@@ -46,10 +52,15 @@
 
       &:hover {
         background-color: $muted-300;
+        cursor: pointer;
       }
 
       .country-name {
         flex: 1;
+
+        .country-code {
+          color: $muted-200;
+        }
       }
 
       .country-flag-svg {
@@ -58,8 +69,6 @@
       }
     }
   }
-
-  
 
   .show-dropdown {
     transform: scale(1);
