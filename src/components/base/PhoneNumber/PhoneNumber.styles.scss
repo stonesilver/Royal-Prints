@@ -19,13 +19,9 @@
       background-color: $muted-300;
     }
 
-    &:hover ~ .countries-dropdown {
-      transform: scale(1);
-    }
-
     .country-flag-svg {
-      width: 1.8rem;
-      height: 1.5rem;
+      width: 1.7rem;
+      height: 1.4rem;
     }
   }
 
@@ -41,5 +37,31 @@
     border-radius: 3px;
     transform-origin: top;
     transition: 0.3s ease-in-out;
+
+    &-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.5rem;
+
+      &:hover {
+        background-color: $muted-300;
+      }
+
+      .country-name {
+        flex: 1;
+      }
+
+      .country-flag-svg {
+        width: 1.7rem;
+        height: 1.4rem;
+      }
+    }
+  }
+
+  
+
+  .show-dropdown {
+    transform: scale(1);
   }
 }
