@@ -22,7 +22,8 @@
 
     .country-flag-svg {
       width: 1.7rem;
-      height: 1.4rem;
+      height: 1.05rem;
+      object-fit: cover;
     }
   }
 
@@ -34,14 +35,13 @@
     height: 10rem;
     transform: scale(0);
     background-color: $primaryWhite;
-    border: 1px solid $muted-300;
     border-radius: 3px;
     transform-origin: top;
     transition: 0.2s ease-in-out;
     overflow-y: auto;
 
     &:focus {
-      border: 0;
+      border: 1px solid $muted-300;
       outline: 0;
     }
 
@@ -67,7 +67,8 @@
 
       .country-flag-svg {
         width: 1.7rem;
-        height: 1.4rem;
+        height: 1.05rem;
+        object-fit: cover;
       }
     }
   }

@@ -17,6 +17,8 @@ const PhoneNumber = ({ value, setState, handleChange, Iso2Code }) => {
     setOpen(false);
   };
 
+  const sortedPhoneCode = phoneCode.sort((a, b) => a.country_en - b.country_en);
+
   return (
     <div className='custom-phone-number'>
       <div className='country-code-select' onClick={toggleDropDown}>
@@ -43,7 +45,7 @@ const PhoneNumber = ({ value, setState, handleChange, Iso2Code }) => {
         onBlur={() => setOpen(false)}
         tabIndex={0}
       >
-        {phoneCode.map(({ country_code, country_en, phone_code }) => (
+        {sortedPhoneCode.map(({ country_code, country_en, phone_code }) => (
           <div
             key={country_en}
             className='countries-dropdown-option'
