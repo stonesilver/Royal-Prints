@@ -40,7 +40,8 @@ const ProfileDetails = () => {
     setFormData((prevS) => ({ ...prevS, [label]: value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     alert(JSON.stringify(formData));
   };
 
@@ -156,6 +157,11 @@ const ProfileDetails = () => {
             />
           </div>
         </div>
+
+        {/* Submit button */}
+        <button type='submit' className='profile-submit-btn'>
+          Update Profile
+        </button>
       </form>
     </UserAccountItemCard>
   );
