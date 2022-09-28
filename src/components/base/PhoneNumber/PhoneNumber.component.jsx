@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import phoneCode from '../../../assets/countryDailingCode.json';
+import { ReactComponent as CaretDown } from '../../../assets/svg/caret-down.svg';
 import { flagSvg } from '../../../utils/flagSvg';
 import './PhoneNumber.styles.scss';
 
@@ -52,6 +53,7 @@ const PhoneNumber = ({ value, setState, handleChange, Iso2Code }) => {
           alt={Iso2Code}
           className='country-flag-svg'
         />
+        <CaretDown className='country-code-select-caret' />
       </div>
 
       <input
