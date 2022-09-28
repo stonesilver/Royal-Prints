@@ -4,6 +4,7 @@ import Input from '../../../../components/base/Input/Input.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
 import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.component';
+import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
 
 const ProfileDetails = () => {
   const [formData, setFormData] = useState({
@@ -103,12 +104,7 @@ const ProfileDetails = () => {
           </div>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Birth Date</p>
-            <Input
-              type='text'
-              name='lastName'
-              value={formData.lastName}
-              handleChange={handleChange}
-            />
+            <CustomSelect label='Month' />
           </div>
         </div>
       </form>

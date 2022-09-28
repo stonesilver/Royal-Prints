@@ -1,0 +1,42 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.custom-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  width: 100%;
+  height: 3rem;
+  border-radius: 3px;
+  border: 1px solid $muted-300;
+  cursor: pointer;
+
+  &-selected {
+    font-size: 0.875rem;
+    color: $muted-200;
+  }
+
+  &-dropdown {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    min-width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: $primaryWhite;
+    max-width: fit-content;
+    border: 1px solid $muted-300;
+
+    &-option {
+      font-size: 0.875rem;
+      padding: 0.25rem 0.5rem;
+
+      &:hover {
+        background-color: $muted-300;
+        cursor: pointer;
+      }
+    }
+  }
+}
