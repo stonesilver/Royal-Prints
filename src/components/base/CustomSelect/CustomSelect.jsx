@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ReactComponent as CaretDown } from '../../../assets/svg/caret-down.svg';
 import './CustomSelect.styles.scss';
 
 const CustomSelect = ({ options, value, label, setState }) => {
@@ -20,6 +21,7 @@ const CustomSelect = ({ options, value, label, setState }) => {
       <p aria-label='select' className='custom-select-selected'>
         {value || label}
       </p>
+      <CaretDown className='custom-select-caret' />
       {open && (
         <ul className='custom-select-dropdown'>
           {options.map((option) => (

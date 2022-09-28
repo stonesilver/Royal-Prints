@@ -4,6 +4,7 @@
 .custom-select {
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
   width: 100%;
@@ -15,6 +16,13 @@
   &-selected {
     font-size: 0.875rem;
     color: $muted-200;
+  }
+
+  &-caret {
+    width: 1rem;
+    height: 1rem;
+    fill: $muted-200;
+    stroke: $muted-200;
   }
 
   &-dropdown {
