@@ -5,6 +5,7 @@ import UserAccountItemCard from '../../../../components/UserAccountItemCard/User
 import './ProfileDetails.styles.scss';
 import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.component';
 import { months, year, days } from '../../../../utils/customSelectData';
+import timeZones from '../../../../assets/timeZones.json';
 import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
 
 const ProfileDetails = () => {
@@ -19,7 +20,7 @@ const ProfileDetails = () => {
       Month: '',
       Year: '',
     },
-    timeZone: '',
+    timeZone: '(UTC-12:00) International Date Line West',
     Iso2Code: 'NG',
   });
 
@@ -33,6 +34,10 @@ const ProfileDetails = () => {
       ...prevS,
       birthday: { ...prevS.birthday, [label]: value },
     }));
+  };
+
+  const handleTImeZoneChange = (label, value) => {
+    setFormData((prevS) => ({ ...prevS, [label]: value }));
   };
 
   const handleSubmit = () => {
@@ -143,6 +148,12 @@ const ProfileDetails = () => {
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Time Zone</p>
+            <CustomSelect
+              label='timeZone'
+              value={formData.timeZone}
+              handleChange={handleTImeZoneChange}
+              options={timeZones}
+            />
           </div>
         </div>
       </form>
