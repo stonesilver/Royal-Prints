@@ -35,6 +35,10 @@
     }
   }
 
+  &-input {
+    flex: 1;
+  }
+
   .countries-dropdown {
     position: absolute;
     top: 3rem;

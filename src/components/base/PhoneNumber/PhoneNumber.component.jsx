@@ -63,6 +63,7 @@ const PhoneNumber = ({ value, setState, handleChange, Iso2Code }) => {
         onChange={(event) => {
           !event.target.value.match(/[a-z]/gi) && handleChange(event);
         }}
+        className='custom-phone-number-input'
       />
 
       {/* drop-down menu */}
