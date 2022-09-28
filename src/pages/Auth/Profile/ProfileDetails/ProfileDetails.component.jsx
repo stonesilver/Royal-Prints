@@ -4,6 +4,7 @@ import Input from '../../../../components/base/Input/Input.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
 import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.component';
+import { months } from '../../../../utils/customSelectData';
 import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
 
 const ProfileDetails = () => {
@@ -13,7 +14,11 @@ const ProfileDetails = () => {
     firstName: '',
     lastName: '',
     phone: '+234',
-    birthday: '',
+    birthday: {
+      Day: '',
+      Month: '',
+      Year: '',
+    },
     timeZone: '',
     Iso2Code: 'NG',
   });
@@ -104,7 +109,12 @@ const ProfileDetails = () => {
           </div>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Birth Date</p>
-            <CustomSelect label='Month' />
+            <CustomSelect
+              label='Month'
+              value={formData.birthday.Month}
+              setState={setFormData}
+              options={months}
+            />
           </div>
         </div>
       </form>
