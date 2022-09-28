@@ -4,7 +4,7 @@ import Input from '../../../../components/base/Input/Input.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './ProfileDetails.styles.scss';
 import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.component';
-import { months } from '../../../../utils/customSelectData';
+import { months, year, days } from '../../../../utils/customSelectData';
 import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
 
 const ProfileDetails = () => {
@@ -109,12 +109,26 @@ const ProfileDetails = () => {
           </div>
           <div className='profile-details-first-row-columns'>
             <p className='title'>Birth Date</p>
-            <CustomSelect
-              label='Month'
-              value={formData.birthday.Month}
-              setState={setFormData}
-              options={months}
-            />
+            <div className='profile-details-first-row-columns-row'>
+              <CustomSelect
+                label='Year'
+                value={formData.birthday.Year}
+                setState={setFormData}
+                options={year()}
+              />
+              <CustomSelect
+                label='Month'
+                value={formData.birthday.Month}
+                setState={setFormData}
+                options={months}
+              />
+              <CustomSelect
+                label='Day'
+                value={formData.birthday.Day}
+                setState={setFormData}
+                options={days()}
+              />
+            </div>
           </div>
         </div>
       </form>
