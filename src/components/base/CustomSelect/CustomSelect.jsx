@@ -2,18 +2,11 @@ import { useState } from 'react';
 import { ReactComponent as CaretDown } from '../../../assets/svg/caret-down.svg';
 import './CustomSelect.styles.scss';
 
-const CustomSelect = ({ options, value, label, setState }) => {
+const CustomSelect = ({ options, value, label, handleChange }) => {
   const [open, setOpen] = useState(false);
 
   const toggleDropdown = () => {
     setOpen((prevS) => !prevS);
-  };
-
-  const handleChange = (value) => {
-    setState((prevS) => ({
-      ...prevS,
-      birthday: { ...prevS.birthday, [label]: value },
-    }));
   };
 
   return (
@@ -28,7 +21,7 @@ const CustomSelect = ({ options, value, label, setState }) => {
             <li
               key={option}
               className='custom-select-dropdown-option'
-              onClick={() => handleChange(option)}
+              onClick={() => handleChange(label, option)}
             >
               {option}
             </li>

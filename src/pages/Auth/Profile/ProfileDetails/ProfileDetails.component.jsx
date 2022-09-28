@@ -28,6 +28,13 @@ const ProfileDetails = () => {
     setFormData((prevS) => ({ ...prevS, [name]: value }));
   };
 
+  const handleBirthdayChange = (label, value) => {
+    setFormData((prevS) => ({
+      ...prevS,
+      birthday: { ...prevS.birthday, [label]: value },
+    }));
+  };
+
   const handleSubmit = () => {
     alert(JSON.stringify(formData));
   };
@@ -113,22 +120,29 @@ const ProfileDetails = () => {
               <CustomSelect
                 label='Year'
                 value={formData.birthday.Year}
-                setState={setFormData}
+                handleChange={handleBirthdayChange}
                 options={year()}
               />
               <CustomSelect
                 label='Month'
                 value={formData.birthday.Month}
-                setState={setFormData}
+                handleChange={handleBirthdayChange}
                 options={months}
               />
               <CustomSelect
                 label='Day'
                 value={formData.birthday.Day}
-                setState={setFormData}
+                handleChange={handleBirthdayChange}
                 options={days()}
               />
             </div>
+          </div>
+        </div>
+
+        {/* Time zone */}
+        <div className='profile-details-first-row'>
+          <div className='profile-details-first-row-columns'>
+            <p className='title'>Time Zone</p>
           </div>
         </div>
       </form>
