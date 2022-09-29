@@ -1,0 +1,45 @@
+@import '../../../../scss/media-query-mixins';
+@import '../../../../scss/sass-variables';
+
+.edit-account {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  &-row {
+    &-title {
+      position: relative;
+      width: fit-content;
+      font-size: $md;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    &-important {
+      &::after {
+        position: absolute;
+        content: '*';
+        top: 0;
+        right: -0.5rem;
+        color: #ff0000;
+      }
+    }
+
+    &-description {
+      font-size: 0.75rem;
+      color: $muted-500;
+      margin-top: 5px;
+    }
+  }
+
+  &-submit-btn {
+    width: fit-content;
+    align-self: flex-end;
+    background-color: $secondaryColor;
+    color: $primaryWhite;
+    font-size: 0.875rem;
+    border-radius: 3px;
+    padding: 0.75rem 1.5rem;
+  }
+}

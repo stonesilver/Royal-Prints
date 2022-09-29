@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
+import Input from '../../../../components/base/Input/Input.component';
 import './EditAccount.styles.scss';
 
 const EditAccount = () => {
@@ -7,7 +8,7 @@ const EditAccount = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    oldPassword: '',
+    currentPassword: '',
   });
 
   const handleChange = (event) => {
@@ -21,10 +22,66 @@ const EditAccount = () => {
 
     alert(JSON.stringify(formData));
   };
+
   return (
     <UserAccountItemCard title='Edit Account'>
       <form onSubmit={handleSumit} className='edit-account'>
-        
+        {/* Email */}
+        <div className='edit-account-row'>
+          <p className='edit-account-row-title edit-account-row-important'>
+            Email
+          </p>
+          <Input
+            type='text'
+            name='email'
+            value={formData.email}
+            handleChange={handleChange}
+          />
+        </div>
+
+        {/* Password */}
+        <div className='edit-account-row'>
+          <p className='edit-account-row-title'>Password</p>
+          <Input
+            type='password'
+            name='password'
+            value={formData.password}
+            handleChange={handleChange}
+          />
+          <p className='edit-account-row-description'>
+            Leave blank if you don't want to change it.
+          </p>
+        </div>
+
+        {/* Password confirmation */}
+        <div className='edit-account-row'>
+          <p className='edit-account-row-title'>Password Confirmation</p>
+          <Input
+            type='password'
+            name='confirmPassword'
+            value={formData.confirmPassword}
+            handleChange={handleChange}
+          />
+        </div>
+
+        {/* Current password */}
+        <div className='edit-account-row'>
+          <p className='edit-account-row-title'>Current Password</p>
+          <Input
+            type='password'
+            name='currentPasword'
+            value={formData.currentPasword}
+            handleChange={handleChange}
+          />
+          <p className='edit-account-row-description'>
+            We need your current password to confirm your changes.
+          </p>
+        </div>
+
+        {/* Submit button */}
+        <button type='submit' className='edit-account-submit-btn'>
+          Update Account
+        </button>
       </form>
     </UserAccountItemCard>
   );
