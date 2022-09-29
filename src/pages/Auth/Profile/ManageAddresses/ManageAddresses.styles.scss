@@ -1,0 +1,37 @@
+@import '../../../../scss/media-query-mixins';
+@import '../../../../scss/sass-variables';
+
+.manage-addresess {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border: 1px solid $muted-300;
+
+  @include sm {
+    width: 400px;
+    margin: 1.5rem;
+  }
+
+  &-content {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-plus-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: $secondaryColor;
+      stroke: $secondaryColor;
+      stroke-width: 3px;
+    }
+
+    &-text {
+      color: $secondaryColor;
+      font-size: 0.875rem;
+    }
+  }
+}

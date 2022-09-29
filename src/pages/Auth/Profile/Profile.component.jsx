@@ -3,6 +3,7 @@ import UploadAvatar from './UploadAvatar/UploadAvatar.component';
 import './Profile.styles.scss';
 import ProfileDetails from './ProfileDetails/ProfileDetails.component';
 import EditAccount from './EditAccount/EditAccount.component';
+import ManageAddresses from './ManageAddresses/ManageAddresses.component';
 
 const Profile = () => {
   return (
@@ -11,6 +12,7 @@ const Profile = () => {
       <UploadAvatar />
       <ProfileDetails />
       <EditAccount />
+      <ManageAddresses />
     </div>
   );
 };
