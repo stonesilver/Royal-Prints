@@ -11,6 +11,7 @@ import './App.scss';
 import ProtectRoute from './Auth/ProtectRoute';
 import Account from './pages/Auth/Account/Account.component';
 import Profile from './pages/Auth/Profile/Profile.component';
+import Addresses from './pages/Auth/Addresses/Addresses.component';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='account/en' element={<ProtectRoute />}>
             <Route index element={<Account />} />
             <Route path='profile' element={<Profile />} />
+            <Route path='addresses/new' element={<Addresses />} />
           </Route>
 
           <Route path='*' element={<PageNotFound />} />

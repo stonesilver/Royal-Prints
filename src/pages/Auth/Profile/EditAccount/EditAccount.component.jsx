@@ -66,7 +66,7 @@ const EditAccount = () => {
 
         {/* Current password */}
         <div className='edit-account-row'>
-          <p className='edit-account-row-title'>Current Password</p>
+          <p className='edit-account-row-title edit-account-row-important'>Current Password</p>
           <Input
             type='password'
             name='currentPasword'

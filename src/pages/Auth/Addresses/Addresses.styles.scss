@@ -1,0 +1,31 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.user-addresses {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+
+  @include sm {
+    padding: 1.5rem;
+  }
+
+  &-title {
+    position: relative;
+    width: fit-content;
+    font-size: $md;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &-important {
+    &::after {
+      position: absolute;
+      content: '*';
+      top: 0;
+      right: -0.5rem;
+      color: #ff0000;
+    }
+  }
+}
