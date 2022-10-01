@@ -3,6 +3,7 @@ import { ReactComponent as WithdrawIcon } from '../../../assets/svg/arrow-left-r
 import { ReactComponent as CashNoteIcon } from '../../../assets/svg/cash-banknote.svg';
 import { Link } from 'react-router-dom';
 import './Wallet.styles.scss';
+import UserAccountItemCard from '../../../components/UserAccountItemCard/UserAccountItemCard.component';
 
 const className = 'user-wallet-link-cards-card-column-icon';
 
@@ -38,6 +39,17 @@ const Wallet = () => {
           </Link>
         ))}
       </div>
+
+      {/* Transaction details */}
+      <UserAccountItemCard title=''>
+        <div className='user-wallet-transaction-details'>
+            <p className="user-wallet-transaction-details-column-one">0</p>
+            <p className="user-wallet-transaction-details-column-two">Transactions</p>
+            <p className="user-wallet-transaction-details-column-three">Date</p>
+            <p className="user-wallet-transaction-details-column-four">Amount</p>
+            <p className="user-wallet-transaction-details-column-five">Balance</p>
+        </div>
+      </UserAccountItemCard>
     </div>
   );
 };

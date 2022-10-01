@@ -60,4 +60,26 @@
       }
     }
   }
+
+  &-transaction-details {
+    display: flex;
+    justify-content: space-between;
+    padding: $base 0.5rem;
+    font-size: $base;
+
+    &-column-one {
+      width: max-content;
+      padding: 0 0.25rem;
+    }
+
+    &-column-two {
+      flex: 40%;
+    }
+
+    &-column-three,
+    &-column-four,
+    &-column-five {
+      flex: 1;
+    }
+  }
 }
