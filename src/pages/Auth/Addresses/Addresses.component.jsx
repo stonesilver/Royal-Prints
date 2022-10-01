@@ -4,6 +4,7 @@ import FormItem from '../../../components/FormItem';
 import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
 import CountriesJson from '../../../assets/countries.json';
 import './Addresses.styles.scss';
+import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
 
 const Addresses = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +16,8 @@ const Addresses = () => {
     zip: '',
     city: '',
     country: '',
-    deliveryPhoneNumber: '',
+    phone: '+234',
+    Iso2Code: 'NG',
   });
 
   const handleChange = (event) => {
@@ -120,6 +122,19 @@ const Addresses = () => {
             />
           </div>
         </FormItem>
+        <div className='user-addresses-row'>
+          <div className='user-addresses-row-column'>
+            <p className='user-addresses-row-column-title user-addresses-row-column-important'>
+              Phone Number
+            </p>
+            <PhoneNumber
+              value={formData.phone}
+              setState={setFormData}
+              handleChange={handleChange}
+              Iso2Code={formData.Iso2Code}
+            />
+          </div>
+        </div>
       </form>
     </UserAccountItemCard>
   );
