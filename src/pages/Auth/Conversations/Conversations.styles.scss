@@ -1,9 +1,19 @@
 @import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
 
 .user-conversations {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   padding: 1rem;
 
   @include sm {
     padding: 1.5rem;
   }
+}
+
+.message-type-btn {
+  display: flex;
+  gap: $xs;
+  margin-top: 1rem;
 }
