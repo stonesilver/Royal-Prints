@@ -2,6 +2,7 @@ import { useState } from 'react';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import Input from '../../../../components/base/Input/Input.component';
 import './EditAccount.styles.scss';
+import FormSubmitBtn from '../../../../components/FormSubmitBtn/FormSubmitBtn.component';
 
 const EditAccount = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +67,9 @@ const EditAccount = () => {
 
         {/* Current password */}
         <div className='edit-account-row'>
-          <p className='edit-account-row-title edit-account-row-important'>Current Password</p>
+          <p className='edit-account-row-title edit-account-row-important'>
+            Current Password
+          </p>
           <Input
             type='password'
             name='currentPasword'
@@ -79,9 +82,7 @@ const EditAccount = () => {
         </div>
 
         {/* Submit button */}
-        <button type='submit' className='edit-account-submit-btn'>
-          Update Account
-        </button>
+        <FormSubmitBtn label='Update Account' />
       </form>
     </UserAccountItemCard>
   );

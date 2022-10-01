@@ -5,6 +5,7 @@ import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
 import CountriesJson from '../../../assets/countries.json';
 import './Addresses.styles.scss';
 import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
+import FormSubmitBtn from '../../../components/FormSubmitBtn/FormSubmitBtn.component';
 
 const Addresses = () => {
   const [formData, setFormData] = useState({
@@ -135,6 +136,8 @@ const Addresses = () => {
             />
           </div>
         </div>
+        {/* Submit Button */}
+        <FormSubmitBtn label='Create Address' />
       </form>
     </UserAccountItemCard>
   );
