@@ -13,7 +13,12 @@
 
   &-row {
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
+
+    @include sm {
+      flex-direction: row;
+    }
 
     &-column {
       flex: 1;
