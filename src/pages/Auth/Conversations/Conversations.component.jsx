@@ -22,17 +22,22 @@ const Conversations = () => {
     <>
       <UserAccountItemcard title='Conversations'>
         <form onSubmit={handleSubmit} className='user-conversations'>
-          <FormItem
-            options={[
-              {
-                label: 'SUBJECT, CONTENT, USERNAME, ...',
-                type: 'text',
-                name: 'searchInput',
-                value: formData.searchInput,
-                handleChange,
-              },
-            ]}
-          />
+          <div className='user-conversations-search-messages'>
+            <FormItem
+              options={[
+                {
+                  label: 'SUBJECT, CONTENT, USERNAME, ...',
+                  type: 'text',
+                  name: 'searchInput',
+                  value: formData.searchInput,
+                  handleChange,
+                },
+              ]}
+            />
+            <button type='submit' className='user-conversations-search-messages-btn'>
+              Filter
+            </button>
+          </div>
           <Radio
             name='message'
             checked={formData.message === 'all'}
