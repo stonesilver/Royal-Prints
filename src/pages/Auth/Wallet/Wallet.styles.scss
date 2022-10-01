@@ -1,0 +1,63 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.user-wallet {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &-header-bal {
+    display: flex;
+    justify-content: space-between;
+    background-color: $muted-400;
+    box-shadow: 0 2px 3px $muted-300;
+    padding: 1rem;
+
+    &-balance-amount {
+      font-weight: 600;
+    }
+  }
+
+  &-link-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    &-card-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+      flex: 45%;
+      height: 6rem;
+      border: 1px solid $muted-300;
+
+      @include sm {
+        flex: 1;
+      }
+
+      &-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        stroke-width: 2px;
+      }
+
+      &-text {
+        font-weight: 600;
+      }
+
+      .History {
+        color: $error;
+      }
+
+      .Withdraw {
+        color: #7cc5f0;
+      }
+
+      .Deposit {
+        color: $verifyGreen;
+      }
+    }
+  }
+}

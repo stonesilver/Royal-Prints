@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import UserAccountItemcard from '../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import FormItem from '../../../components/FormItem';
-import './Conversations.styles.scss';
 import Radio from '../../../components/base/Radio/Radio.component';
 import Button from '../../../components/base/Button/Button.component';
+import './Conversations.styles.scss';
 
 const Conversations = () => {
   const [formData, setFormData] = useState({ searchInput: '', message: 'all' });
