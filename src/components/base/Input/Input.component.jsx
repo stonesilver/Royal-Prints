@@ -29,4 +29,8 @@ const Input = ({
   );
 };
 
+Input.defaultProps = {
+  type: 'text',
+};
+
 export default Input;
