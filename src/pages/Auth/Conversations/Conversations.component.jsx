@@ -13,10 +13,15 @@ const Conversations = () => {
     setFormData((prevS) => ({ ...prevS, [name]: value }));
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(JSON.stringify(formData));
+  };
+
   return (
     <>
       <UserAccountItemcard title='Conversations'>
-        <form className='user-conversations'>
+        <form onSubmit={handleSubmit} className='user-conversations'>
           <FormItem
             options={[
               {
@@ -32,7 +37,7 @@ const Conversations = () => {
             name='message'
             checked={formData.message === 'all'}
             onChange={handleChange}
-            label='ALL MESSAGES'
+            label='All Messages'
           />
         </form>
       </UserAccountItemcard>

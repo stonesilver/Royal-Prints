@@ -15,16 +15,16 @@
 .message-type-btn {
   display: flex;
   gap: $xs;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .display-messages {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5rem;
+  height: 8rem;
   border: 1px solid $muted-300;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 
   .no-message {
     font-size: $lg;
