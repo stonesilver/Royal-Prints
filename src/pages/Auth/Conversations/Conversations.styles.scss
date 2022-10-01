@@ -17,3 +17,17 @@
   gap: $xs;
   margin-top: 1rem;
 }
+
+.display-messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  border: 1px solid $muted-300;
+  margin-top: 1rem;
+
+  .no-message {
+    font-size: $lg;
+    font-weight: 600;
+  }
+}
