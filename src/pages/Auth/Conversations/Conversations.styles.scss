@@ -1,0 +1,9 @@
+@import '../../../scss/media-query-mixins';
+
+.user-conversations {
+  padding: 1rem;
+
+  @include sm {
+    padding: 1.5rem;
+  }
+}
