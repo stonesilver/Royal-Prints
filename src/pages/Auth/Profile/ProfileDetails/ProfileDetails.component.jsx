@@ -7,6 +7,7 @@ import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.com
 import { months, year, days } from '../../../../utils/customSelectData';
 import timeZones from '../../../../assets/timeZones.json';
 import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
+import FormSubmitBtn from '../../../../components/FormSubmitBtn/FormSubmitBtn.component';
 
 const ProfileDetails = () => {
   const [formData, setFormData] = useState({
@@ -159,9 +160,7 @@ const ProfileDetails = () => {
         </div>
 
         {/* Submit button */}
-        <button type='submit' className='profile-submit-btn'>
-          Update Profile
-        </button>
+        <FormSubmitBtn label='Update Profile' />
       </form>
     </UserAccountItemCard>
   );
