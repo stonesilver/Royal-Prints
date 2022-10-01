@@ -30,11 +30,11 @@ const Wallet = () => {
           <Link
             key={name}
             className='user-wallet-link-cards-card-column'
-            to='/'
+            to='/account/en/wallet'
           >
             {icon}
             <p className={`user-wallet-link-cards-card-column-text ${name}`}>
-              History
+              {name}
             </p>
           </Link>
         ))}
@@ -43,11 +43,13 @@ const Wallet = () => {
       {/* Transaction details */}
       <UserAccountItemCard title=''>
         <div className='user-wallet-transaction-details'>
-            <p className="user-wallet-transaction-details-column-one">0</p>
-            <p className="user-wallet-transaction-details-column-two">Transactions</p>
-            <p className="user-wallet-transaction-details-column-three">Date</p>
-            <p className="user-wallet-transaction-details-column-four">Amount</p>
-            <p className="user-wallet-transaction-details-column-five">Balance</p>
+          <p className='user-wallet-transaction-details-column-one'>0</p>
+          <p className='user-wallet-transaction-details-column-two'>
+            Transactions
+          </p>
+          <p className='user-wallet-transaction-details-column-three'>Date</p>
+          <p className='user-wallet-transaction-details-column-four'>Amount</p>
+          <p className='user-wallet-transaction-details-column-five'>Balance</p>
         </div>
       </UserAccountItemCard>
     </div>

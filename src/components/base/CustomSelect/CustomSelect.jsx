@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ReactComponent as CaretDown } from '../../../assets/svg/caret-down.svg';
 import './CustomSelect.styles.scss';
 
 const CustomSelect = ({ options, value, label, handleChange }) => {
   const [open, setOpen] = useState(false);
+  const ref = useRef();
 
   const toggleDropdown = () => {
     setOpen((prevS) => !prevS);
+    setTimeout(() => {
+      ref.current && ref.current.focus();
+    }, 20);
   };
 
   return (
@@ -16,7 +20,12 @@ const CustomSelect = ({ options, value, label, handleChange }) => {
       </p>
       <CaretDown className='custom-select-caret' />
       {open && (
-        <ul className='custom-select-dropdown'>
+        <ul
+          ref={ref}
+          className='custom-select-dropdown'
+          tabIndex={1}
+          onBlur={() => setOpen(false)}
+        >
           {options.map((option) => (
             <li
               key={option}

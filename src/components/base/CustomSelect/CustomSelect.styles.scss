@@ -37,8 +37,11 @@
     margin: 0;
     background-color: $primaryWhite;
     max-width: fit-content;
-    border: 1px solid $muted-300;
     z-index: 1;
+
+    &:focus {
+      outline: 1px solid $muted-300;
+    }
 
     &-option {
       font-size: 0.875rem;
