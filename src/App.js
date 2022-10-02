@@ -14,6 +14,7 @@ import Profile from './pages/Auth/Profile/Profile.component';
 import Addresses from './pages/Auth/Addresses/Addresses.component';
 import Conversations from './pages/Auth/Conversations/Conversations.component';
 import Wallet from './pages/Auth/Wallet/Wallet.component';
+import Purchases from './pages/Auth/Purchases/Purchases.component';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
             <Route path='addresses/new' element={<Addresses />} />
             <Route path='message' element={<Conversations />} />
             <Route path='wallet' element={<Wallet />} />
+            <Route path='purchases' element={<Purchases />} />
           </Route>
 
           <Route path='*' element={<PageNotFound />} />

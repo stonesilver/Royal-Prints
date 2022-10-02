@@ -1,0 +1,30 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.user-purchases {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+
+  @include sm {
+    padding: 1.5rem;
+  }
+
+  &-search-messages {
+    position: relative;
+
+    &-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 3rem;
+      background-color: $primaryBlack;
+      color: $primaryWhite;
+      font-size: $base;
+      padding: 0 2rem;
+      transform: translateY(50%);
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}
