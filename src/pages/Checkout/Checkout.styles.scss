@@ -2,6 +2,9 @@
 @import '../../scss/sass-variables';
 
 .checkout-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   min-height: 50ch;
   border: 1px solid $muted-300;
 
