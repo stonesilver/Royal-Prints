@@ -1,0 +1,13 @@
+@import '../../../scss/media-query-mixins';
+@import '../../../scss/sass-variables';
+
+.checkout-shipping-address {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  @include md {
+    flex-direction: row;
+  }
+}
