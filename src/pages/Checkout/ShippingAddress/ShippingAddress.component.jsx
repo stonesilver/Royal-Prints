@@ -110,6 +110,13 @@ const ShippingAddress = () => {
             handleChange={handleChange}
             Iso2Code={formData.Iso2Code}
           />
+          <div className='For-delivery-purposes'>For delivery purposes</div>
+          <button
+            type='reset'
+            className='checkout-shipping-address-column-reset-btn'
+          >
+            Reset
+          </button>
         </div>
         <div className='checkout-shipping-address-column'>
           <p className='checkout-shipping-address-column-heading'>ADDRESS :</p>

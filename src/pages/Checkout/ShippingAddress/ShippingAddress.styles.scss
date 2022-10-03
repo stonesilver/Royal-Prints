@@ -41,5 +41,17 @@
         gap: 0.5rem;
       }
     }
+
+    .For-delivery-purposes {
+      font-size: $xs;
+      margin-top: -0.3rem;
+    }
+
+    &-reset-btn {
+      width: fit-content;
+      font-size: $base;
+      margin-top: 1.5rem;
+      color: $secondaryColor;
+    }
   }
 }
