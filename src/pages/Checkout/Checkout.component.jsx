@@ -4,7 +4,7 @@ import StageIndicator from './StageIndicator/StageIndicator.component';
 const Checkout = () => {
   return (
     <div className='checkout-contacts'>
-      <StageIndicator />
+      <StageIndicator active='Shipping' />
     </div>
   );
 };

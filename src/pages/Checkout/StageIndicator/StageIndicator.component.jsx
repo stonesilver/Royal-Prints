@@ -1,21 +1,20 @@
 import './StageIndicator.styles.scss';
 
+const options = ['Shipping', 'Payment', 'Confirmation'];
+
 const StageIndicator = ({ active }) => {
   return (
     <div className='checkout-stage-indicator'>
       <div className='checkout-stage-indicator-bar'>
-        <span
-          label='Shipping'
-          className='checkout-stage-indicator-bar-circle'
-        ></span>
-        <span
-          label='Payment'
-          className='checkout-stage-indicator-bar-circle'
-        ></span>
-        <span
-          label='Confirmation'
-          className='checkout-stage-indicator-bar-circle'
-        ></span>
+        {options.map((item) => (
+          <span
+            key={item}
+            label={item}
+            className={`checkout-stage-indicator-bar-circle ${
+              active === item && 'checkout-stage-indicator-bar-active'
+            }`}
+          ></span>
+        ))}
       </div>
     </div>
   );
