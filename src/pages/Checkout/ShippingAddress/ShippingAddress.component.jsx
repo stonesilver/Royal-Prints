@@ -5,6 +5,7 @@ import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.compon
 import Radio from '../../../components/base/Radio/Radio.component';
 import UserAccountItemCard from '../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import { days, months, year } from '../../../utils/customSelectData';
+import Countries from '../../../assets/countries.json';
 import './ShippingAddress.styles.scss';
 
 const titleArray = ['Miss', 'Mrs', 'Mr'];
@@ -29,10 +30,17 @@ const ShippingAddress = () => {
     setFormData((prevS) => ({ ...prevS, [name]: value }));
   };
 
-  const selectHandleChange = (label, option) => {
+  const handleBirthdayChange = (label, option) => {
     setFormData((prevS) => ({
       ...prevS,
       birthday: { ...prevS.birthday, [label]: option },
+    }));
+  };
+
+  const handleCountryChange = (label, option) => {
+    setFormData((prevS) => ({
+      ...prevS,
+      [label]: option,
     }));
   };
 
@@ -80,19 +88,19 @@ const ShippingAddress = () => {
                 options={days()}
                 value={formData.birthday.Day}
                 label='Day'
-                handleChange={selectHandleChange}
+                handleChange={handleBirthdayChange}
               />
               <CustomSelect
                 options={months}
                 value={formData.birthday.Month}
                 label='Month'
-                handleChange={selectHandleChange}
+                handleChange={handleBirthdayChange}
               />
               <CustomSelect
                 options={year()}
                 value={formData.birthday.Year}
                 label='Year'
-                handleChange={selectHandleChange}
+                handleChange={handleBirthdayChange}
               />
             </div>
           </div>
@@ -105,6 +113,36 @@ const ShippingAddress = () => {
         </div>
         <div className='checkout-shipping-address-column'>
           <p className='checkout-shipping-address-column-heading'>ADDRESS :</p>
+          <Input
+            value={formData.addressLineOne}
+            placeHolder='Address Line 1'
+            handleChange={handleChange}
+            name='addressLineOne'
+          />
+          <Input
+            value={formData.addressLineTwo}
+            placeHolder='Address Line 2'
+            handleChange={handleChange}
+            name='addressLineTwo'
+          />
+          <Input
+            value={formData.zip}
+            placeHolder='ZIP'
+            handleChange={handleChange}
+            name='zip'
+          />
+          <Input
+            value={formData.city}
+            placeHolder='City'
+            handleChange={handleChange}
+            name='city'
+          />
+          <CustomSelect
+            options={Countries}
+            value={formData.country}
+            label='country'
+            handleChange={handleCountryChange}
+          />
         </div>
       </form>
     </UserAccountItemCard>
