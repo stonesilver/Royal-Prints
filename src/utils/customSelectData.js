@@ -27,7 +27,8 @@ export const days = () => {
   const days = [];
 
   for (let i = 0; i <= 30; i++) {
-    days.push(Number(i) + 1);
+    const number = (i + 1).toString().length === 1 ? `0${i + 1}` : i + 1;
+    days.push(number);
   }
 
   return days;

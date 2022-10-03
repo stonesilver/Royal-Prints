@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
 import Input from '../../../components/base/Input/Input.component';
+import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
 import Radio from '../../../components/base/Radio/Radio.component';
 import UserAccountItemCard from '../../../components/UserAccountItemCard/UserAccountItemCard.component';
+import { days, months, year } from '../../../utils/customSelectData';
 import './ShippingAddress.styles.scss';
 
 const titleArray = ['Miss', 'Mrs', 'Mr'];
@@ -13,12 +15,13 @@ const ShippingAddress = () => {
     firstName: '',
     lastName: '',
     birthday: { Day: '', Month: '', Year: '' },
-    phone: '',
+    phone: '+234',
     addressLineOne: '',
     addressLineTwo: '',
     zip: '',
     city: '',
     country: 'Nigeria',
+    Iso2Code: 'NG',
   });
 
   const handleChange = (event) => {
@@ -74,25 +77,31 @@ const ShippingAddress = () => {
             </p>
             <div className='checkout-shipping-address-column-birthday-row'>
               <CustomSelect
-                options={[]}
+                options={days()}
                 value={formData.birthday.Day}
                 label='Day'
                 handleChange={selectHandleChange}
               />
               <CustomSelect
-                options={[]}
+                options={months}
                 value={formData.birthday.Month}
                 label='Month'
                 handleChange={selectHandleChange}
               />
               <CustomSelect
-                options={[]}
+                options={year()}
                 value={formData.birthday.Year}
                 label='Year'
                 handleChange={selectHandleChange}
               />
             </div>
           </div>
+          <PhoneNumber
+            value={formData.phone}
+            setState={setFormData}
+            handleChange={handleChange}
+            Iso2Code={formData.Iso2Code}
+          />
         </div>
         <div className='checkout-shipping-address-column'>
           <p className='checkout-shipping-address-column-heading'>ADDRESS :</p>
