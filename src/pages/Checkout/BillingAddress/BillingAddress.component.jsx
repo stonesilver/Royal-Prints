@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import UserAccountItemCard from '../../../components/UserAccountItemCard/UserAccountItemCard.component';
+import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
+import Input from '../../../components/base/Input/Input.component';
+import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
 import './BillingAddress.styles.scss';
 
 const BillingAddress = () => {
@@ -64,8 +67,17 @@ const BillingAddress = () => {
         {/* billing content */}
         {sameInfo && (
           <div className='checkout-billing-address-form'>
-            <div className='checkout-billing-address-form-column'></div>
-            <div className='checkout-billing-address-form-column'></div>
+            <div className='checkout-billing-address-form-column'>
+              <p className='checkout-billing-address-form-column-title'>
+                CONTACT :
+              </p>
+              
+            </div>
+            <div className='checkout-billing-address-form-column'>
+              <p className='checkout-billing-address-form-column-title'>
+                ADDRESS :
+              </p>
+            </div>
           </div>
         )}
       </form>
