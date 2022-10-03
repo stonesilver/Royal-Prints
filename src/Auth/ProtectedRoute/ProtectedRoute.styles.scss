@@ -1,0 +1,15 @@
+@import '../../scss/media-query-mixins';
+
+.protected-route {
+  max-width: 100%;
+  margin: 1.5rem auto;
+  border: 1px solid red;
+
+  @include md {
+    max-width: 90%;
+  }
+
+  @include lg {
+    max-width: 85%;
+  }
+}

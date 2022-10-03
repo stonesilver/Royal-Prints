@@ -3,7 +3,7 @@ import AccountLayout from '../Layout/AccountLayout/AccountLayout.component';
 
 const signedIn = true;
 
-const ProtectRoute = () => {
+const AccountProtectedRoute = () => {
   return signedIn ? (
     <AccountLayout>
       <Outlet />
@@ -13,4 +13,4 @@ const ProtectRoute = () => {
   );
 };
 
-export default ProtectRoute;
+export default AccountProtectedRoute;
