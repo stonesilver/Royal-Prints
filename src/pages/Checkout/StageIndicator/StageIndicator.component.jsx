@@ -10,10 +10,12 @@ const StageIndicator = ({ active }) => {
           <span
             key={item}
             label={item}
-            className={`checkout-stage-indicator-bar-circle ${
-              active === item && 'checkout-stage-indicator-bar-active'
-            }`}
-          ></span>
+            className='checkout-stage-indicator-bar-circle'
+          >
+            {active === item && (
+              <span className='checkout-stage-indicator-bar-circle-active'></span>
+            )}
+          </span>
         ))}
       </div>
     </div>
