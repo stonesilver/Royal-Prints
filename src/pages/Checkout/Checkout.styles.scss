@@ -1,0 +1,17 @@
+@import '../../scss/media-query-mixins';
+@import '../../scss/sass-variables';
+
+.checkout-contacts {
+  min-height: 50ch;
+  border: 1px solid $muted-300;
+
+  @include sm {
+    max-width: 29.8rem;
+    margin: 0 auto;
+  }
+
+  @include lg {
+    max-width: 47rem;
+    margin: 0 auto;
+  }
+}
