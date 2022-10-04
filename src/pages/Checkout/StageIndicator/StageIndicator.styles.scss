@@ -11,7 +11,7 @@
   margin-bottom: 1.5rem;
 
   @include sm {
-    font-size: $base;
+    font-size: $md;
     height: 5rem;
   }
 
@@ -25,7 +25,7 @@
     margin-top: 2rem;
 
     @include sm {
-      height: 8px;
+      height: 5px;
     }
 
     &-circle {
@@ -40,9 +40,9 @@
       transform: translateY(-0.65rem);
 
       @include sm {
-        width: 2.2rem;
-        height: 2.2rem;
-        transform: translateY(-0.875rem);
+        width: 1.8rem;
+        height: 1.8rem;
+        transform: translateY(-0.75rem);
       }
 
       &::after {
@@ -58,8 +58,8 @@
         border-radius: 50%;
 
         @include sm {
-          width: 1.2rem;
-          height: 1.2rem;
+          width: 1rem;
+          height: 1rem;
         }
       }
     }
