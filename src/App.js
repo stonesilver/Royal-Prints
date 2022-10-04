@@ -16,7 +16,8 @@ import Conversations from './pages/Auth/Conversations/Conversations.component';
 import Wallet from './pages/Auth/Wallet/Wallet.component';
 import Purchases from './pages/Auth/Purchases/Purchases.component';
 import Checkout from './pages/Checkout/CheckoutShipping/CheckoutShipping.component';
-import ProtectedRoute from './Auth/ProtectedRoute/ProtectedRoute';
+import CheckoutProtectedRoute from './Auth/CheckoutProtectedRoute/CheckoutProtectedRoute';
+import CheckoutPayment from './pages/Checkout/CheckoutPayment/CheckoutPayment.component';
 
 const App = () => {
   return (
@@ -41,8 +42,9 @@ const App = () => {
           </Route>
 
           {/* Checkout routes */}
-          <Route path='/en' element={<ProtectedRoute />}>
-            <Route path='checkout/contacts' element={<Checkout />} />
+          <Route path='/en/checkout' element={<CheckoutProtectedRoute />}>
+            <Route path='contacts' element={<Checkout />} />
+            <Route path='payment' element={<CheckoutPayment />} />
           </Route>
 
           <Route path='*' element={<PageNotFound />} />

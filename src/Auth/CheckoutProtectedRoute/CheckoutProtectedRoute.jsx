@@ -1,5 +1,5 @@
 import { Outlet, Navigate } from 'react-router-dom';
-import './ProtectedRoute.styles.scss';
+import './CheckoutProtectedRoute.styles.scss';
 
 const signedIn = true;
 

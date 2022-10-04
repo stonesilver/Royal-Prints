@@ -5,11 +5,13 @@
   margin: 1.5rem auto;
   padding: 0 1rem;
 
-  @include md {
-    max-width: 90%;
+  @include sm {
+    max-width: 29.8rem;
+    margin: 0 auto;
   }
 
   @include lg {
-    max-width: 85%;
+    max-width: 47rem;
+    margin: 0 auto;
   }
 }
