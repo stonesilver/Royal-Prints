@@ -27,13 +27,18 @@
       flex: 1;
       display: grid;
       gap: 0.3rem;
-      min-height: 6rem;
-      border: 1px solid $muted-300;
+      height: fit-content;
 
       &-title {
         font-size: $base;
         font-weight: 600;
         color: $muted-500;
+      }
+
+      &-reset-btn {
+        width: fit-content;
+        color: $secondaryColor;
+        font-size: $base;
       }
     }
   }

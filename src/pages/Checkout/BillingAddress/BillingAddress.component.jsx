@@ -3,6 +3,7 @@ import UserAccountItemCard from '../../../components/UserAccountItemCard/UserAcc
 import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
 import Input from '../../../components/base/Input/Input.component';
 import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
+import Countries from '../../../assets/countries.json';
 import './BillingAddress.styles.scss';
 
 const BillingAddress = () => {
@@ -28,13 +29,6 @@ const BillingAddress = () => {
 
   const handleSameInfoOnChange = (event) => {
     setSameInfo(event.target.checked);
-  };
-
-  const handleBirthdayChange = (label, option) => {
-    setFormData((prevS) => ({
-      ...prevS,
-      birthday: { ...prevS.birthday, [label]: option },
-    }));
   };
 
   const handleCountryChange = (label, option) => {
@@ -71,12 +65,71 @@ const BillingAddress = () => {
               <p className='checkout-billing-address-form-column-title'>
                 CONTACT :
               </p>
-              
+
+              <Input
+                value={formData.firstName}
+                placeHolder='First Name'
+                handleChange={handleChange}
+                name='firstName'
+              />
+
+              <Input
+                value={formData.lastName}
+                placeHolder='Last Name'
+                handleChange={handleChange}
+                name='lastName'
+              />
+
+              <PhoneNumber
+                value={formData.phone}
+                setState={setFormData}
+                handleChange={handleChange}
+                Iso2Code={formData.Iso2Code}
+              />
+
+              <button
+                type='reset'
+                className='checkout-billing-address-form-column-reset-btn'
+              >
+                Reset
+              </button>
             </div>
+
             <div className='checkout-billing-address-form-column'>
               <p className='checkout-billing-address-form-column-title'>
                 ADDRESS :
               </p>
+
+              <Input
+                value={formData.addressLineOne}
+                placeHolder='Address Line 1'
+                handleChange={handleChange}
+                name='addressLineOne'
+              />
+              <Input
+                value={formData.addressLineTwo}
+                placeHolder='Address Line 2'
+                handleChange={handleChange}
+                name='addressLineTwo'
+              />
+              <Input
+                value={formData.zip}
+                placeHolder='ZIP'
+                handleChange={handleChange}
+                name='zip'
+              />
+              <Input
+                value={formData.city}
+                placeHolder='City'
+                handleChange={handleChange}
+                name='city'
+              />
+              <CustomSelect
+                options={Countries}
+                value={formData.country}
+                label='country'
+                handleChange={handleCountryChange}
+              />
             </div>
           </div>
         )}
