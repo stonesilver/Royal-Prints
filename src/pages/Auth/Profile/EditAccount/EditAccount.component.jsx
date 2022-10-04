@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import Input from '../../../../components/base/Input/Input.component';
-import './EditAccount.styles.scss';
 import FormSubmitBtn from '../../../../components/FormSubmitBtn/FormSubmitBtn.component';
+import FormInputTitle from '../../../../components/base/FormInputTitle/FormInputTitle.component';
+import './EditAccount.styles.scss';
 
 const EditAccount = () => {
   const [formData, setFormData] = useState({
@@ -29,9 +30,7 @@ const EditAccount = () => {
       <form onSubmit={handleSumit} className='edit-account'>
         {/* Email */}
         <div className='edit-account-row'>
-          <p className='edit-account-row-title edit-account-row-important'>
-            Email
-          </p>
+          <FormInputTitle label='Email' important />
           <Input
             type='text'
             name='email'
@@ -42,7 +41,7 @@ const EditAccount = () => {
 
         {/* Password */}
         <div className='edit-account-row'>
-          <p className='edit-account-row-title'>Password</p>
+          <FormInputTitle label='Password' />
           <Input
             type='password'
             name='password'
@@ -56,7 +55,7 @@ const EditAccount = () => {
 
         {/* Password confirmation */}
         <div className='edit-account-row'>
-          <p className='edit-account-row-title'>Password Confirmation</p>
+          <FormInputTitle label='Password Confirmation' />
           <Input
             type='password'
             name='confirmPassword'
@@ -67,9 +66,7 @@ const EditAccount = () => {
 
         {/* Current password */}
         <div className='edit-account-row'>
-          <p className='edit-account-row-title edit-account-row-important'>
-            Current Password
-          </p>
+          <FormInputTitle label='Current Password' important />
           <Input
             type='password'
             name='currentPasword'
