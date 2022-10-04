@@ -4,7 +4,9 @@ import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
 import Input from '../../../components/base/Input/Input.component';
 import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
 import Countries from '../../../assets/countries.json';
+import { ReactComponent as ChevronIcon } from '../../../assets/chevron-right.svg';
 import './BillingAddress.styles.scss';
+import Button from '../../../components/base/Button/Button.component';
 
 const BillingAddress = () => {
   const [sameInfo, setSameInfo] = useState(false);
@@ -133,6 +135,14 @@ const BillingAddress = () => {
             </div>
           </div>
         )}
+
+        <Button
+          type='submit'
+          text='Next Step'
+          className='checkout-billing-address-proceed-btn'
+        >
+          <ChevronIcon className='checkout-billing-address-proceed-btn-caret-icon' />
+        </Button>
       </form>
     </UserAccountItemCard>
   );

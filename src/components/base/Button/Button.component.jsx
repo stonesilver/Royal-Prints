@@ -1,9 +1,9 @@
 import './Button.styles.scss';
 
-const Button = ({ type, text, variant, className }) => {
+const Button = ({ type, text, variant, className, children }) => {
   return (
     <button className={`custom-btn ${variant} ${className}`} type={type}>
-      {text}
+      {text} {children}
     </button>
   );
 };
