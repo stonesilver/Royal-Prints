@@ -5,7 +5,14 @@ const options = ['Shipping', 'Payment', 'Confirmation'];
 const StageIndicator = ({ active }) => {
   return (
     <div className='checkout-stage-indicator'>
-      <div className='checkout-stage-indicator-bar'>
+      <div
+        className={`checkout-stage-indicator-bar ${
+          active.includes('Payment') && 'checkout-stage-indicator-payment'
+        } ${
+          active.includes('Confirmation') &&
+          'checkout-stage-indicator-confirmation'
+        }`}
+      >
         {options.map((item) => (
           <span
             key={item}

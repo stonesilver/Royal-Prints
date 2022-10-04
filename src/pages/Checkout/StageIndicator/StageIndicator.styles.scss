@@ -64,4 +64,16 @@
       }
     }
   }
+
+  &-payment {
+    background: linear-gradient(
+      to right,
+      $secondaryColor 0% 50%,
+      $muted-300 50%
+    );
+  }
+
+  &-confirmation {
+    background: $secondaryColor;
+  }
 }
