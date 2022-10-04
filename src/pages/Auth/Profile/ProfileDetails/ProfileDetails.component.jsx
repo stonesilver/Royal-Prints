@@ -8,6 +8,7 @@ import { months, year, days } from '../../../../utils/customSelectData';
 import timeZones from '../../../../assets/timeZones.json';
 import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
 import FormSubmitBtn from '../../../../components/FormSubmitBtn/FormSubmitBtn.component';
+import FormInputTitle from '../../../../components/base/FormInputTitle/FormInputTitle.component';
 
 const ProfileDetails = () => {
   const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ const ProfileDetails = () => {
         {/* account type and gender */}
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
-            <p className='title'>Account Type</p>
+            <FormInputTitle label='Account Type' important />
             <div className='profile-details-first-row-columns-row'>
               <Radio
                 name='accountType'
@@ -70,7 +71,7 @@ const ProfileDetails = () => {
           </div>
 
           <div className='profile-details-first-row-columns'>
-            <p className='title'>Gender</p>
+            <FormInputTitle label='Gender' important />
             <div className='profile-details-first-row-columns-row'>
               <Radio
                 name='gender'
@@ -91,7 +92,7 @@ const ProfileDetails = () => {
         {/* First and last name */}
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
-            <p className='title'>First Name</p>
+            <FormInputTitle label='First Name' important />
             <Input
               type='text'
               name='firstName'
@@ -100,7 +101,7 @@ const ProfileDetails = () => {
             />
           </div>
           <div className='profile-details-first-row-columns'>
-            <p className='title'>Last Name</p>
+            <FormInputTitle label='Last Name' important />
             <Input
               type='text'
               name='lastName'
@@ -113,7 +114,7 @@ const ProfileDetails = () => {
         {/* Phone number and birth date */}
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
-            <p className='title'>Phone Number</p>
+            <FormInputTitle label='Phone Number' important />
             <PhoneNumber
               value={formData.phone}
               setState={setFormData}
@@ -122,7 +123,7 @@ const ProfileDetails = () => {
             />
           </div>
           <div className='profile-details-first-row-columns'>
-            <p className='title'>Birth Date</p>
+            <FormInputTitle label='Birth Date' important />
             <div className='profile-details-first-row-columns-row'>
               <CustomSelect
                 label='Year'
@@ -149,7 +150,7 @@ const ProfileDetails = () => {
         {/* Time zone */}
         <div className='profile-details-first-row'>
           <div className='profile-details-first-row-columns'>
-            <p className='title'>Time Zone</p>
+            <FormInputTitle label='Time Zone' important />
             <CustomSelect
               label='timeZone'
               value={formData.timeZone}
