@@ -22,24 +22,6 @@
 
     &-column {
       flex: 1;
-
-      &-title {
-        position: relative;
-        width: fit-content;
-        font-size: $md;
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-      }
-
-      &-important {
-        &::after {
-          position: absolute;
-          content: '*';
-          top: 0;
-          right: -0.5rem;
-          color: #ff0000;
-        }
-      }
     }
   }
 }

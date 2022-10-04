@@ -6,6 +6,7 @@ import CountriesJson from '../../../assets/countries.json';
 import './Addresses.styles.scss';
 import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
 import FormSubmitBtn from '../../../components/FormSubmitBtn/FormSubmitBtn.component';
+import FormInputTitle from '../../../components/base/FormInputTitle/FormInputTitle.component';
 
 const Addresses = () => {
   const [formData, setFormData] = useState({
@@ -111,9 +112,7 @@ const Addresses = () => {
           ]}
         >
           <div className='user-addresses-row-column'>
-            <p className='user-addresses-row-column-title user-addresses-row-column-important'>
-              Country
-            </p>
+            <FormInputTitle label='Country' important />
 
             <CustomSelect
               options={CountriesJson}
@@ -125,9 +124,7 @@ const Addresses = () => {
         </FormItem>
         <div className='user-addresses-row'>
           <div className='user-addresses-row-column'>
-            <p className='user-addresses-row-column-title user-addresses-row-column-important'>
-              Phone Number
-            </p>
+            <FormInputTitle label='Phone Number' important />
             <PhoneNumber
               value={formData.phone}
               setState={setFormData}
