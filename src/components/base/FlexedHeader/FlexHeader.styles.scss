@@ -1,0 +1,8 @@
+.flexed-header {
+  display: flex;
+  justify-content: space-between;
+
+  &-value {
+    font-weight: 600;
+  }
+}

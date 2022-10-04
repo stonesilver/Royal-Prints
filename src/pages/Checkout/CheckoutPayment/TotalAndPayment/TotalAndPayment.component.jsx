@@ -1,21 +1,7 @@
 import { useState } from 'react';
+import FlexHeader from '../../../../components/base/FlexedHeader/FlexedHeader.component';
 import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
 import './TotalAndPayment.styles.scss';
-
-const TotalTitle = ({ value }) => {
-  return (
-    <div className='total-title'>
-      <p className='total-title-header'>Total</p>
-      <p className='total-title-value'>
-        {value.toLocaleString('en-ng', {
-          style: 'currency',
-          currency: 'NGN',
-          minimumFractionDigits: 0,
-        })}
-      </p>
-    </div>
-  );
-};
 
 const TotalAndPayment = () => {
   const [state, setState] = useState({
@@ -39,9 +25,11 @@ const TotalAndPayment = () => {
     <div className='total-and-payment'>
       {/* coupons and order details */}
       <div className='total-and-payment-column-one'>
-        <UserAccountItemCard title={<TotalTitle value={45254} />} />
+        <UserAccountItemCard
+          title={<FlexHeader header='Total' value='₦45,254' />}>
+            
+          </UserAccountItemCard>
       </div>
-
       {/* handles payments */}
       <div className='total-and-payment-column-two'></div>
     </div>
