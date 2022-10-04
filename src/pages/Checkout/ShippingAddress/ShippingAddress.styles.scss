@@ -16,6 +16,7 @@
     flex: 1;
     display: grid;
     gap: 0.5rem;
+    height: fit-content;
 
     &-heading {
       font-size: $base;
