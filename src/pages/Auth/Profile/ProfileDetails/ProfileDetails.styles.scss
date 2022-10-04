@@ -23,22 +23,6 @@
     &-columns {
       flex: 1;
 
-      .title {
-        position: relative;
-        width: fit-content;
-        font-size: $md;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-
-        &::after {
-          position: absolute;
-          content: '*';
-          top: 0;
-          right: -0.5rem;
-          color: #ff0000;
-        }
-      }
-
       &-row {
         display: flex;
         gap: 0.5rem;

@@ -12,24 +12,6 @@
   }
 
   &-row {
-    &-title {
-      position: relative;
-      width: fit-content;
-      font-size: $md;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    &-important {
-      &::after {
-        position: absolute;
-        content: '*';
-        top: 0;
-        right: -0.5rem;
-        color: #ff0000;
-      }
-    }
-
     &-description {
       font-size: 0.75rem;
       color: $muted-500;
