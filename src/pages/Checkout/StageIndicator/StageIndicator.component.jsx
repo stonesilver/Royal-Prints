@@ -12,7 +12,7 @@ const StageIndicator = ({ active }) => {
             label={item}
             className='checkout-stage-indicator-bar-circle'
           >
-            {active === item && (
+            {active.includes(item) && (
               <span className='checkout-stage-indicator-bar-circle-active'></span>
             )}
           </span>
