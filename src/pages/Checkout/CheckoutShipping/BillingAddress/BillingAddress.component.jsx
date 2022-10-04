@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import UserAccountItemCard from '../../../components/UserAccountItemCard/UserAccountItemCard.component';
-import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
-import Input from '../../../components/base/Input/Input.component';
-import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
-import Countries from '../../../assets/countries.json';
-import { ReactComponent as ChevronIcon } from '../../../assets/chevron-right.svg';
+import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
+import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
+import Input from '../../../../components/base/Input/Input.component';
+import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.component';
+import Countries from '../../../../assets/countries.json';
+import { ReactComponent as ChevronIcon } from '../../../../assets/chevron-right.svg';
 import './BillingAddress.styles.scss';
-import Button from '../../../components/base/Button/Button.component';
+import Button from '../../../../components/base/Button/Button.component';
 
 const BillingAddress = () => {
   const [sameInfo, setSameInfo] = useState(false);

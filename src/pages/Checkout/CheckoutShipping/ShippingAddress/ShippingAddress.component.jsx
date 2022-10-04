@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import CustomSelect from '../../../components/base/CustomSelect/CustomSelect';
-import Input from '../../../components/base/Input/Input.component';
-import PhoneNumber from '../../../components/base/PhoneNumber/PhoneNumber.component';
-import Radio from '../../../components/base/Radio/Radio.component';
-import UserAccountItemCard from '../../../components/UserAccountItemCard/UserAccountItemCard.component';
-import { days, months, year } from '../../../utils/customSelectData';
-import Countries from '../../../assets/countries.json';
+import CustomSelect from '../../../../components/base/CustomSelect/CustomSelect';
+import Input from '../../../../components/base/Input/Input.component';
+import PhoneNumber from '../../../../components/base/PhoneNumber/PhoneNumber.component';
+import Radio from '../../../../components/base/Radio/Radio.component';
+import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
+import { days, months, year } from '../../../../utils/customSelectData';
+import Countries from '../../../../assets/countries.json';
 import './ShippingAddress.styles.scss';
 
 const titleArray = ['Miss', 'Mrs', 'Mr'];

@@ -15,7 +15,7 @@ import Addresses from './pages/Auth/Addresses/Addresses.component';
 import Conversations from './pages/Auth/Conversations/Conversations.component';
 import Wallet from './pages/Auth/Wallet/Wallet.component';
 import Purchases from './pages/Auth/Purchases/Purchases.component';
-import Checkout from './pages/Checkout/Checkout.component';
+import Checkout from './pages/Checkout/CheckoutShipping/CheckoutShipping.component';
 import ProtectedRoute from './Auth/ProtectedRoute/ProtectedRoute';
 
 const App = () => {
