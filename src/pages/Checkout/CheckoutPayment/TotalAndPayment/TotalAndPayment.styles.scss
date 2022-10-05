@@ -12,8 +12,47 @@
 
   &-column-one {
     flex: 1;
-    border: 1px solid $muted-300;
     min-height: 8rem;
+
+    &-total {
+      padding-top: 1rem;
+
+      &-coupon-label {
+        font-size: $xs;
+        margin-bottom: 0.25rem;
+        padding: 0 1rem;
+    }
+
+      &-coupon {
+        display: flex;
+        height: 1.8rem;
+        border-radius: 3px;
+        border: 1px solid $muted-300;
+        margin: 0 1rem;
+        margin-bottom: 1.2rem;
+        overflow: hidden;
+
+        &-input {
+          flex: 1;
+          height: 100%;
+          padding: 0 0.5rem;
+        }
+
+        &-ok-btn {
+          height: 100%;
+          background-color: $primaryBlack;
+          color: $primaryWhite;
+          padding: 0 0.5rem;
+        }
+      }
+    }
+
+    &-order-detail {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid $muted-300;
+      padding: 0.5rem 1rem;
+    }
   }
 
   &-column-two {
