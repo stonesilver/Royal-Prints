@@ -44,7 +44,7 @@ const TotalAndPayment = () => {
                 ok
               </button>
             </div>
-            
+
             <div className='total-and-payment-column-one-order-detail'>
               <p className='total-and-payment-column-one-order-detail-label'>
                 Sub-total
@@ -61,6 +61,20 @@ const TotalAndPayment = () => {
                 ₦0.0
               </p>
             </div>
+          </div>
+        </UserAccountItemCard>
+
+        <UserAccountItemCard
+          title={<FlexHeader header='Ship To' value='Edit' />}
+        >
+          <div className='total-and-payment-column-one-ship-to'>
+            <p className='total-and-payment-column-one-ship-to-name'>
+              chigozie ezenwa
+            </p>
+            <p>4 desmond madumere crescent</p>
+            <p>102103 lagos</p>
+            <p>Nigeria</p>
+            <p>+234 706 437 8577</p>
           </div>
         </UserAccountItemCard>
       </div>

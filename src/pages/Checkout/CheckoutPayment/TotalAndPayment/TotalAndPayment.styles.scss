@@ -12,6 +12,9 @@
 
   &-column-one {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     min-height: 8rem;
 
     &-total {
@@ -21,7 +24,7 @@
         font-size: $xs;
         margin-bottom: 0.25rem;
         padding: 0 1rem;
-    }
+      }
 
       &-coupon {
         display: flex;
@@ -52,6 +55,17 @@
       justify-content: space-between;
       border-top: 1px solid $muted-300;
       padding: 0.5rem 1rem;
+    }
+
+    &-ship-to {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem;
+
+      &-name {
+        font-weight: 600;
+      }
     }
   }
 
