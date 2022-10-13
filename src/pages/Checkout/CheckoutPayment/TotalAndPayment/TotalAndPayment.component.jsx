@@ -29,9 +29,9 @@ const TotalAndPayment = () => {
           title={<FlexHeader header='Total' value='₦45,254' />}
         >
           <div className='total-and-payment-column-one-total'>
-            <p className='total-and-payment-column-one-total-coupon-label'>
+            <label className='total-and-payment-column-one-total-coupon-label'>
               Have a coupon ? Enter the code below and click "ok"
-            </p>
+            </label>
             <div className='total-and-payment-column-one-total-coupon'>
               <input
                 type='text'
