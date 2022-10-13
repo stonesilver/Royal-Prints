@@ -7,7 +7,6 @@ import ProductDetails from './pages/ProductDetails';
 import SignIn from './pages/Auth/SignIn/SignIn.component';
 import SignUp from './pages/Auth/SignUp/SignUp.component';
 import PageNotFound from './pages/PageNotFound';
-import './App.scss';
 import AccountProtectedRoute from './Auth/AccountProtectedRoute';
 import Account from './pages/Auth/Account/Account.component';
 import Profile from './pages/Auth/Profile/Profile.component';
@@ -18,6 +17,7 @@ import Purchases from './pages/Auth/Purchases/Purchases.component';
 import Checkout from './pages/Checkout/CheckoutShipping/CheckoutShipping.component';
 import CheckoutProtectedRoute from './Auth/CheckoutProtectedRoute/CheckoutProtectedRoute';
 import CheckoutPayment from './pages/Checkout/CheckoutPayment/CheckoutPayment.component';
+import './App.scss';
 
 const App = () => {
   return (
@@ -43,7 +43,7 @@ const App = () => {
 
           {/* Checkout routes */}
           <Route path='/en/checkout' element={<CheckoutProtectedRoute />}>
-            <Route path='contacts' element={<Checkout />} />
+            <Route index element={<Checkout />} />
             <Route path='payment' element={<CheckoutPayment />} />
           </Route>
 

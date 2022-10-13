@@ -22,7 +22,7 @@ const TotalAndPayment = () => {
   };
 
   return (
-    <div className='total-and-payment'>
+    <form className='total-and-payment' onSubmit={handleSubmit}>
       {/* coupons and order details */}
       <div className='total-and-payment-column-one'>
         <UserAccountItemCard
@@ -80,7 +80,7 @@ const TotalAndPayment = () => {
       </div>
       {/* handles payments */}
       <div className='total-and-payment-column-two'></div>
-    </div>
+    </form>
   );
 };
 
