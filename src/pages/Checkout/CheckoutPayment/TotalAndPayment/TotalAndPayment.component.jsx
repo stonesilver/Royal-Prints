@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import FlexHeader from '../../../../components/base/FlexedHeader/FlexedHeader.component';
-import UserAccountItemCard from '../../../../components/UserAccountItemCard/UserAccountItemCard.component';
+import FlexHeader from 'components/base/FlexedHeader/FlexedHeader.component';
+import UserAccountItemCard from 'components/UserAccountItemCard/UserAccountItemCard.component';
+import Radio from 'components/base/Radio/Radio.component'
 import './TotalAndPayment.styles.scss';
 
 const TotalAndPayment = () => {
@@ -9,6 +10,7 @@ const TotalAndPayment = () => {
     cardNumber: '',
     expiryDate: '',
     code: '',
+    paymentAmount: '',
   });
 
   const handleChange = (event) => {
@@ -79,7 +81,10 @@ const TotalAndPayment = () => {
         </UserAccountItemCard>
       </div>
       {/* handles payments */}
-      <div className='total-and-payment-column-two'></div>
+      <div className='total-and-payment-column-two'>
+        <p className='total-and-payment-column-two-header'>Payment</p>
+        <Radio />
+      </div>
     </form>
   );
 };
