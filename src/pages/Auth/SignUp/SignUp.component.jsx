@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
-import Input from '../../../components/base/Input/Input.component';
-import SubmitBtn from '../../../components/base/SubmitBtn/SubmitBtn.component';
+import Input from 'components/base/Input/Input.component';
+import SubmitBtn from 'components/base/SubmitBtn/SubmitBtn.component';
+import CheckBox from 'components/base/CheckBox/CheckBox.component';
 import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.styles.scss';
 
@@ -208,16 +209,13 @@ const SignUp = () => {
             />
           </div>
           <div className='form-input terms-and-conditions'>
-            <label htmlFor='termsAndConditions' id='termsAndConditions'>
-              <input
-                type='checkbox'
-                name='termsAndConditions'
-                checked={userInput.termsAndConditions}
-                onChange={handleChange}
-                className={`TAndC ${error.termsAndConditions && 'error'}`}
-              />
-              By signing up i agree with coronation terms and conditions
-            </label>
+            <CheckBox
+              name='termsAndConditions'
+              onChange={handleChange}
+              checked={userInput.termsAndConditions}
+              error={error.termsAndConditions}
+              label='By signing up i agree with coronation terms and conditions'
+            />
           </div>
           <div className='submit-btn-and-login-link'>
             <div className='submit'>
