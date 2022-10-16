@@ -114,4 +114,137 @@
       }
     }
   }
+
+  .horizontal-line {
+    position: relative;
+    height: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $muted-300;
+    margin: 0.5rem 0;
+
+    &-text {
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: $xs;
+      width: fit-content;
+      background-color: $primaryWhite;
+      transform: translateY(-6px);
+      padding: 0 0.5rem;
+
+      .lock-icon {
+        width: $base;
+        height: $base;
+      }
+    }
+  }
+
+  .order-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 2rem 1rem;
+
+    &-image {
+      flex: 1;
+      display: flex;
+      gap: 0.25rem;
+
+      &-designer-img {
+        width: 4rem;
+      }
+
+      &-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        &-name {
+          font-size: $xs;
+          font-weight: 600;
+
+          @include sm {
+            font-size: $md;
+          }
+        }
+
+        &-size {
+          font-size: $xs;
+          color: $muted-500;
+        }
+      }
+    }
+
+    &-amount {
+      text-align: right;
+      font-size: $md;
+
+      &-quantity,
+      &-free-shipping {
+        font-size: $xs;
+      }
+
+      &-free-shipping {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  .sub-total-total-fee {
+    border: 1px solid $muted-300;
+    border-radius: 4px;
+
+    @include md {
+      width: 50%;
+      align-self: flex-end;
+    }
+
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      padding: $md 1rem;
+      border-bottom: 1px solid $muted-300;
+
+      &:last-child {
+        border-bottom: 1px solid transparent;
+      }
+
+      .total-price {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .payment-secure-money-back {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: $xs;
+
+    @include md {
+      flex-direction: row;
+    }
+
+    &-card {
+      display: flex;
+      gap: $tiny;
+      border: 1px solid $muted-300;
+      padding: $md;
+
+      &-icon {
+        width: 3rem;
+        height: 3rem;
+        stroke: $primaryBlack;
+      }
+
+      &-body {
+        &-header {
+          font-weight: 600;
+        }
+      }
+    }
+  }
 }

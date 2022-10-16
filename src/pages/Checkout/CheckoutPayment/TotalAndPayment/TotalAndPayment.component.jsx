@@ -6,7 +6,25 @@ import FormInputTitle from 'components/base/FormInputTitle/FormInputTitle.compon
 import Input from 'components/base/Input/Input.component';
 import CheckBox from 'components/base/CheckBox/CheckBox.component';
 import SubmitBtn from 'components/base/SubmitBtn/SubmitBtn.component';
+import { ReactComponent as LockIcon } from 'assets/lock.svg';
+import { ReactComponent as ArrowClockWiseIcon } from 'assets/clockwise.svg';
+import DesignerImg from 'assets/imgFiles/styles/54.jpg';
 import './TotalAndPayment.styles.scss';
+
+const card = [
+  {
+    icon: <LockIcon className='payment-secure-money-back-card-icon' />,
+    title: 'Payment 100% secured',
+    sub: 'Your payment is secured with the strongest finance protocols',
+  },
+  {
+    icon: (
+      <ArrowClockWiseIcon className='payment-secure-money-back-card-icon' />
+    ),
+    title: 'Money back guarantee',
+    sub: 'We guarantee your money back if you are not satisfied',
+  },
+];
 
 const TotalAndPayment = () => {
   const [state, setState] = useState({
@@ -147,10 +165,67 @@ const TotalAndPayment = () => {
             error={false}
           />
           <div className='total-and-payment-column-two-submit-btn'>
-            <SubmitBtn>Pay {`#${state.paymentAmount}`}</SubmitBtn>
+            <SubmitBtn>Pay {`₦${state.paymentAmount}`}</SubmitBtn>
           </div>
         </div>
       </form>
+      <div className='horizontal-line'>
+        <p className='horizontal-line-text'>
+          <LockIcon className='lock-icon' /> Payment 100% secured
+        </p>
+      </div>
+      <UserAccountItemCard title='Rolloyds'>
+        <div className='order-detail'>
+          <div className='order-detail-image'>
+            <img
+              src={DesignerImg}
+              alt='designer'
+              className='order-detail-image-designer-img'
+            />
+            <div className='order-detail-image-details'>
+              <p className='order-detail-image-details-name'>
+                Classic Gentleman 2 Piece Kaftan
+              </p>
+              <p className='order-detail-image-details-size'>L - Men</p>
+            </div>
+          </div>
+          <div className='order-detail-amount'>
+            <p className='order-detail-amount-total-amount'>₦50,525</p>
+            <p className='order-detail-amount-quantity'>1 X ₦50,525</p>
+            <p className='order-detail-amount-free-shipping'>
+              Shipping: 5 days - Free
+            </p>
+          </div>
+        </div>
+      </UserAccountItemCard>
+      <div className='sub-total-total-fee'>
+        <div className='sub-total-total-fee-sub-total list-item'>
+          <p className='title'>Sub Total</p>
+          <p className='title'>₦50,525</p>
+        </div>
+        <div className='sub-total-total-fee-shipping list-item'>
+          <p className='title'>Shipping</p>
+          <p className='title'>₦0</p>
+        </div>
+        <div className='sub-total-total-fee-total list-item'>
+          <p className='title'>Total</p>
+          <p className='title total-price'>₦50,525</p>
+        </div>
+      </div>
+
+      <div className='payment-secure-money-back'>
+        {card.map(({ icon, title, sub }) => (
+          <div key={title} className='payment-secure-money-back-card'>
+            {icon}
+            <div className='payment-secure-money-back-card-body'>
+              <p className='payment-secure-money-back-card-body-header'>
+                {title}
+              </p>
+              <p className='payment-secure-money-back-card-body-sub'>{sub}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
